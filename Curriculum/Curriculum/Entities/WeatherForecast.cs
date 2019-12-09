@@ -1,6 +1,6 @@
 using System;
 
-namespace Curriculum
+namespace Curriculum.Models
 {
     public class WeatherForecast
     {

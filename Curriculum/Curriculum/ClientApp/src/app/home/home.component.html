@@ -4,14 +4,14 @@
     <div class="card horizontal">
       <div class="card-stacked light-blue accent-4" style="color: white">
         <div class="card-content">
-          <h3 style="margin-bottom: 0">David Campos Chavarría</h3>
+          <h3 style="margin-bottom: 0">{{ data.Name }} {{ data.Surnames }}</h3>
           <h6 style="margin: 0 0 2.168rem 0;">Systems engineering</h6>
-          <div class="valign-wrapper"><i class="small material-icons" style="padding-right: 15px">assignment_ind</i><h5 style="margin: 0">1-11396-0817</h5></div>
-          <div class="valign-wrapper"><i class="small material-icons" style="padding-right: 15px">cake</i><h5 style="margin:0">17/07/1989</h5></div>
-          <div class="valign-wrapper"><i class="small material-icons" style="padding-right: 15px">people</i><h5 style="margin:0">Soltero</h5></div>
-          <div class="valign-wrapper"><i class="small material-icons" style="padding-right: 15px">place</i><h5 style="margin:0">Guadalupe Bº Pilar</h5></div>
-          <div class="valign-wrapper"><i class="small material-icons" style="padding-right: 15px">email</i><h5 style="margin:0">davidcamposch@gmail.com</h5></div>
-          <div class="valign-wrapper"><i class="small material-icons" style="padding-right: 15px">phone</i><h5 style="margin:0">+506 60958027</h5></div>
+          <div class="valign-wrapper"><i class="small material-icons" style="padding-right: 15px">assignment_ind</i><h5 style="margin: 0">{{ data.Identification }}</h5></div>
+          <div class="valign-wrapper"><i class="small material-icons" style="padding-right: 15px">cake</i><h5 style="margin:0">{{ data.Birth_Date }}</h5></div>
+          <div class="valign-wrapper"><i class="small material-icons" style="padding-right: 15px">people</i><h5 style="margin:0">{{ data.Civil_Status }}</h5></div>
+          <div class="valign-wrapper"><i class="small material-icons" style="padding-right: 15px">place</i><h5 style="margin:0">{{ data.Location }}</h5></div>
+          <div class="valign-wrapper"><i class="small material-icons" style="padding-right: 15px">email</i><h5 style="margin:0">{{ data.Mail }}</h5></div>
+          <div class="valign-wrapper"><i class="small material-icons" style="padding-right: 15px">phone</i><h5 style="margin:0">{{ data.Phone }}</h5></div>
         </div>
       </div>
       <div class="card-image right">

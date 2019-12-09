@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Curriculum.Entities;
+using Curriculum.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -27,10 +29,12 @@ namespace Curriculum.Controllers
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
+            String informacion = FirebaseContext.Database.Informations.GetAllAsync().Result;
+            _logger.LogInformation("Se conecto con Firebase");
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
+                TemperatureC = 8,
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
