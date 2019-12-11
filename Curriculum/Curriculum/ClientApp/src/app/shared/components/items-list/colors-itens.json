@@ -1,0 +1,16 @@
+[{
+        "indicador": "#FFFFFF",
+        "sombra": "#EEEEEE",
+        "fondo": "green"
+    },
+    {
+        "indicador": "#0081EE",
+        "sombra": "rgba(0,64,169, .4)",
+        "fondo": "#FFFFFF"
+    },
+    {
+        "indicador": "green",
+        "sombra": "green",
+        "fondo": "#FFFFFF"
+    }
+]
