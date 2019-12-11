@@ -9,7 +9,7 @@ import {
 } from "@angular/core";
 import { CardItemComponent } from "../card-item/card-item.component";
 import * as Colors from "./colors-itens.json";
-import { HttpClient } from "selenium-webdriver/http";
+import { HttpClient } from "@angular/common/http";
 @Component({
   selector: "app-items-list",
   templateUrl: "./items-list.component.html",
@@ -22,7 +22,10 @@ export class ItemsListComponent implements OnInit, AfterViewInit {
   private http: HttpClient;
   @ViewChildren(CardItemComponent) cards: QueryList<CardItemComponent>;
 
-  constructor(http: HttpClient, @Inject("BASE_URL") baseUrl: string) {}
+  constructor(http: HttpClient, @Inject("BASE_URL") baseUrl: string) {
+    this.baseUrl = baseUrl;
+    this.http = http;
+  }
 
   ngAfterViewInit(): void {
     this.cards.forEach((card, index) => {
