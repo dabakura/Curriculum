@@ -26,3 +26,11 @@ html {
     line-height: unset;
     height: 100%;
   }
+
+.contacto {
+    padding-right: 1rem;
+}
+
+.logo {
+  padding-left: 1rem;
+}

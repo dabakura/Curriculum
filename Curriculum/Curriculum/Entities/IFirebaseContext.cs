@@ -8,6 +8,7 @@ namespace Curriculum.Entities
     public interface IFirebaseContext
     {
         DbSet<Information> Informations { get; set; }
+        DbSet<Knowledge> Knowledges { get; set; }
         //DbSet<AdminEntity> Admins { get; set; }
         //DbSet<BookingEntity> Bookings { get; set; }
         //DbSet<OfficeEntity> Offices { get; set; }

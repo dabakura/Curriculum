@@ -22,7 +22,15 @@ export class CardItemComponent implements OnInit {
   public contenido: string;
   @ViewChild("progressindicator", { static: false }) progress: ElementRef;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2) {
+    this.img = "";
+    this.indicador = "";
+    this.sombra = "";
+    this.fondo = "";
+    this.percentage = "";
+    this.percentagestring = "";
+    this.contenido = "";
+  }
 
   ngOnInit() {
     AOS.init();

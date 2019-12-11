@@ -12,6 +12,7 @@ namespace Curriculum.Entities
 		public FirebaseContext()
 		{
 			this.Informations = new DbSet<Information>();
+			this.Knowledges = new DbSet<Knowledge>();
 		}
 
 		public static FirebaseContext Database
@@ -20,5 +21,6 @@ namespace Curriculum.Entities
 		}
 
 		public DbSet<Information> Informations { get; set; }
-    }
+		public DbSet<Knowledge> Knowledges { get; set; }
+	}
 }

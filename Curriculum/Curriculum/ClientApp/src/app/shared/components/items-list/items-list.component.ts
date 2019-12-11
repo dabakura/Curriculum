@@ -16,7 +16,8 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ["./items-list.component.css"]
 })
 export class ItemsListComponent implements OnInit, AfterViewInit {
-  public items: LengProgramming[];
+  public items: Framework[];
+  public datos: Knowledge;
   public colors: Color[];
   private baseUrl: string;
   private http: HttpClient;
@@ -28,48 +29,50 @@ export class ItemsListComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.cards.forEach((card, index) => {
-      const element = this.items[index];
-      const color = this.getColor(index);
-      card.contenido = element.Name;
-      card.img = element.Image;
-      card.percentage = (element.Level * 10).toString();
-      card.percentagestring = element.Level * 10 + "%";
-      card.indicador = color.indicador;
-      card.sombra = color.sombra;
-      card.fondo = color.fondo;
-      card.updateColors();
+    this.cards.changes.subscribe((cards: QueryList<CardItemComponent>) => {
+      cards.forEach((card, index) => {
+        const element = this.items[index];
+        const color = this.getColor(index);
+        card.contenido = element.Name;
+        card.img = element.Image;
+        card.percentage = (element.Level * 10).toString();
+        card.percentagestring = element.Level * 10 + "%";
+        card.indicador = color.indicador;
+        card.sombra = color.sombra;
+        card.fondo = color.fondo;
+        card.updateColors();
+      });
     });
   }
   ngOnInit() {
-    /* this.http.get<Information>(this.baseUrl + "information").subscribe(
-    result => {
-      this.items = result;
-    },
-    error => console.error(error)
-  ); */
-    this.items = [
-      {
-        Name: "Python",
-        Image: "",
-        Level: 7
+    this.http.get<Knowledge>(this.baseUrl + "Knowledge").subscribe(
+      result => {
+        this.items = result.Programming_Languages;
       },
-      {
-        Name: "Java",
-        Image: "",
-        Level: 7
-      },
-      {
-        Name: "Php",
-        Image: "",
-        Level: 7
-      },
-      {
-        Name: "Php",
-        Image: "",
-        Level: 7
-      }
-    ];
+      error => console.error(error)
+    );
+    //this.items = [
+    //  {
+    //    Name: "Python",
+    //    Image: "",
+    //    Level: 7
+    //  },
+    //  {
+    //    Name: "Java",
+    //    Image: "",
+    //    Level: 7
+    //  },
+    //  {
+    //    Name: "Php",
+    //    Image: "",
+    //    Level: 7
+    //  },
+    //  {
+    //    Name: "Php",
+    //    Image: "",
+    //    Level: 7
+    //  }
+    //];
     this.colors = (Colors as any).default;
   }
 
@@ -83,10 +86,28 @@ export class ItemsListComponent implements OnInit, AfterViewInit {
     return this.colors[index];
   }
 }
-export interface LengProgramming {
+export interface Knowledge {
+  Frameworks: Framework[];
+  Languages: Framework[];
+  Otros: Otro[];
+  Programming_Languages: Framework[];
+  Technologies: Technologie[];
+}
+
+export interface Framework {
   Name: string;
   Image: string;
   Level: number;
+}
+
+export interface Otro {
+  Name: string;
+  Description: string;
+}
+
+export interface Technologie {
+  Name: string;
+  List: string[];
 }
 
 export interface Color {

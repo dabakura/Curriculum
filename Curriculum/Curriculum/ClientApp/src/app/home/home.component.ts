@@ -22,26 +22,26 @@ export class HomeComponent implements OnInit {
       error => console.error(error)
     ); */
     this.data = {
-      Birth_Date: "string",
-      Civil_Status: "string",
-      Identification: "string",
-      Location: "string",
-      Mail: "string",
-      Name: "string",
-      Phone: "string",
-      Qualities: "string",
-      Surnames: "string"
+      Birth_Date: "",
+      Civil_Status: "",
+      Identification: "",
+      Location: "",
+      Mail: "",
+      Name: "",
+      Phone: "",
+      Qualities: "",
+      Surnames: ""
     };
     AOS.init();
   }
 
   ngOnInit(): void {
-    /* this.http.get<Information>(this.baseUrl + "information").subscribe(
+    this.http.get<Information>(this.baseUrl + "information").subscribe(
       result => {
         this.data = result;
       },
       error => console.error(error)
-    ); */
+    ); 
     AOS.init();
   }
 }
