@@ -5,7 +5,8 @@ import {
   ViewChildren,
   QueryList,
   AfterViewInit,
-  Inject
+  Inject,
+  Input
 } from "@angular/core";
 import { CardItemComponent } from "../card-item/card-item.component";
 import * as Colors from "./colors-itens.json";
@@ -22,6 +23,7 @@ export class ItemsListComponent implements OnInit, AfterViewInit {
   private baseUrl: string;
   private http: HttpClient;
   @ViewChildren(CardItemComponent) cards: QueryList<CardItemComponent>;
+  @Input() columns: number;
 
   constructor(http: HttpClient, @Inject("BASE_URL") baseUrl: string) {
     this.baseUrl = baseUrl;
@@ -84,6 +86,22 @@ export class ItemsListComponent implements OnInit, AfterViewInit {
       index -= this.colors.length;
     }
     return this.colors[index];
+  }
+
+  /**
+   * getClass
+   */
+  public getClass() {
+    switch (this.columns) {
+      case 6:
+        return "col s4 m3 l2 margen";
+      case 4:
+        return "col s4 m3 margen";
+      case 3:
+        return "col s4 margen";
+      default:
+        return "col s12 margen";
+    }
   }
 }
 export interface Knowledge {

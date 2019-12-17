@@ -21,6 +21,12 @@
     "@angular/platform-browser-dynamic": "8.2.12",
     "@angular/platform-server": "8.2.12",
     "@angular/router": "8.2.12",
+    "@ngrx/data": "^8.5.2",
+    "@ngrx/effects": "^8.5.2",
+    "@ngrx/entity": "^8.5.2",
+    "@ngrx/router-store": "^8.5.2",
+    "@ngrx/store": "^8.5.2",
+    "@ngrx/store-devtools": "^8.5.2",
     "@nguniversal/module-map-ngfactory-loader": "8.1.1",
     "angular2-materialize": "^15.1.10",
     "aos": "^2.3.4",
@@ -40,6 +46,7 @@
     "@angular/cli": "8.3.14",
     "@angular/compiler-cli": "8.2.12",
     "@angular/language-service": "8.2.12",
+    "@ngrx/schematics": "^8.5.2",
     "@types/jasmine": "~3.4.4",
     "@types/jasminewd2": "~2.0.8",
     "@types/node": "~12.11.6",
@@ -51,6 +58,7 @@
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
+    "ngrx-store-freeze": "^0.2.4",
     "typescript": "3.5.3"
   },
   "optionalDependencies": {
