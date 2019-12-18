@@ -1,0 +1,72 @@
+[
+  {
+    "indicador": "#7B241C",
+    "sombra": "rgba(123, 36, 28, .1)",
+    "fondo": "#FFFFFF"
+  },
+  {
+    "indicador": "#4A235A",
+    "sombra": "rgba(74, 35, 90, .1)",
+    "fondo": "#FFFFFF"
+  },
+  {
+    "indicador": "#154360",
+    "sombra": "rgba(21, 67, 96, .1)",
+    "fondo": "#FFFFFF"
+  },
+  {
+    "indicador": "#0B5345",
+    "sombra": "rgba(11, 83, 69, .1)",
+    "fondo": "#FFFFFF"
+  },
+  {
+    "indicador": "#196F3D",
+    "sombra": "rgba(25, 111, 61, .1)",
+    "fondo": "#FFFFFF"
+  },
+  {
+    "indicador": "#9C640C",
+    "sombra": "rgba(156, 100, 12, .1)",
+    "fondo": "#FFFFFF"
+  },
+  {
+    "indicador": "#873600",
+    "sombra": "rgba(135, 54, 0, .1)",
+    "fondo": "#FFFFFF"
+  },
+  {
+    "indicador": "#943126",
+    "sombra": "rgba(148, 49, 38, .1)",
+    "fondo": "#FFFFFF"
+  },
+  {
+    "indicador": "#633974",
+    "sombra": "rgba(99, 57, 116, .1)",
+    "fondo": "#FFFFFF"
+  },
+  {
+    "indicador": "#21618C",
+    "sombra": "rgba(33, 97, 140, .1)",
+    "fondo": "#FFFFFF"
+  },
+  {
+    "indicador": "#117864",
+    "sombra": "rgba(17, 120, 100, .1)",
+    "fondo": "#FFFFFF"
+  },
+  {
+    "indicador": "#1D8348",
+    "sombra": "rgba(29, 131, 72, .1)",
+    "fondo": "#FFFFFF"
+  },
+  {
+    "indicador": "#9A7D0A",
+    "sombra": "rgba(154, 125, 10, .1)",
+    "fondo": "#FFFFFF"
+  },
+  {
+    "indicador": "#935116",
+    "sombra": "rgba(147, 81, 22, .1)",
+    "fondo": "#FFFFFF"
+  }
+]
