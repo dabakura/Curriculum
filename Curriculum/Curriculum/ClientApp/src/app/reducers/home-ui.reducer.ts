@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import * as HomeUIActions from "../actions/home-ui.actions";
+import * as Actions from "../actions/";
 import { HomeUIState } from "../states/home-ui.state";
 
 export const initialState: HomeUIState = {
@@ -11,42 +11,42 @@ export const initialState: HomeUIState = {
 
 export const homeUIReducer = createReducer(
   initialState,
-  on(HomeUIActions.loadInformationRequest, state => {
+  on(Actions.loadInformationRequest, state => {
     return {
       ...state,
       loadingInformation: true,
       errorLoadingInformation: null
     };
   }),
-  on(HomeUIActions.loadInformationSuccess, state => {
+  on(Actions.loadInformationSuccess, state => {
     return {
       ...state,
       loadingInformation: false,
       errorLoadingInformation: null
     };
   }),
-  on(HomeUIActions.loadInformationFail, (state, { error }) => {
+  on(Actions.loadInformationFail, (state, { error }) => {
     return {
       ...state,
       loadingInformation: false,
       errorLoadingInformation: error || null
     };
   }),
-  on(HomeUIActions.loadKnowledgeRequest, state => {
+  on(Actions.loadKnowledgeRequest, state => {
     return {
       ...state,
       loadingKnowledge: true,
       errorLoadingKnowledge: null
     };
   }),
-  on(HomeUIActions.loadKnowledgeSuccess, state => {
+  on(Actions.loadKnowledgeSuccess, state => {
     return {
       ...state,
       loadingKnowledge: false,
       errorLoadingKnowledge: null
     };
   }),
-  on(HomeUIActions.loadKnowledgeFail, (state, { error }) => {
+  on(Actions.loadKnowledgeFail, (state, { error }) => {
     return {
       ...state,
       loadingKnowledge: false,

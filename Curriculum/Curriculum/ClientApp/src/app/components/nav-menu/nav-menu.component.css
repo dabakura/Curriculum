@@ -1,0 +1,17 @@
+.tabs {
+    width: auto;
+    height: 100%;
+}
+
+.tabs .tab {
+    line-height: unset;
+    height: 100%;
+}
+
+.contacto {
+    padding-right: 1rem;
+}
+
+.logo {
+    padding-left: 1rem;
+}

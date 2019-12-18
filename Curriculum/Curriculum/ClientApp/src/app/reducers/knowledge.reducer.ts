@@ -1,14 +1,20 @@
 import { createReducer, on } from "@ngrx/store";
-import * as KnowledgeActions from "../actions/knowledge.actions";
-import { KnowledgeState, knowledgeAdapter } from "../states";
+import * as Actions from "../actions/";
+import { Knowledge } from "../models/Knowledge";
 
-export const initialState: KnowledgeState = knowledgeAdapter.getInitialState({
-  // additional entity state properties
-});
+export const initialState: Knowledge = {
+  Frameworks: [],
+  Languages: [],
+  Otros: [],
+  Programming_Languages: [],
+  Technologies: []
+};
 
-export const knowledgeReducer = createReducer(
+const _knowledgeReducer = createReducer(
   initialState,
-  on(KnowledgeActions.loadKnowledge, (state, { knowledge }) => {
-    return knowledgeAdapter.addAll([knowledge], state);
-  })
+  on(Actions.loadKnowledge, (state, { knowledge }) => knowledge)
 );
+
+export function knowledgeReducer(state, action) {
+  return _knowledgeReducer(state, action);
+}

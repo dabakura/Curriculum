@@ -1,40 +1,11 @@
 <img [src]="'/assets/img/banner2.jpg'" alt="" class="responsive-img banner">
 <div class="container">
-    <div class="col s12 m7" style="margin-top: 100px;">
-        <div class="card horizontal">
-            <div class="card-stacked light-blue accent-4" style="color: white">
-                <div class="card-content">
-                    <h3 style="margin-bottom: 0">{{ data$.Name | async }} {{ data$.Surnames | async }}</h3>
-                    <h6 style="margin: 0 0 2.168rem 0;">Systems engineering</h6>
-                    <div class="valign-wrapper"><i class="small material-icons" style="padding-right: 15px">assignment_ind</i>
-                        <h5 style="margin: 0">{{ data.Identification }}</h5>
-                    </div>
-                    <div class="valign-wrapper"><i class="small material-icons" style="padding-right: 15px">cake</i>
-                        <h5 style="margin:0">{{ data.Birth_Date }}</h5>
-                    </div>
-                    <div class="valign-wrapper"><i class="small material-icons" style="padding-right: 15px">people</i>
-                        <h5 style="margin:0">{{ data.Civil_Status }}</h5>
-                    </div>
-                    <div class="valign-wrapper"><i class="small material-icons" style="padding-right: 15px">place</i>
-                        <h5 style="margin:0">{{ data.Location }}</h5>
-                    </div>
-                    <div class="valign-wrapper"><i class="small material-icons" style="padding-right: 15px">email</i>
-                        <h5 style="margin:0">{{ data.Mail }}</h5>
-                    </div>
-                    <div class="valign-wrapper"><i class="small material-icons" style="padding-right: 15px">phone</i>
-                        <h5 style="margin:0">{{ data.Phone }}</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="card-image right">
-                <img [src]="'/assets/img/perfil.png'" style="height: 100%">
-            </div>
-        </div>
-    </div>
+    <ng-template [ngIf]="showInformation">
+        <app-curriculum [data]="information$ | async"></app-curriculum>
+    </ng-template>
     <div class="row programming">
-        <!-- <app-items-list class="programming col xl5 s12 m8 l6"></app-items-list> -->
         <h4 class="titulo">Lenguajes de Programación</h4>
-        <!-- <app-items-list class="col s12" [columns]="6"></app-items-list> -->
+        <app-items-list class="col s12" [columns]="6" [data]="programming_Languages$ | async"></app-items-list>
     </div>
     <p>Welcome to your new single-page application, built with:</p>
     <ul>

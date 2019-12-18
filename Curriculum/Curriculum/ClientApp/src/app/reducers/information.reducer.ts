@@ -1,6 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import * as InformationActions from "../actions/information.actions";
-import { InformationState, informationAdapter } from "../states";
+import * as Actions from "../actions/";
 import { Information } from "../models/Information";
 
 export const initialState: Information = {
@@ -14,18 +13,10 @@ export const initialState: Information = {
   Qualities: "",
   Surnames: ""
 };
-/*
 
-export const informationReducer = createReducer(
-  initialState,
-  on(InformationActions.loadInformation, (state, { information }) => {
-    return informationAdapter.addAll([information], state);
-  })
-);
- */
 const _informationReducer = createReducer(
   initialState,
-  on(InformationActions.loadInformation, state => state)
+  on(Actions.loadInformation, (state, { information }) => information)
 );
 
 export function informationReducer(state, action) {

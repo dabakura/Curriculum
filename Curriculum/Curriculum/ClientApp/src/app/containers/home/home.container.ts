@@ -1,57 +1,47 @@
 import { Component, Inject, OnInit } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { strict } from "assert";
 import { Store, select } from "@ngrx/store";
 import { PortfolioModuleState } from "../../states/portfolio-module.state";
 import { Information } from "../../models/Information";
 import { Observable } from "rxjs";
-import { getInformation, getInformationModuleState } from "../../selectors";
-import { loadInformationRequest } from "../../actions";
-import { InformationState } from "../../states";
+import {
+  getInformation,
+  getHomeUIState,
+  getProgramming_Languages
+} from "../../selectors";
+import { HomeUIState } from "../../states";
+import * as HomeUIActions from "../../actions/home-ui.actions";
+import { Framework } from "../../models/Framework";
 
 @Component({
   selector: "app-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.css"]
+  templateUrl: "./home.container.html",
+  styleUrls: ["./home.container.css"]
 })
-export class HomeComponent implements OnInit {
-  // public data: Information;
-  // private baseUrl: string;
-  // private http: HttpClient;
-  data$: Observable<Information>;
+export class HomeContainer implements OnInit {
+  information$: Observable<Information>;
+  programming_Languages$: Observable<Framework[]>;
+  indicators$: Observable<HomeUIState>;
+  private showInformation: boolean;
 
   constructor(private store: Store<PortfolioModuleState>) {
-    this.data$ = this.store.pipe(select(getInformation));
-    /* this.baseUrl = baseUrl;
-    this.http = http; */
-    /* http.get<Information>(baseUrl + "information").subscribe(
-      result => {
-        this.data = result;
-      },
-      error => console.error(error)
-    ); */
-    /* this.data = {
-      Birth_Date: "",
-      Civil_Status: "",
-      Identification: "",
-      Location: "",
-      Mail: "",
-      Name: "",
-      Phone: "",
-      Qualities: "",
-      Surnames: ""
-    }; */
-    AOS.init();
+    this.showInformation = false;
   }
 
   ngOnInit(): void {
-    /* this.http.get<Information>(this.baseUrl + "information").subscribe(
-      result => {
-        this.data = result;
-      },
-      error => console.error(error)
-    );  */
-    //this.store.dispatch(loadInformationRequest);
+    this.information$ = this.store.pipe(select(getInformation));
+    this.programming_Languages$ = this.store.pipe(
+      select(getProgramming_Languages)
+    );
+    this.indicators$ = this.store.pipe(select(getHomeUIState));
+    this.indicators$.subscribe(state => {
+      if (state.errorLoadingInformation) {
+        console.error(state.loadingInformation);
+      } else {
+        this.showInformation = !state.loadingInformation;
+      }
+    });
+    this.store.dispatch(HomeUIActions.loadInformationRequest());
+    this.store.dispatch(HomeUIActions.loadKnowledgeRequest());
     AOS.init();
   }
 }
