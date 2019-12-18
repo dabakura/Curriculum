@@ -9,12 +9,12 @@ import * as fromRouter from "@ngrx/router-store";
 import { environment } from "../../environments/environment";
 import { PortfolioModuleState } from "../states";
 import { informationReducer } from "./information.reducer";
-import { knowledgeReducer } from "./knowledge.reducer";
+import { programmingLanguagesReducer } from "./programmingLanguages.reducer";
 import { homeUIReducer } from "./home-ui.reducer";
 
 export const reducers: ActionReducerMap<PortfolioModuleState> = {
   information: informationReducer,
-  knowledge: knowledgeReducer,
+  programmingLanguages: programmingLanguagesReducer,
   homeUI: homeUIReducer,
   router: fromRouter.routerReducer
 };

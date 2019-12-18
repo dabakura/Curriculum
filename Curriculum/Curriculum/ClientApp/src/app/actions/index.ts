@@ -1,3 +1,3 @@
 export * from "./information.actions";
-export * from "./knowledge.actions";
+export * from "./programmingLanguages.actions";
 export * from "./home-ui.actions";

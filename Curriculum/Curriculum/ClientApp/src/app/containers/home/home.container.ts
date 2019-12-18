@@ -6,11 +6,11 @@ import { Observable } from "rxjs";
 import {
   getInformation,
   getHomeUIState,
-  getProgramming_Languages
+  selectProgrammingLanguages
 } from "../../selectors";
 import { HomeUIState } from "../../states";
 import * as HomeUIActions from "../../actions/home-ui.actions";
-import { Framework } from "../../models/Framework";
+import { ProgrammingLanguages } from "src/app/models/ProgrammingLanguages";
 
 @Component({
   selector: "app-home",
@@ -19,7 +19,7 @@ import { Framework } from "../../models/Framework";
 })
 export class HomeContainer implements OnInit {
   information$: Observable<Information>;
-  programming_Languages$: Observable<Framework[]>;
+  programming_Languages$: Observable<ProgrammingLanguages[]>;
   indicators$: Observable<HomeUIState>;
   private showInformation: boolean;
 
@@ -30,7 +30,7 @@ export class HomeContainer implements OnInit {
   ngOnInit(): void {
     this.information$ = this.store.pipe(select(getInformation));
     this.programming_Languages$ = this.store.pipe(
-      select(getProgramming_Languages)
+      select(selectProgrammingLanguages)
     );
     this.indicators$ = this.store.pipe(select(getHomeUIState));
     this.indicators$.subscribe(state => {
@@ -41,7 +41,7 @@ export class HomeContainer implements OnInit {
       }
     });
     this.store.dispatch(HomeUIActions.loadInformationRequest());
-    this.store.dispatch(HomeUIActions.loadKnowledgeRequest());
+    this.store.dispatch(HomeUIActions.loadProgrammingLanguagesRequest());
     AOS.init();
   }
 }

@@ -32,21 +32,21 @@ export const homeUIReducer = createReducer(
       errorLoadingInformation: error || null
     };
   }),
-  on(Actions.loadKnowledgeRequest, state => {
+  on(Actions.loadProgrammingLanguagesRequest, state => {
     return {
       ...state,
       loadingKnowledge: true,
       errorLoadingKnowledge: null
     };
   }),
-  on(Actions.loadKnowledgeSuccess, state => {
+  on(Actions.loadProgrammingLanguagesSuccess, state => {
     return {
       ...state,
       loadingKnowledge: false,
       errorLoadingKnowledge: null
     };
   }),
-  on(Actions.loadKnowledgeFail, (state, { error }) => {
+  on(Actions.loadProgrammingLanguagesFail, (state, { error }) => {
     return {
       ...state,
       loadingKnowledge: false,

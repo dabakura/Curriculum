@@ -4,6 +4,8 @@ import { environment } from "../../environments/environment";
 import { Information } from "../models/Information";
 import { Knowledge } from "../models/Knowledge";
 import { Observable } from "rxjs";
+import { map } from "rxjs/operators";
+import { ProgrammingLanguages } from "../models/ProgrammingLanguages";
 
 @Injectable({
   providedIn: "root"
@@ -14,9 +16,11 @@ export class PortfolioService {
     this.apiUrl = "https://localhost:5001";
   }
 
-  getKnowledge(): Observable<Knowledge> {
+  getProgrammingLanguages(): Observable<ProgrammingLanguages[]> {
     const url = `${this.apiUrl}/Knowledge`;
-    return this.http.get<Knowledge>(url);
+    return this.http
+      .get<Knowledge>(url)
+      .pipe(map(todos => todos.Programming_Languages));
   }
 
   getInformation(): Observable<Information> {

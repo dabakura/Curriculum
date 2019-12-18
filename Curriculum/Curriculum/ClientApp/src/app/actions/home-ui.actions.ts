@@ -13,15 +13,15 @@ export const loadInformationFail = createAction(
   props<{ error: string }>()
 );
 
-export const loadKnowledgeRequest = createAction(
+export const loadProgrammingLanguagesRequest = createAction(
   "[PortfolioModule] LoadKnowledgeRequest"
 );
 
-export const loadKnowledgeSuccess = createAction(
+export const loadProgrammingLanguagesSuccess = createAction(
   "[PortfolioModule] LoadKnowledgeSuccess"
 );
 
-export const loadKnowledgeFail = createAction(
+export const loadProgrammingLanguagesFail = createAction(
   "[PortfolioModule] LoadKnowledgeFail",
   props<{ error: string }>()
 );

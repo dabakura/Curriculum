@@ -8,10 +8,10 @@ import {
   loadInformationRequest,
   loadInformationSuccess,
   loadInformationFail,
-  loadKnowledge,
-  loadKnowledgeRequest,
-  loadKnowledgeSuccess,
-  loadKnowledgeFail
+  loadProgrammingLanguages,
+  loadProgrammingLanguagesRequest,
+  loadProgrammingLanguagesSuccess,
+  loadProgrammingLanguagesFail
 } from "../actions";
 import { PortfolioService } from "../services/portfolio.service";
 
@@ -36,14 +36,14 @@ export class PortfolioEffects {
 
   loadKnowledgeRequest = createEffect(() =>
     this.actions$.pipe(
-      ofType(loadKnowledgeRequest),
+      ofType(loadProgrammingLanguagesRequest),
       switchMap(() => {
-        return this.portfolioService.getKnowledge().pipe(
-          mergeMap(knowledge => [
-            loadKnowledge({ knowledge }),
-            loadKnowledgeSuccess()
+        return this.portfolioService.getProgrammingLanguages().pipe(
+          mergeMap(programmingLanguages => [
+            loadProgrammingLanguages({ programmingLanguages }),
+            loadProgrammingLanguagesSuccess()
           ]),
-          catchError(error => of(loadKnowledgeFail({ error })))
+          catchError(error => of(loadProgrammingLanguagesFail({ error })))
         );
       })
     )
