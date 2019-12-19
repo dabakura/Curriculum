@@ -14,14 +14,27 @@ export const loadInformationFail = createAction(
 );
 
 export const loadProgrammingLanguagesRequest = createAction(
-  "[PortfolioModule] LoadKnowledgeRequest"
+  "[PortfolioModule] LoadProgrammingLanguagesRequest"
 );
 
 export const loadProgrammingLanguagesSuccess = createAction(
-  "[PortfolioModule] LoadKnowledgeSuccess"
+  "[PortfolioModule] LoadProgrammingLanguagesSuccess"
 );
 
 export const loadProgrammingLanguagesFail = createAction(
-  "[PortfolioModule] LoadKnowledgeFail",
+  "[PortfolioModule] LoadProgrammingLanguagesFail",
+  props<{ error: string }>()
+);
+
+export const loadLanguagesRequest = createAction(
+  "[PortfolioModule] LoadLanguagesRequest"
+);
+
+export const loadLanguagesSuccess = createAction(
+  "[PortfolioModule] LoadLanguagesSuccess"
+);
+
+export const loadLanguagesFail = createAction(
+  "[PortfolioModule] LoadLanguagesFail",
   props<{ error: string }>()
 );

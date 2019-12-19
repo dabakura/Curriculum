@@ -64,7 +64,7 @@ export class ItemsListContainer implements OnInit, AfterViewInit {
       case 3:
         return "col s4 margen";
       default:
-        return "col s12 margen";
+        return "col s12";
     }
   }
 

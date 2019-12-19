@@ -5,8 +5,10 @@ import { HomeUIState } from "../states/home-ui.state";
 export const initialState: HomeUIState = {
   errorLoadingInformation: null,
   loadingInformation: false,
-  errorLoadingKnowledge: null,
-  loadingKnowledge: false
+  errorLoadingProgrammingLanguages: null,
+  loadingProgrammingLanguages: false,
+  errorLoadingLanguages: null,
+  loadingLanguages: false
 };
 
 export const homeUIReducer = createReducer(
@@ -35,22 +37,43 @@ export const homeUIReducer = createReducer(
   on(Actions.loadProgrammingLanguagesRequest, state => {
     return {
       ...state,
-      loadingKnowledge: true,
-      errorLoadingKnowledge: null
+      loadingProgrammingLanguages: true,
+      errorLoadingProgrammingLanguages: null
     };
   }),
   on(Actions.loadProgrammingLanguagesSuccess, state => {
     return {
       ...state,
-      loadingKnowledge: false,
-      errorLoadingKnowledge: null
+      loadingProgrammingLanguages: false,
+      errorLoadingProgrammingLanguages: null
     };
   }),
   on(Actions.loadProgrammingLanguagesFail, (state, { error }) => {
     return {
       ...state,
-      loadingKnowledge: false,
-      errorKnowledgeKnowledge: error || null
+      loadingProgrammingLanguages: false,
+      errorLoadingProgrammingLanguages: error || null
+    };
+  }),
+  on(Actions.loadLanguagesRequest, state => {
+    return {
+      ...state,
+      loadingLanguages: true,
+      errorLoadingLanguages: null
+    };
+  }),
+  on(Actions.loadLanguagesSuccess, state => {
+    return {
+      ...state,
+      loadingLanguages: false,
+      errorLoadingLanguages: null
+    };
+  }),
+  on(Actions.loadLanguagesFail, (state, { error }) => {
+    return {
+      ...state,
+      loadingLanguages: false,
+      errorLoadingLanguages: error || null
     };
   })
 );

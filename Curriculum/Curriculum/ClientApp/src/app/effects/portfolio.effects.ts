@@ -11,7 +11,11 @@ import {
   loadProgrammingLanguages,
   loadProgrammingLanguagesRequest,
   loadProgrammingLanguagesSuccess,
-  loadProgrammingLanguagesFail
+  loadProgrammingLanguagesFail,
+  loadLanguagesRequest,
+  loadLanguagesSuccess,
+  loadLanguagesFail,
+  loadLanguages
 } from "../actions";
 import { PortfolioService } from "../services/portfolio.service";
 
@@ -37,7 +41,7 @@ export class PortfolioEffects {
     )
   );
 
-  loadKnowledgeRequest = createEffect(() =>
+  loadProgrammingLanguagesRequest = createEffect(() =>
     this.actions$.pipe(
       ofType(loadProgrammingLanguagesRequest),
       switchMap(() => {
@@ -55,6 +59,23 @@ export class PortfolioEffects {
     )
   );
 
+  loadLanguagesRequest = createEffect(() =>
+    this.actions$.pipe(
+      ofType(loadLanguagesRequest),
+      switchMap(() => {
+        return this.portfolioService.getLanguages().pipe(
+          mergeMap(languages => [
+            loadLanguages({ languages }),
+            loadLanguagesSuccess()
+          ]),
+          catchError(error => {
+            console.error(error);
+            return of(loadLanguagesFail({ error }));
+          })
+        );
+      })
+    )
+  );
   constructor(
     private actions$: Actions,
     private portfolioService: PortfolioService

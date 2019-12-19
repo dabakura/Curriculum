@@ -1,7 +1,7 @@
 import { createAction, props } from "@ngrx/store";
-import { ProgrammingLanguages } from "../models/ProgrammingLanguages";
+import { Languages } from "../models/Languages";
 
-export const loadProgrammingLanguages = createAction(
-  "[PortfolioModule] LoadKnowledge",
-  props<{ programmingLanguages: ProgrammingLanguages[] }>()
+export const loadLanguages = createAction(
+  "[PortfolioModule] LoadLanguages",
+  props<{ languages: Languages[] }>()
 );

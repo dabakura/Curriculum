@@ -11,10 +11,12 @@ import { PortfolioModuleState } from "../states";
 import { informationReducer } from "./information.reducer";
 import { programmingLanguagesReducer } from "./programmingLanguages.reducer";
 import { homeUIReducer } from "./home-ui.reducer";
+import { languagesReducer } from "./languages.reducer";
 
 export const reducers: ActionReducerMap<PortfolioModuleState> = {
   information: informationReducer,
   programmingLanguages: programmingLanguagesReducer,
+  languages: languagesReducer,
   homeUI: homeUIReducer,
   router: fromRouter.routerReducer
 };

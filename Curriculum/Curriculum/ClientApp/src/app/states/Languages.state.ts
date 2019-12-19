@@ -8,7 +8,7 @@ export function selectLanguagesId(a: Languages): string {
   return a.Name;
 }
 
-export function sortByName(a: Languages, b: Languages): number {
+export function sortByNameLanguages(a: Languages, b: Languages): number {
   return a.Name.localeCompare(b.Name);
 }
 
@@ -16,5 +16,5 @@ export const languagesAdapter: EntityAdapter<Languages> = createEntityAdapter<
   Languages
 >({
   selectId: selectLanguagesId,
-  sortComparer: sortByName
+  sortComparer: sortByNameLanguages
 });

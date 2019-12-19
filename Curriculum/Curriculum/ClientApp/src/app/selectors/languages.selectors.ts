@@ -1,15 +1,12 @@
-import { PortfolioModuleState, programmingLanguagesAdapter } from "../states";
+import { PortfolioModuleState, languagesAdapter } from "../states";
 
-export const selectProgramming_LanguagesFeature = (
-  state: PortfolioModuleState
-) => state.programmingLanguages;
+export const selectLanguagesFeature = (state: PortfolioModuleState) =>
+  state.languages;
 
 export const {
   selectIds,
   selectEntities,
   selectAll
-} = programmingLanguagesAdapter.getSelectors(
-  selectProgramming_LanguagesFeature
-);
+} = languagesAdapter.getSelectors(selectLanguagesFeature);
 
-export const selectProgrammingLanguages = selectAll;
+export const selectLanguages = selectAll;

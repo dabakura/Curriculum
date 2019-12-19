@@ -1,23 +1,18 @@
 import { createReducer, on } from "@ngrx/store";
 import * as Actions from "../actions";
-import {
-  ProgrammingLanguagesState,
-  programmingLanguagesAdapter
-} from "../states";
+import { LanguagesState, languagesAdapter } from "../states";
 
-export const initialState: ProgrammingLanguagesState = programmingLanguagesAdapter.getInitialState(
-  {
-    // additional entity state properties
-  }
-);
+export const initialState: LanguagesState = languagesAdapter.getInitialState({
+  // additional entity state properties
+});
 
-const _programmingLanguagesReducer = createReducer(
+const _languagesReducer = createReducer(
   initialState,
-  on(Actions.loadProgrammingLanguages, (state, { programmingLanguages }) => {
-    return programmingLanguagesAdapter.addAll(programmingLanguages, state);
+  on(Actions.loadLanguages, (state, { languages }) => {
+    return languagesAdapter.addAll(languages, state);
   })
 );
 
-export function programmingLanguagesReducer(state, action) {
-  return _programmingLanguagesReducer(state, action);
+export function languagesReducer(state, action) {
+  return _languagesReducer(state, action);
 }

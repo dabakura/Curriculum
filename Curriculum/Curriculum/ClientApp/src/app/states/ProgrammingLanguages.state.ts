@@ -9,7 +9,7 @@ export function selectProgrammingLanguagesId(a: ProgrammingLanguages): string {
   return a.Name;
 }
 
-export function sortByName(
+export function sortByNameProgramming(
   a: ProgrammingLanguages,
   b: ProgrammingLanguages
 ): number {
@@ -20,5 +20,5 @@ export const programmingLanguagesAdapter: EntityAdapter<ProgrammingLanguages> = 
   ProgrammingLanguages
 >({
   selectId: selectProgrammingLanguagesId,
-  sortComparer: sortByName
+  sortComparer: sortByNameProgramming
 });

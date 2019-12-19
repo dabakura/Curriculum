@@ -6,6 +6,7 @@ import { Knowledge } from "../models/Knowledge";
 import { Observable, throwError } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 import { ProgrammingLanguages } from "../models/ProgrammingLanguages";
+import { Languages } from "../models/Languages";
 
 @Injectable({
   providedIn: "root"
@@ -24,6 +25,14 @@ export class PortfolioService {
     const url = `${this.apiUrl}/Knowledge`;
     return this.http.get<Knowledge>(url, this.httpOptions).pipe(
       map(todos => todos.Programming_Languages),
+      catchError(error => throwError(error))
+    );
+  }
+
+  getLanguages(): Observable<Languages[]> {
+    const url = `${this.apiUrl}/Knowledge`;
+    return this.http.get<Knowledge>(url, this.httpOptions).pipe(
+      map(todos => todos.Languages),
       catchError(error => throwError(error))
     );
   }

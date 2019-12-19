@@ -7,6 +7,7 @@ import { getHomeUIState, getHomeArrayState } from "../../selectors";
 import { HomeUIState } from "../../states";
 import * as HomeUIActions from "../../actions/home-ui.actions";
 import { ProgrammingLanguages } from "src/app/models/ProgrammingLanguages";
+import { Languages } from "src/app/models/Languages";
 
 @Component({
   selector: "app-home",
@@ -20,6 +21,7 @@ export class HomeContainer implements OnInit {
   data$: Observable<{
     info: Information;
     progra: ProgrammingLanguages[];
+    langua: Languages[];
   }>;
   showInformation: boolean;
 
@@ -37,6 +39,6 @@ export class HomeContainer implements OnInit {
     });
     this.store.dispatch(HomeUIActions.loadInformationRequest());
     this.store.dispatch(HomeUIActions.loadProgrammingLanguagesRequest());
-    AOS.init();
+    this.store.dispatch(HomeUIActions.loadLanguagesRequest());
   }
 }
