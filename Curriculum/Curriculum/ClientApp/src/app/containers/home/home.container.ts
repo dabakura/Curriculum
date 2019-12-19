@@ -1,13 +1,9 @@
-import { Component, Inject, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Store, select } from "@ngrx/store";
 import { PortfolioModuleState } from "../../states/portfolio-module.state";
 import { Information } from "../../models/Information";
 import { Observable } from "rxjs";
-import {
-  getInformation,
-  getHomeUIState,
-  selectProgrammingLanguages
-} from "../../selectors";
+import { getHomeUIState, getHomeArrayState } from "../../selectors";
 import { HomeUIState } from "../../states";
 import * as HomeUIActions from "../../actions/home-ui.actions";
 import { ProgrammingLanguages } from "src/app/models/ProgrammingLanguages";
@@ -21,22 +17,21 @@ export class HomeContainer implements OnInit {
   information$: Observable<Information>;
   programming_Languages$: Observable<ProgrammingLanguages[]>;
   indicators$: Observable<HomeUIState>;
-  private showInformation: boolean;
+  data$: Observable<{
+    info: Information;
+    progra: ProgrammingLanguages[];
+  }>;
+  showInformation: boolean;
 
   constructor(private store: Store<PortfolioModuleState>) {
     this.showInformation = false;
+    this.data$ = this.store.pipe(select(getHomeArrayState));
+    this.indicators$ = this.store.pipe(select(getHomeUIState));
   }
 
   ngOnInit(): void {
-    this.information$ = this.store.pipe(select(getInformation));
-    this.programming_Languages$ = this.store.pipe(
-      select(selectProgrammingLanguages)
-    );
-    this.indicators$ = this.store.pipe(select(getHomeUIState));
     this.indicators$.subscribe(state => {
-      if (state.errorLoadingInformation) {
-        console.error(state.loadingInformation);
-      } else {
+      if (!state.errorLoadingInformation) {
         this.showInformation = !state.loadingInformation;
       }
     });

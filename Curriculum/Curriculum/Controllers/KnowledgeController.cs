@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Curriculum.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 
 namespace Curriculum.Controllers
@@ -14,10 +15,12 @@ namespace Curriculum.Controllers
     public class KnowledgeController : ControllerBase
     {
         private readonly ILogger<KnowledgeController> _logger;
+        private IMemoryCache _cache;
 
-        public KnowledgeController(ILogger<KnowledgeController> logger)
+        public KnowledgeController(ILogger<KnowledgeController> logger, IMemoryCache memoryCache)
         {
             _logger = logger;
+            _cache = memoryCache;
         }
 
         // GET: api/Knowledge
@@ -26,15 +29,26 @@ namespace Curriculum.Controllers
         {
             try
             {
-                _logger.LogInformation("Intento de conección con Firebase url database/Knowledge");
-                string json = await FirebaseContext.Database.Knowledges.GetAllAsync();
-                _logger.LogInformation("Se conecto con Firebase");
+                if (!_cache.TryGetValue("Knowledge", out string json))
+                {
+                    if (String.IsNullOrEmpty(json))
+                    {
+                        _logger.LogInformation("Intento de conección con Firebase url database/Knowledge");
+                        json = await FirebaseContext.Database.Knowledges.GetAllAsync();
+                        _logger.LogInformation("Se conecto con Firebase [Knowledge]");
+                    }
+                    var cacheEntryOptions = new MemoryCacheEntryOptions()
+                        .SetSlidingExpiration(TimeSpan.FromMinutes(20))
+                        .SetAbsoluteExpiration(DateTime.Now.AddHours(1));
+                    _cache.Set("Knowledge", json, cacheEntryOptions);
+                } else
+                    _logger.LogInformation("Se cargo información desde la cache [Knowledge]");
                 return json;
             }
             catch (Exception ex)
             {
                 _logger.LogError("Error: Fallo la conección con Firebase url database/Knowledge", ex);
-                throw new ArgumentException("Se presento un error al procesar la inforamación", ex);
+                throw new ArgumentException("Se presento un error al procesar la información database/Knowledge", ex);
             }
         }
 

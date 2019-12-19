@@ -3,9 +3,9 @@ import {
   OnInit,
   Renderer2,
   ViewChild,
-  ElementRef
+  ElementRef,
+  Input
 } from "@angular/core";
-import { DomSanitizer } from "@angular/platform-browser";
 
 @Component({
   selector: "app-card-item",
@@ -13,7 +13,6 @@ import { DomSanitizer } from "@angular/platform-browser";
   styleUrls: ["./card-item.component.css"]
 })
 export class CardItemComponent implements OnInit {
-  public img: string;
   public indicador: string;
   public sombra: string;
   public fondo: string;
@@ -21,9 +20,9 @@ export class CardItemComponent implements OnInit {
   public percentagestring: string;
   public contenido: string;
   @ViewChild("progressindicator", { static: false }) progress: ElementRef;
+  @Input() img: string;
 
   constructor(private renderer: Renderer2) {
-    this.img = "";
     this.indicador = "";
     this.sombra = "";
     this.fondo = "";

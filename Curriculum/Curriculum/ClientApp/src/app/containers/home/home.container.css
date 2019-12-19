@@ -14,14 +14,18 @@
 }
 
 .programming {
-  background-color: #21D4FD;
-  background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
-  padding-top: 0.1rem;
-  padding-bottom: 0.75rem;
-  margin-bottom: 0;
-  color: white;
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    padding-top: 0.1rem;
+    padding-bottom: 0.75rem;
+    margin-bottom: 0;
+    color: white;
 }
 
 .titulo {
     padding-left: 0.75rem;
+}
+
+span.badge.new:after {
+    content: "";
 }

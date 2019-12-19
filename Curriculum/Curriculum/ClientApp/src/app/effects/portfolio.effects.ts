@@ -28,7 +28,10 @@ export class PortfolioEffects {
             loadInformation({ information }),
             loadInformationSuccess()
           ]),
-          catchError(error => of(loadInformationFail({ error })))
+          catchError(error => {
+            console.error(error);
+            return of(loadInformationFail({ error }));
+          })
         );
       })
     )
@@ -43,7 +46,10 @@ export class PortfolioEffects {
             loadProgrammingLanguages({ programmingLanguages }),
             loadProgrammingLanguagesSuccess()
           ]),
-          catchError(error => of(loadProgrammingLanguagesFail({ error })))
+          catchError(error => {
+            console.error(error);
+            return of(loadProgrammingLanguagesFail({ error }));
+          })
         );
       })
     )

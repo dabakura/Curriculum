@@ -11,6 +11,8 @@ h1 {
     --percentage: 90;
     --percentagestring: "90%";
     --contenido: "CSS";
+    --img: "iconodefault.png";
+    --we: "/assets/img/";
 }
 
 .progressBar {
@@ -70,12 +72,12 @@ h1 {
 }
 
 img {
-    height: 2.5rem;
+    height: 44%;
     z-index: 2;
-    top: 3.9rem;
+    top: 52%;
     text-align: center;
     position: absolute;
-    right: 2.25rem;
+    right: -16.5%;
 }
 
 @media (min-width: 1200px) {

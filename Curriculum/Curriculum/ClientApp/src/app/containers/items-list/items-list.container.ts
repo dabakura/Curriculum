@@ -17,9 +17,9 @@ import { Framework } from "../../models/Framework";
 })
 export class ItemsListContainer implements OnInit, AfterViewInit {
   private colors: Color[];
-  @Input() private data: Framework[];
+  @Input() data: Framework[];
   @ViewChildren(CardItemComponent) cards: QueryList<CardItemComponent>;
-  @Input() private columns: number;
+  @Input() columns: number;
 
   constructor() {}
 
@@ -29,7 +29,6 @@ export class ItemsListContainer implements OnInit, AfterViewInit {
         const element = this.data[index];
         const color = this.getColor(index);
         card.contenido = element.Name;
-        card.img = element.Image;
         card.percentage = (element.Level * 10).toString();
         card.percentagestring = element.Level * 10 + "%";
         card.indicador = color.indicador;
@@ -67,5 +66,12 @@ export class ItemsListContainer implements OnInit, AfterViewInit {
       default:
         return "col s12 margen";
     }
+  }
+
+  /**
+   * getImg
+   */
+  public getImg(index: number) {
+    return this.data[index].Imagen;
   }
 }

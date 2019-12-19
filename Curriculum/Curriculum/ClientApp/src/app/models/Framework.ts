@@ -1,5 +1,5 @@
 export interface Framework {
   Name: string;
-  Image: string;
+  Imagen: string;
   Level: number;
 }

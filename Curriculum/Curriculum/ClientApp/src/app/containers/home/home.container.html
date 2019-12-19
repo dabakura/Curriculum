@@ -1,12 +1,23 @@
 <img [src]="'/assets/img/banner2.jpg'" alt="" class="responsive-img banner">
 <div class="container">
     <ng-template [ngIf]="showInformation">
-        <app-curriculum [data]="information$ | async"></app-curriculum>
+        <app-curriculum [data]="(data$ | async)?.info"></app-curriculum>
     </ng-template>
     <div class="row programming">
         <h4 class="titulo">Lenguajes de Programación</h4>
-        <app-items-list class="col s12" [columns]="6" [data]="programming_Languages$ | async"></app-items-list>
+        <app-items-list class="col s12" [columns]="6" [data]="(data$ | async)?.progra"></app-items-list>
     </div>
+    <div class="row valign-wrapper">
+        <div class="col s12 m2">
+            <h5 class="titulo">Idiomas</h5>
+            <app-items-list [columns]="1" [data]=""></app-items-list>
+        </div>
+        <div class="col s12 m10">
+            <app-technologies></app-technologies>
+        </div>
+    </div>
+
+
     <p>Welcome to your new single-page application, built with:</p>
     <ul>
         <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
@@ -26,5 +37,68 @@
         into it.</p>
     <div data-aos="fade-left" data-aos-offset="50" data-aos-easing="ease-in-sine" class="muestra">
     </div>
-
+    <p>Welcome to your new single-page application, built with:</p>
+    <ul>
+        <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
+        <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>
+        <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
+    </ul>
+    <p>To help you get started, we've also set up:</p>
+    <ul>
+        <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.
+        </li>
+        <li><strong>Angular CLI integration</strong>. In development mode, there's no need to run <code>ng serve</code>. It runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you
+            modify any file.</li>
+        <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration automatically invokes <code>ng build</code> to produce minified, ahead-of-time compiled
+            JavaScript files.</li>
+    </ul>
+    <p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use <code>npm</code> to install extra packages
+        into it.</p>
+    <p>Welcome to your new single-page application, built with:</p>
+    <ul>
+        <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code
+        </li>
+        <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>
+        <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
+    </ul>
+    <p>To help you get started, we've also set up:</p>
+    <ul>
+        <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.
+        </li>
+        <li><strong>Angular CLI integration</strong>. In development mode, there's no need to run <code>ng serve</code>. It runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you
+            modify any file.</li>
+        <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration automatically invokes <code>ng build</code> to produce minified, ahead-of-time compiled
+            JavaScript files.</li>
+    </ul>
+    <p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use <code>npm</code> to install extra packages
+        into it.</p>
+    <p>To help you get started, we've also set up:</p>
+    <ul>
+        <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.
+        </li>
+        <li><strong>Angular CLI integration</strong>. In development mode, there's no need to run <code>ng
+        serve</code>. It runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>
+        <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration automatically invokes <code>ng build</code> to produce minified, ahead-of-time compiled
+            JavaScript files.</li>
+    </ul>
+    <p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use
+        <code>npm</code> to install extra packages into it.</p>
+    <p>Welcome to your new single-page application, built with:</p>
+    <ul>
+        <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code
+        </li>
+        <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>
+        <li><a href='http://getbootstrap.com/'>Bootstrap</a> for layout and styling</li>
+    </ul>
+    <p>To help you get started, we've also set up:</p>
+    <ul>
+        <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.
+        </li>
+        <li><strong>Angular CLI integration</strong>. In development mode, there's no need to run <code>ng
+        serve</code>. It runs in the background automatically, so your client-side resources are dynamically built on demand and the page refreshes when you modify any file.</li>
+        <li><strong>Efficient production builds</strong>. In production mode, development-time features are disabled, and your <code>dotnet publish</code> configuration automatically invokes <code>ng build</code> to produce minified, ahead-of-time compiled
+            JavaScript files.</li>
+    </ul>
+    <p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use
+        <code>npm</code> to install extra packages into it.</p>
 </div>
