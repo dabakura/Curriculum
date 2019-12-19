@@ -7,6 +7,9 @@ import { Observable, throwError } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 import { ProgrammingLanguages } from "../models/ProgrammingLanguages";
 import { Languages } from "../models/Languages";
+import { Framework } from "../models/Framework";
+import { Technologie } from "../models/Technologie";
+import { Otro } from "../models/Otro";
 
 @Injectable({
   providedIn: "root"
@@ -33,6 +36,30 @@ export class PortfolioService {
     const url = `${this.apiUrl}/Knowledge`;
     return this.http.get<Knowledge>(url, this.httpOptions).pipe(
       map(todos => todos.Languages),
+      catchError(error => throwError(error))
+    );
+  }
+
+  getFrameworks(): Observable<Framework[]> {
+    const url = `${this.apiUrl}/Knowledge`;
+    return this.http.get<Knowledge>(url, this.httpOptions).pipe(
+      map(todos => todos.Frameworks),
+      catchError(error => throwError(error))
+    );
+  }
+
+  getTechnologies(): Observable<Technologie[]> {
+    const url = `${this.apiUrl}/Knowledge`;
+    return this.http.get<Knowledge>(url, this.httpOptions).pipe(
+      map(todos => todos.Technologies),
+      catchError(error => throwError(error))
+    );
+  }
+
+  getOtros(): Observable<Otro[]> {
+    const url = `${this.apiUrl}/Knowledge`;
+    return this.http.get<Knowledge>(url, this.httpOptions).pipe(
+      map(todos => todos.Otros),
       catchError(error => throwError(error))
     );
   }

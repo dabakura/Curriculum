@@ -5,4 +5,10 @@ export interface HomeUIState {
   loadingProgrammingLanguages: boolean;
   errorLoadingLanguages: string | null;
   loadingLanguages: boolean;
+  errorLoadingTechnologie: string | null;
+  loadingTechnologie: boolean;
+  errorLoadingOtro: string | null;
+  loadingOtro: boolean;
+  errorLoadingFramework: string | null;
+  loadingFramework: boolean;
 }

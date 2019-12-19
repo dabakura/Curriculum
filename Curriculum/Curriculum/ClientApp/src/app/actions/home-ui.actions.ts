@@ -38,3 +38,42 @@ export const loadLanguagesFail = createAction(
   "[PortfolioModule] LoadLanguagesFail",
   props<{ error: string }>()
 );
+
+export const loadTechnologieRequest = createAction(
+  "[PortfolioModule] LoadTechnologieRequest"
+);
+
+export const loadTechnologieSuccess = createAction(
+  "[PortfolioModule] LoadTechnologieSuccess"
+);
+
+export const loadTechnologieFail = createAction(
+  "[PortfolioModule] LoadTechnologieFail",
+  props<{ error: string }>()
+);
+
+export const loadOtroRequest = createAction(
+  "[PortfolioModule] LoadOtroRequest"
+);
+
+export const loadOtroSuccess = createAction(
+  "[PortfolioModule] LoadOtroSuccess"
+);
+
+export const loadOtroFail = createAction(
+  "[PortfolioModule] LoadOtroFail",
+  props<{ error: string }>()
+);
+
+export const loadFrameworkRequest = createAction(
+  "[PortfolioModule] LoadFrameworkRequest"
+);
+
+export const loadFrameworkSuccess = createAction(
+  "[PortfolioModule] LoadFrameworkSuccess"
+);
+
+export const loadFrameworkFail = createAction(
+  "[PortfolioModule] LoadFrameworkFail",
+  props<{ error: string }>()
+);

@@ -4,7 +4,7 @@ export const selectProgramming_LanguagesFeature = (
   state: PortfolioModuleState
 ) => state.programmingLanguages;
 
-export const {
+const {
   selectIds,
   selectEntities,
   selectAll

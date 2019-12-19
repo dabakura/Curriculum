@@ -8,6 +8,9 @@ import { HomeUIState } from "../../states";
 import * as HomeUIActions from "../../actions/home-ui.actions";
 import { ProgrammingLanguages } from "src/app/models/ProgrammingLanguages";
 import { Languages } from "src/app/models/Languages";
+import { Framework } from "src/app/models/Framework";
+import { Technologie } from "src/app/models/Technologie";
+import { Otro } from "src/app/models/Otro";
 
 @Component({
   selector: "app-home",
@@ -22,6 +25,9 @@ export class HomeContainer implements OnInit {
     info: Information;
     progra: ProgrammingLanguages[];
     langua: Languages[];
+    frame: Framework[];
+    techn: Technologie[];
+    otro: Otro[];
   }>;
   showInformation: boolean;
 
@@ -40,5 +46,8 @@ export class HomeContainer implements OnInit {
     this.store.dispatch(HomeUIActions.loadInformationRequest());
     this.store.dispatch(HomeUIActions.loadProgrammingLanguagesRequest());
     this.store.dispatch(HomeUIActions.loadLanguagesRequest());
+    this.store.dispatch(HomeUIActions.loadFrameworkRequest());
+    this.store.dispatch(HomeUIActions.loadTechnologieRequest());
+    this.store.dispatch(HomeUIActions.loadOtroRequest());
   }
 }

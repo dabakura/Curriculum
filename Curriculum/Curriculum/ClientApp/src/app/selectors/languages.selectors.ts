@@ -3,10 +3,8 @@ import { PortfolioModuleState, languagesAdapter } from "../states";
 export const selectLanguagesFeature = (state: PortfolioModuleState) =>
   state.languages;
 
-export const {
-  selectIds,
-  selectEntities,
-  selectAll
-} = languagesAdapter.getSelectors(selectLanguagesFeature);
+const { selectIds, selectEntities, selectAll } = languagesAdapter.getSelectors(
+  selectLanguagesFeature
+);
 
 export const selectLanguages = selectAll;

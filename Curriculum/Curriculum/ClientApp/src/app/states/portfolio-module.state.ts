@@ -1,16 +1,22 @@
 import * as fromRouter from "@ngrx/router-store";
-import { RouterReducerState } from "@ngrx/router-store";
-import { InformationState } from "./Information.state";
 import { HomeUIState } from "./home-ui.state";
 import { Information } from "../models/Information";
 import { RouterStateUrl } from "../shared/utils/utils";
-import { Knowledge } from "../models/Knowledge";
-import { LanguagesState, ProgrammingLanguagesState } from ".";
+import {
+  LanguagesState,
+  ProgrammingLanguagesState,
+  TechnologieState,
+  OtroState,
+  FrameworkState
+} from ".";
 
 export interface PortfolioModuleState {
   information: Information;
   programmingLanguages: ProgrammingLanguagesState;
   languages: LanguagesState;
+  technologies: TechnologieState;
+  otros: OtroState;
+  frameworks: FrameworkState;
   homeUI: HomeUIState;
   router: fromRouter.RouterReducerState<RouterStateUrl>;
 }

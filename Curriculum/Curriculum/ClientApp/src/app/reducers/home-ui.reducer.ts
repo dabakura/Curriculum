@@ -8,7 +8,13 @@ export const initialState: HomeUIState = {
   errorLoadingProgrammingLanguages: null,
   loadingProgrammingLanguages: false,
   errorLoadingLanguages: null,
-  loadingLanguages: false
+  loadingLanguages: false,
+  errorLoadingOtro: null,
+  loadingOtro: false,
+  errorLoadingFramework: null,
+  loadingFramework: false,
+  errorLoadingTechnologie: null,
+  loadingTechnologie: false
 };
 
 export const homeUIReducer = createReducer(
@@ -74,6 +80,69 @@ export const homeUIReducer = createReducer(
       ...state,
       loadingLanguages: false,
       errorLoadingLanguages: error || null
+    };
+  }),
+  on(Actions.loadOtroRequest, state => {
+    return {
+      ...state,
+      loadingOtro: true,
+      errorLoadingOtro: null
+    };
+  }),
+  on(Actions.loadOtroSuccess, state => {
+    return {
+      ...state,
+      loadingOtro: false,
+      errorLoadingOtro: null
+    };
+  }),
+  on(Actions.loadOtroFail, (state, { error }) => {
+    return {
+      ...state,
+      loadingOtro: false,
+      errorLoadingOtro: error || null
+    };
+  }),
+  on(Actions.loadFrameworkRequest, state => {
+    return {
+      ...state,
+      loadingFramework: true,
+      errorLoadingFramework: null
+    };
+  }),
+  on(Actions.loadFrameworkSuccess, state => {
+    return {
+      ...state,
+      loadingFramework: false,
+      errorLoadingFramework: null
+    };
+  }),
+  on(Actions.loadFrameworkFail, (state, { error }) => {
+    return {
+      ...state,
+      loadingFramework: false,
+      errorLoadingFramework: error || null
+    };
+  }),
+  on(Actions.loadTechnologieRequest, state => {
+    return {
+      ...state,
+      loadingTechnologie: true,
+      errorLoadingTechnologie: null
+    };
+  }),
+  on(Actions.loadTechnologieSuccess, state => {
+    return {
+      ...state,
+      loadingTechnologie: false,
+      errorLoadingTechnologie: null
+    };
+  }),
+  on(Actions.loadTechnologieFail, (state, { error }) => {
+    return {
+      ...state,
+      loadingTechnologie: false,
+      errorLoadingTechnologie: error || null
     };
   })
 );
