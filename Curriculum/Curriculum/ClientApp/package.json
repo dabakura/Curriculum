@@ -28,6 +28,7 @@
     "@ngrx/store": "^8.5.2",
     "@ngrx/store-devtools": "^8.5.2",
     "@nguniversal/module-map-ngfactory-loader": "8.1.1",
+    "@types/jquery": "^3.3.31",
     "angular2-materialize": "^15.1.10",
     "aos": "^2.3.4",
     "aspnet-prerendering": "^3.0.1",
