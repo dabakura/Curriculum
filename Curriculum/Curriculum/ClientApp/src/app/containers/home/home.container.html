@@ -15,11 +15,19 @@
             <app-items-list-circular [data]="(data$ | async)?.langua" [columns]="1"></app-items-list-circular>
         </div>
         <div class="col s12 m10">
-            <app-technologies></app-technologies>
+            <app-items-list-collection [data]="(data$ | async)?.techn">
+            </app-items-list-collection>
         </div>
     </div>
 </div>
-<p>Welcome to your new single-page application, built with:</p>
+<div class="row programming">
+    <div class="container">
+        <h4 class="titulo">Frameworks o Library</h4>
+        <app-items-list class="col s12" [columns]="6" [data]="(data$ | async)?.frame"></app-items-list>
+    </div>
+</div>
+<app-footer></app-footer>
+<!-- <p>Welcome to your new single-page application, built with:</p>
 <ul>
     <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code</li>
     <li><a href='https://angular.io/'>Angular</a> and <a href='http://www.typescriptlang.org/'>TypeScript</a> for client-side code</li>
@@ -35,7 +43,8 @@
         <code>dotnet publish</code> configuration automatically invokes <code>ng build</code> to produce minified, ahead-of-time compiled JavaScript files.</li>
 </ul>
 <p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use <code>npm</code> to install extra packages into
-    it.</p>
+    it.
+</p>
 <div data-aos="fade-left" data-aos-offset="50" data-aos-easing="ease-in-sine" class="muestra">
 </div>
 <p>Welcome to your new single-page application, built with:</p>
@@ -54,7 +63,8 @@
         <code>dotnet publish</code> configuration automatically invokes <code>ng build</code> to produce minified, ahead-of-time compiled JavaScript files.</li>
 </ul>
 <p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use <code>npm</code> to install extra packages into
-    it.</p>
+    it.
+</p>
 <p>Welcome to your new single-page application, built with:</p>
 <ul>
     <li><a href='https://get.asp.net/'>ASP.NET Core</a> and <a href='https://msdn.microsoft.com/en-us/library/67ef8sbd.aspx'>C#</a> for cross-platform server-side code
@@ -72,7 +82,8 @@
         <code>dotnet publish</code> configuration automatically invokes <code>ng build</code> to produce minified, ahead-of-time compiled JavaScript files.</li>
 </ul>
 <p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use <code>npm</code> to install extra packages into
-    it.</p>
+    it.
+</p>
 <p>To help you get started, we've also set up:</p>
 <ul>
     <li><strong>Client-side navigation</strong>. For example, click <em>Counter</em> then <em>Back</em> to return here.
@@ -101,4 +112,4 @@
         <code>dotnet publish</code> configuration automatically invokes <code>ng build</code> to produce minified, ahead-of-time compiled JavaScript files.</li>
 </ul>
 <p>The <code>ClientApp</code> subdirectory is a standard Angular CLI application. If you open a command prompt in that directory, you can run any <code>ng</code> command (e.g., <code>ng test</code>), or use
-    <code>npm</code> to install extra packages into it.</p>
+    <code>npm</code> to install extra packages into it.</p> -->

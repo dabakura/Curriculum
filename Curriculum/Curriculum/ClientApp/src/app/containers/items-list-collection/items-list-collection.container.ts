@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
+import { Technologie } from "../../models/Technologie";
+import { Otro } from "../../models/Otro";
 
 @Component({
-  selector: 'app-items-list-collection',
-  templateUrl: './items-list-collection.component.html',
-  styleUrls: ['./items-list-collection.component.css']
+  selector: "app-items-list-collection",
+  templateUrl: "./items-list-collection.container.html",
+  styleUrls: ["./items-list-collection.container.css"]
 })
-export class ItemsListCollectionComponent implements OnInit {
+export class ItemsListCollectionContainer implements OnInit {
+  @Input() data: { technologies: Technologie[]; otros: Otro[] };
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

@@ -39,8 +39,7 @@ export const getHomeArrayState = createSelector(
     info: state_info,
     progra: state_progra,
     langua: state_langua,
-    techn: state_techn,
-    frame: state_frame,
-    otro: state_otro
+    techn: { technologies: state_techn, otros: state_otro },
+    frame: state_frame
   })
 );

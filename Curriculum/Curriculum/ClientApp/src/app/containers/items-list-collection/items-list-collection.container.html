@@ -1,1 +1,5 @@
-<p>items-list-collection works!</p>
+<div class="collection">
+    <app-technologies *ngFor="let item of data.technologies" [data]="item" [lastChild]="false"></app-technologies>
+    <app-technologies *ngFor="let item of data.otros; let i=index" [data]="item" [lastChild]="data.otros.length-1 == i">
+    </app-technologies>
+</div>

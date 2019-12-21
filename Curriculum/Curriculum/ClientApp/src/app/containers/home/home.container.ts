@@ -25,9 +25,8 @@ export class HomeContainer implements OnInit {
     info: Information;
     progra: ProgrammingLanguages[];
     langua: Languages[];
+    techn: { technologies: Technologie[]; otros: Otro[] };
     frame: Framework[];
-    techn: Technologie[];
-    otro: Otro[];
   }>;
   showInformation: boolean;
 

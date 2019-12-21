@@ -1,32 +1,12 @@
-<div class="collection">
-    <div class="row collection-item" style="margin: 2px;">
-        <div class="col s9 push-s3">
-            <span class="badge">1dsd</span><span class="badge grey darken-3 new">4 dasd</span><span class="new badge deep-orange darken-4">4</span>
-            <span class="badge blue lighten-5 new">4 dasd</span><span class="new badge indigo darken-4">4</span>
-            <span class="badge teal accent-4 new">4 dasd</span><span class="new badge blue lighten-5">4</span>
-            <span class="badge blue lighten-5 new">4 dasd</span><span class="new badge blue lighten-5">4</span>
-            <span class="badge light-blue darken-4 new">4 dasd</span><span class="new badge blue lighten-5">4</span>
-        </div>
-        <div class="col s3 pull-s9"><span class="flow-text">Bases de Datos</span></div>
+<div *ngIf="!lineal" class="row collection-item contorno" style="border-bottom: 1px solid #e0e0e0;">
+    <div class="col s8 push-s4">
+        <span *ngFor="let item of getTecnologieOrOtro(); let i=index" class="badge new" [ngClass]="{'grey darken-3': i%2==0, 'light-blue darken-4': i%2!=0}">{{ item }}</span>
     </div>
-    <div class="row collection-item" style="margin: 2px;">
-        <div class="col s9 push-s3">
-            <span class="badge">1dsd</span><span class="badge red new">4 dasd</span><span class="new badge red">4</span>
-            <span class="badge red new">4 dasd</span><span class="new badge red">4</span>
-            <span class="badge red new">4 dasd</span><span class="new badge red">4</span>
-            <span class="badge red new">4 dasd</span><span class="new badge red">4</span>
-            <span class="badge red new">4 dasd</span><span class="new badge red">4</span>
-        </div>
-        <div class="col s3 pull-s9"><span class="flow-text">lenguajes</span></div>
+    <div class="col s4 pull-s8"><span class="flow-text" style="font-weight: normal;">{{ data.Name }}</span></div>
+</div>
+<div *ngIf="lineal" class="row collection-item contorno" [ngStyle]="{'border-bottom: 1px solid #e0e0e0;': !lastChild}">
+    <div class="col s8 push-s4">
+        <span class="badge">{{ getTecnologieOrOtro() }}</span>
     </div>
-    <div class="row collection-item" style="margin: 2px;">
-        <div class="col s9 push-s3">
-            <span class="badge">1dsd</span><span class="badge red new">4 dasd</span><span class="new badge red">4</span>
-            <span class="badge red new">4 dasd</span><span class="new badge red">4</span>
-            <span class="badge red new">4 dasd</span><span class="new badge red">4</span>
-            <span class="badge red new">4 dasd</span><span class="new badge red">4</span>
-            <span class="badge red new">4 dasd</span><span class="new badge red">4</span>
-        </div>
-        <div class="col s3 pull-s9"><span class="flow-text">Modelos de programacion</span></div>
-    </div>
+    <div class="col s4 pull-s8"><span class="flow-text" style="font-weight: normal;">{{ data.Name }}</span></div>
 </div>
