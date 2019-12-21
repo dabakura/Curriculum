@@ -40,6 +40,7 @@ export class HomeContainer implements OnInit {
     this.indicators$.subscribe(state => {
       if (!state.errorLoadingInformation) {
         this.showInformation = !state.loadingInformation;
+        AOS.init();
       }
     });
     this.store.dispatch(HomeUIActions.loadInformationRequest());

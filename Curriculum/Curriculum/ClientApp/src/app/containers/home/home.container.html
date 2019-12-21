@@ -5,7 +5,7 @@
 
 <section class="progra">
     <div class="row programming one">
-        <div class="container">
+        <div class="container" data-aos="zoom-in-up" data-aos-offset="50" data-aos-anchor-placement="top-center">
             <h4 class="titulo">Lenguajes de Programación</h4>
             <app-items-list class="col s12" [columns]="6" [data]="(data$ | async)?.progra"></app-items-list>
         </div>
@@ -30,7 +30,7 @@
 
 <section class="frame">
     <div class="row framework">
-        <div class="container">
+        <div class="container" data-aos="fade-left" data-aos-offset="50" data-aos-easing="ease-in-sine">
             <h4 class="titulo">Frameworks o Library</h4>
             <app-items-list class="col s12" [columns]="6" [data]="(data$ | async)?.frame"></app-items-list>
         </div>

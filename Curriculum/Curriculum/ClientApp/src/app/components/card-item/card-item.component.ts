@@ -12,7 +12,7 @@ import {
   templateUrl: "./card-item.component.html",
   styleUrls: ["./card-item.component.css"]
 })
-export class CardItemComponent {
+export class CardItemComponent implements OnInit {
   public indicador: string;
   public sombra: string;
   public fondo: string;
@@ -30,6 +30,8 @@ export class CardItemComponent {
     this.percentagestring = "";
     this.contenido = "";
   }
+
+  ngOnInit(): void {}
 
   /**
    * updateColors
