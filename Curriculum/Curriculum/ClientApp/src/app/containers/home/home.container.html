@@ -2,30 +2,41 @@
 <div class="container">
     <app-curriculum [data]="(data$ | async)?.info"></app-curriculum>
 </div>
-<div class="row programming">
-    <div class="container">
-        <h4 class="titulo">Lenguajes de Programación</h4>
-        <app-items-list class="col s12" [columns]="6" [data]="(data$ | async)?.progra"></app-items-list>
-    </div>
-</div>
-<div class="container">
-    <div class="row valign-wrapper">
-        <div class="col s12" style="width: 180px;">
-            <h5 class="titulo">Idiomas</h5>
-            <app-items-list-circular [data]="(data$ | async)?.langua" [columns]="1"></app-items-list-circular>
-        </div>
-        <div class="col s12 m10">
-            <app-items-list-collection [data]="(data$ | async)?.techn">
-            </app-items-list-collection>
+
+<section class="progra">
+    <div class="row programming one">
+        <div class="container">
+            <h4 class="titulo">Lenguajes de Programación</h4>
+            <app-items-list class="col s12" [columns]="6" [data]="(data$ | async)?.progra"></app-items-list>
         </div>
     </div>
-</div>
-<div class="row programming">
+</section>
+
+<section class="technologies">
     <div class="container">
-        <h4 class="titulo">Frameworks o Library</h4>
-        <app-items-list class="col s12" [columns]="6" [data]="(data$ | async)?.frame"></app-items-list>
+        <div class="row valign-wrapper">
+            <div class="col s12" style="width: 180px;">
+                <h5 class="titulo">Idiomas</h5>
+                <app-items-list-circular [data]="(data$ | async)?.langua" [columns]="1"></app-items-list-circular>
+                <app-time-line [data]="(data$ | async)?.info.Qualities"></app-time-line>
+            </div>
+            <div class="col s12 m10">
+                <app-items-list-collection [data]="(data$ | async)?.techn">
+                </app-items-list-collection>
+            </div>
+        </div>
     </div>
-</div>
+</section>
+
+<section class="frame">
+    <div class="row framework">
+        <div class="container">
+            <h4 class="titulo">Frameworks o Library</h4>
+            <app-items-list class="col s12" [columns]="6" [data]="(data$ | async)?.frame"></app-items-list>
+        </div>
+    </div>
+</section>
+
 <app-footer></app-footer>
 <!-- <p>Welcome to your new single-page application, built with:</p>
 <ul>

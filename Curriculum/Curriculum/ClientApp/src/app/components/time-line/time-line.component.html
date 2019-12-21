@@ -1,1 +1,8 @@
-<p>time-line works!</p>
+<section class="programa" *ngIf="getdata().length>0">
+    <p class="titulo">Cualidades</p>
+    <ul>
+        <li *ngFor="let item of getdata()">
+            <span class="titulo">{{ item }}</span>
+        </li>
+    </ul>
+</section>

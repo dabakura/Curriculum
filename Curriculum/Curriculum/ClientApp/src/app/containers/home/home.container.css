@@ -14,13 +14,11 @@
 }
 
 .programming {
-    background-color: #21D4FD;
-    background-image: linear-gradient(45deg, #303f9f, #7b1fa2);
-    /*     linear-gradient(19deg, #21D4FD 0%, #B721FF 100%); */
     padding-top: 0.1rem;
-    padding-bottom: 0.75rem;
+    padding-bottom: 3.75rem;
     margin-bottom: 0;
     color: white;
+    transform: skew(0deg, -4deg);
 }
 
 .titulo {
@@ -29,4 +27,34 @@
 
 span.badge.new:after {
     content: "";
+}
+
+.progra {
+    transform: skew(0deg, 4deg) translateY(60px);
+    margin-bottom: 3.75rem;
+    background-image: linear-gradient(45deg, #303f9f, #7b1fa2);
+    background-color: #21D4FD;
+}
+
+.framework {
+    padding-top: 0.1rem;
+    padding-bottom: 3.75rem;
+    margin-bottom: 0;
+    color: white;
+}
+
+.technologies {
+    transform: skew(0deg, 4deg) translateY(60px);
+    background-color: white;
+}
+
+.frame {
+    background-image: linear-gradient(45deg, #303f9f, #7b1fa2);
+    background-color: #21D4FD;
+    padding-top: 54px;
+}
+
+.technologies .container {
+    transform: skew(0deg, -4deg);
+    padding-bottom: 3.75rem;
 }

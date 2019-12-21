@@ -15,3 +15,7 @@
 .logo {
     padding-left: 1rem;
 }
+
+nav {
+    box-shadow: none;
+}
