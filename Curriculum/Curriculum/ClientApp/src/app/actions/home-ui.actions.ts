@@ -77,3 +77,7 @@ export const loadFrameworkFail = createAction(
   "[PortfolioModule] LoadFrameworkFail",
   props<{ error: string }>()
 );
+
+export const loadHomeRequest = createAction(
+  "[PortfolioModule] loadHomeRequest"
+);

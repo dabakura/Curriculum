@@ -1,6 +1,7 @@
 import { createReducer, on } from "@ngrx/store";
 import * as Actions from "../actions/";
 import { HomeUIState } from "../states/home-ui.state";
+import { loadHomeRequest } from "../actions/";
 
 export const initialState: HomeUIState = {
   errorLoadingInformation: null,
@@ -143,6 +144,11 @@ export const homeUIReducer = createReducer(
       ...state,
       loadingTechnologie: false,
       errorLoadingTechnologie: error || null
+    };
+  }),
+  on(loadHomeRequest, state => {
+    return {
+      ...state
     };
   })
 );

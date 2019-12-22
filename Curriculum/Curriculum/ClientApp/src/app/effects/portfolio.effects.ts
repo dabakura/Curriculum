@@ -1,9 +1,16 @@
 import { Injectable } from "@angular/core";
 import { Actions, Effect, ofType, createEffect } from "@ngrx/effects";
 import { of } from "rxjs";
-import { switchMap, catchError, mergeMap, map } from "rxjs/operators";
+import {
+  switchMap,
+  catchError,
+  mergeMap,
+  map,
+  concatMap
+} from "rxjs/operators";
 
 import {
+  loadHomeRequest,
   loadInformation,
   loadInformationRequest,
   loadInformationSuccess,
@@ -139,6 +146,41 @@ export class PortfolioEffects {
       })
     )
   );
+
+  loadHomeRequest = createEffect(() =>
+    this.actions$.pipe(
+      ofType(loadHomeRequest),
+      switchMap(() => {
+        return this.portfolioService.getKnowledge().pipe(
+          mergeMap(
+            information => this.portfolioService.getInformation(),
+            (knowledge, information) => ({ knowledge, information })
+          ),
+          mergeMap(data => [
+            loadInformation({ information: data.information }),
+            loadInformationSuccess(),
+            loadOtro({ otro: data.knowledge.Otros }),
+            loadOtroSuccess(),
+            loadTechnologie({ technologie: data.knowledge.Technologies }),
+            loadTechnologieSuccess(),
+            loadFramework({ framework: data.knowledge.Frameworks }),
+            loadFrameworkSuccess(),
+            loadProgrammingLanguages({
+              programmingLanguages: data.knowledge.Programming_Languages
+            }),
+            loadProgrammingLanguagesSuccess(),
+            loadLanguages({ languages: data.knowledge.Languages }),
+            loadLanguagesSuccess()
+          ]),
+          catchError(error => {
+            console.error(error);
+            return of(loadOtroFail({ error }));
+          })
+        );
+      })
+    )
+  );
+
   constructor(
     private actions$: Actions,
     private portfolioService: PortfolioService

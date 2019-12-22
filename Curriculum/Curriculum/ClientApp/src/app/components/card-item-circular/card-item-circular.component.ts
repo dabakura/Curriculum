@@ -40,7 +40,7 @@ export class CardItemCircularComponent implements OnInit {
       trackColor: data.shadow,
       scaleColor: false,
       lineWidth: 7,
-      trackWidth: 5,
+      trackWidth: 3,
       lineCap: "round",
       onStep: function(from, to, percent) {
         this.el.children[0].innerHTML = percent + "%";
@@ -59,7 +59,10 @@ export class CardItemCircularComponent implements OnInit {
         self.div.nativeElement.offsetTop +
         self.div.nativeElement.clientHeight -
         ($(window).scrollTop() + $(window).height());
-      if (visiblecontent > -60 && visiblecontent < 0 && self.status) {
+      console.log("====================================");
+      console.log(visiblecontent);
+      console.log("====================================");
+      if (visiblecontent > -1260 && visiblecontent < -900 && self.status) {
         self.progress.nativeElement.innerHTML =
           '<span class="percent" style="position: absolute; width: 35px; max-width: 35px;"></span>';
         self.chart = self.Chart(self.progress.nativeElement, data);

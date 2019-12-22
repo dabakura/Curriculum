@@ -24,6 +24,13 @@ export class PortfolioService {
     };
   }
 
+  getKnowledge(): Observable<Knowledge> {
+    const url = `${this.apiUrl}/Knowledge`;
+    return this.http
+      .get<Knowledge>(url, this.httpOptions)
+      .pipe(catchError(error => throwError(error)));
+  }
+
   getProgrammingLanguages(): Observable<ProgrammingLanguages[]> {
     const url = `${this.apiUrl}/Knowledge`;
     return this.http.get<Knowledge>(url, this.httpOptions).pipe(
