@@ -10,6 +10,8 @@
 
 .contacto {
     padding-right: 1rem;
+    padding-left: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .logo {
@@ -18,4 +20,9 @@
 
 nav {
     box-shadow: none;
+}
+
+.tabs .tab a:hover,
+.tabs .tab a.active {
+    background-color: rgba(0, 0, 0, 0.1);
 }

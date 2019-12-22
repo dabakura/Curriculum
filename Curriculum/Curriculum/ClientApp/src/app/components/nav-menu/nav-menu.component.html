@@ -10,7 +10,9 @@
                     <li class="tab"><a [routerLinkActive]="['active']" [routerLink]="['/fetch-data']">Titulos</a></li>
                     <li class="tab"><a [routerLinkActive]="['active']" href="#test4">Referencias</a></li>
                 </ul>
-                <a [routerLink]="['/']" class="right contacto">CONTACTO</a>
+                <a (click)="DowmloadPDF()" class="right contacto waves-effect waves-light"><i class="material-icons"
+            style="font-size: 3rem;">archive</i></a>
+                <a #downloadZipLink style="display: none"></a>
             </div>
         </nav>
 
