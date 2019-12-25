@@ -1,1 +1,29 @@
-<p>built-with-item works!</p>
+<div class="title">
+    <div class="left">Tipo:</div>
+    <div class="right">{{ data.tipe }}</div>
+</div>
+
+<div class="content" *ngIf="data.git">
+    <div class="left">
+        <img height="24" width="24" src="/assets/img/32/angular.png">
+    </div>
+    <div class="right"><a [href]="data.link">{{ data.link }}</a></div>
+</div>
+
+<div class="content" *ngIf="data.git">
+    <div class="left">
+        <img height="24" width="24" src="/assets/img/32/angular.png">
+    </div>
+    <div class="right"><a [href]="data.git">{{ data.git }}</a></div>
+</div>
+
+<ul class="collection with-header">
+    <li class="collection-header">
+        <h5 style="text-align: center;">Tecnolgias Usadas</h5>
+    </li>
+    <li class="collection-item" *ngFor="let item of data.list">
+        <div>{{ item }}
+            <a class="secondary-content"><img height="24" width="24" [src]="'/assets/img/32/'+item+'.png'" /></a>
+        </div>
+    </li>
+</ul>

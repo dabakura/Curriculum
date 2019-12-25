@@ -9,6 +9,7 @@ import {
 } from "@angular/core";
 import * as EasyPieChart from "../../../assets/js/easypiechart.min";
 import { timer } from "rxjs";
+import { ChartData } from "../models/ChartData";
 declare var $: any;
 @Component({
   selector: "app-card-item-circular",
@@ -59,9 +60,9 @@ export class CardItemCircularComponent implements OnInit {
         self.div.nativeElement.offsetTop +
         self.div.nativeElement.clientHeight -
         ($(window).scrollTop() + $(window).height());
-      console.log("====================================");
+      /*  console.log("====================================");
       console.log(visiblecontent);
-      console.log("====================================");
+      console.log("===================================="); */
       if (visiblecontent > -1260 && visiblecontent < -900 && self.status) {
         self.progress.nativeElement.innerHTML =
           '<span class="percent" style="position: absolute; width: 35px; max-width: 35px;"></span>';
@@ -73,12 +74,4 @@ export class CardItemCircularComponent implements OnInit {
       }
     });
   }
-}
-
-export interface ChartData {
-  shadow: string;
-  background: string;
-  percent: Number;
-  content: string;
-  img: string;
 }
