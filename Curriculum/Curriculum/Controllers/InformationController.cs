@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Curriculum.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 
 namespace Curriculum.Controllers
@@ -14,10 +15,12 @@ namespace Curriculum.Controllers
     public class InformationController : ControllerBase
     {
         private readonly ILogger<InformationController> _logger;
+        private IMemoryCache _cache;
 
-        public InformationController(ILogger<InformationController> logger)
+        public InformationController(ILogger<InformationController> logger, IMemoryCache memoryCache)
         {
             _logger = logger;
+            _cache = memoryCache;
         }
 
         // GET: api/Information
@@ -26,15 +29,27 @@ namespace Curriculum.Controllers
         {
             try
             {
-                _logger.LogInformation("Intento de conección con Firebase url database/Information");
-                string json = await FirebaseContext.Database.Informations.GetAllAsync();
-                _logger.LogInformation("Se conecto con Firebase");
+                if (!_cache.TryGetValue("Information", out string json))
+                {
+                    if (String.IsNullOrEmpty(json))
+                    {
+                        _logger.LogInformation("Intento de conección con Firebase url database/Information");
+                        json = await FirebaseContext.Database.Informations.GetAllAsync();
+                        _logger.LogInformation("Se conecto con Firebase [Information]");
+                    }
+                    var cacheEntryOptions = new MemoryCacheEntryOptions()
+                        .SetSlidingExpiration(TimeSpan.FromMinutes(20))
+                        .SetAbsoluteExpiration(DateTime.Now.AddHours(1));
+                    _cache.Set("Information", json, cacheEntryOptions);
+                }
+                else
+                    _logger.LogInformation("Se cargo información desde la cache [Information]");
                 return json;
             }
             catch (Exception ex)
             {
-                _logger.LogError("Error: Fallo la conección con Firebase url database/Information",ex);
-                throw new ArgumentException("Se presento un error al procesar la inforamación",ex);
+                _logger.LogError("Error: Fallo la conección con Firebase url database/Information", ex);
+                throw new ArgumentException("Se presento un error al procesar la información database/Information", ex);
             }
         }
 

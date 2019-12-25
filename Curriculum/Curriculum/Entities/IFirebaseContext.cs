@@ -9,6 +9,7 @@ namespace Curriculum.Entities
     {
         DbSet<Information> Informations { get; set; }
         DbSet<Knowledge> Knowledges { get; set; }
+        DbSet<Project> Projects { get; set; }
         //DbSet<AdminEntity> Admins { get; set; }
         //DbSet<BookingEntity> Bookings { get; set; }
         //DbSet<OfficeEntity> Offices { get; set; }
