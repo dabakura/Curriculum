@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-project',
-  templateUrl: './project.component.html',
-  styleUrls: ['./project.component.css']
+  selector: "app-project",
+  templateUrl: "./project.container.html",
+  styleUrls: ["./project.container.css"]
 })
-export class ProjectComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+export class ProjectContainer implements OnInit {
+  images: string[];
+  constructor() {
+    this.images = [
+      "java.png",
+      "c.png",
+      "python.png",
+      "angular.png",
+      "django.png"
+    ];
   }
 
+  ngOnInit() {}
 }

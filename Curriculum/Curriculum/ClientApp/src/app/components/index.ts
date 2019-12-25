@@ -5,6 +5,10 @@ import { CurriculumComponent } from "./curriculum/curriculum.component";
 import { TechnologiesComponent } from "./technologies/technologies.component";
 import { TimeLineComponent } from "./time-line/time-line.component";
 import { FooterComponent } from "./footer/footer.component";
+import { BuiltWithItemComponent } from "./built-with-item/built-with-item.component";
+import { VideoItemComponent } from "./video-item/video-item.component";
+import { ImageItemComponent } from "./image-item/image-item.component";
+import { ProjectItemComponent } from "./project-item/project-item.component";
 
 export const COMPONENTS = [
   CardItemComponent,
@@ -13,5 +17,9 @@ export const COMPONENTS = [
   FooterComponent,
   CurriculumComponent,
   TimeLineComponent,
+  BuiltWithItemComponent,
+  VideoItemComponent,
+  ImageItemComponent,
+  ProjectItemComponent,
   TechnologiesComponent
 ];

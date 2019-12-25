@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  ViewChild,
+  ElementRef,
+  AfterViewInit
+} from "@angular/core";
 
 @Component({
-  selector: 'app-image-item',
-  templateUrl: './image-item.component.html',
-  styleUrls: ['./image-item.component.css']
+  selector: "app-image-item",
+  templateUrl: "./image-item.component.html",
+  styleUrls: ["./image-item.component.css"]
 })
-export class ImageItemComponent implements OnInit {
+export class ImageItemComponent implements AfterViewInit {
+  @Input() images: string[];
+  @ViewChild("carousel", { static: false }) carousel: ElementRef;
 
-  constructor() { }
-
-  ngOnInit() {
+  ngAfterViewInit() {
+    M.Carousel.init(this.carousel.nativeElement, {
+      fullWidth: true,
+      indicators: true
+    });
   }
-
 }

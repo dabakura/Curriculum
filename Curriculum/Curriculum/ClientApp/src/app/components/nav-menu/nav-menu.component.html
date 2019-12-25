@@ -1,25 +1,25 @@
-<div class="navbar-fixed">
-    <header>
+<header>
+    <div class="navbar-fixed">
         <nav class="nav-extended deep-purple darken-4">
             <div class="nav-wrapper">
                 <a [routerLink]="['/']" class="brand-logo logo">David Campos Ch.</a>
                 <a [routerLink]="['/']" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="brand-logo center hide-on-med-and-down tabs tabs-transparent">
                     <li class="tab"><a [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">Curriculum</a></li>
-                    <li class="tab"><a [routerLink]="['/counter']" [routerLinkActive]="['active']">Proyectos</a></li>
-                    <li class="tab"><a [routerLinkActive]="['active']" [routerLink]="['/fetch-data']">Titulos</a></li>
-                    <li class="tab"><a [routerLinkActive]="['active']" href="#test4">Referencias</a></li>
+                    <li class="tab"><a [routerLink]="['/project']" [routerLinkActive]="['active']">Proyectos</a></li>
+                    <li class="tab"><a [routerLink]="['/titles']" [routerLinkActive]="['active']">Titulos</a></li>
+                    <li class="tab"><a [routerLink]="['/references']" [routerLinkActive]="['active']">Referencias</a></li>
                 </ul>
                 <a (click)="DowmloadPDF()" class="right contacto waves-effect waves-light"><i class="material-icons"
             style="font-size: 3rem;">archive</i></a>
                 <a #downloadZipLink style="display: none"></a>
             </div>
         </nav>
-
-        <ul class="sidenav" id="mobile-demo">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">JavaScript</a></li>
-        </ul>
-    </header>
-</div>
+    </div>
+    <ul class="sidenav" id="mobile-demo" #sidenav>
+        <li><a [routerLink]="['/']">Curriculum</a></li>
+        <li><a [routerLink]="['/project']">Proyectos</a></li>
+        <li><a [routerLink]="['/titles']">Titulos</a></li>
+        <li><a [routerLink]="['/references']">Referencias</a></li>
+    </ul>
+</header>

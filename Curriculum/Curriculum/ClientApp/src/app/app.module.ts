@@ -19,6 +19,7 @@ import { NavMenuComponent } from "./components/nav-menu/nav-menu.component";
 import { CounterComponent } from "./counter/counter.component";
 import { FetchDataComponent } from "./fetch-data/fetch-data.component";
 import { HomeContainer } from "./containers/home/home.container";
+import { ProjectContainer } from "./containers/project/project.container";
 
 // config imports
 import * as fromComponents from "./components";
@@ -51,6 +52,7 @@ const NGRX_IMPORTS = [
     NavMenuComponent,
     CounterComponent,
     HomeContainer,
+    ProjectContainer,
     FetchDataComponent,
     ...fromComponents.COMPONENTS,
     ...fromContainers.CONTAINERS
@@ -61,6 +63,7 @@ const NGRX_IMPORTS = [
     FormsModule,
     RouterModule.forRoot([
       { path: "", component: HomeContainer, pathMatch: "full" },
+      { path: "project", component: ProjectContainer },
       { path: "counter", component: CounterComponent },
       { path: "fetch-data", component: FetchDataComponent }
     ]),

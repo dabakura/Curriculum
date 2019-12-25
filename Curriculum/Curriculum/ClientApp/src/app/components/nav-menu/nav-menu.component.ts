@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
+import { Component, AfterViewInit, ViewChild, ElementRef } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Component({
@@ -6,13 +6,12 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
   templateUrl: "./nav-menu.component.html",
   styleUrls: ["./nav-menu.component.css"]
 })
-export class NavMenuComponent implements OnInit {
-  @ViewChild("downloadZipLink", { static: true })
-  private downloadLink: ElementRef;
+export class NavMenuComponent implements AfterViewInit {
+  @ViewChild("downloadZipLink", { static: true }) downloadLink: ElementRef;
+  @ViewChild("sidenav", { static: false }) sidenav: ElementRef;
   constructor(private http: HttpClient) {}
-  ngOnInit(): void {
-    const elems = document.querySelectorAll(".sidenav");
-    M.Sidenav.init(elems);
+  ngAfterViewInit(): void {
+    M.Sidenav.init(this.sidenav.nativeElement);
   }
   public async downloadResource(): Promise<Blob> {
     let headers = new HttpHeaders();
