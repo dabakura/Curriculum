@@ -6,5 +6,5 @@ import { Component, Input } from "@angular/core";
   styleUrls: ["./video-item.component.css"]
 })
 export class VideoItemComponent {
-  @Input() video: String;
+  @Input() video: string;
 }

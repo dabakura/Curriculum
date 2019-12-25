@@ -1,29 +1,29 @@
 <div class="title">
     <div class="left">Tipo:</div>
-    <div class="right">{{ data.tipe }}</div>
+    <div class="right">{{ data.Type }}</div>
 </div>
 
-<div class="content" *ngIf="data.git">
+<div class="content" *ngIf="data.Link">
     <div class="left">
-        <img height="24" width="24" src="/assets/img/32/angular.png">
+        <img height="24" width="24" src="/assets/img/32/web-icon.png">
     </div>
-    <div class="right"><a [href]="data.link">{{ data.link }}</a></div>
+    <div class="right"><a [href]="data.Link" target="_blank">{{ data.Link }}</a></div>
 </div>
 
-<div class="content" *ngIf="data.git">
+<div class="content" *ngIf="data.Github">
     <div class="left">
-        <img height="24" width="24" src="/assets/img/32/angular.png">
+        <img height="24" width="24" src="/assets/img/32/github-icon.png">
     </div>
-    <div class="right"><a [href]="data.git">{{ data.git }}</a></div>
+    <div class="right"><a [href]="data.Github" target="_blank">{{ data.Github }}</a></div>
 </div>
 
 <ul class="collection with-header">
     <li class="collection-header">
         <h5 style="text-align: center;">Tecnolgias Usadas</h5>
     </li>
-    <li class="collection-item" *ngFor="let item of data.list">
-        <div>{{ item }}
-            <a class="secondary-content"><img height="24" width="24" [src]="'/assets/img/32/'+item+'.png'" /></a>
+    <li class="collection-item" *ngFor="let item of data.ListBuilt">
+        <div>{{ item.Name }}
+            <a class="secondary-content" target="_blank"><img height="24" width="24" [src]="'/assets/img/32/'+item.Image" /></a>
         </div>
     </li>
 </ul>

@@ -63,7 +63,7 @@ const NGRX_IMPORTS = [
     FormsModule,
     RouterModule.forRoot([
       { path: "", component: HomeContainer, pathMatch: "full" },
-      { path: "project", component: ProjectContainer },
+      { path: "projects", component: ProjectContainer },
       { path: "counter", component: CounterComponent },
       { path: "fetch-data", component: FetchDataComponent }
     ]),

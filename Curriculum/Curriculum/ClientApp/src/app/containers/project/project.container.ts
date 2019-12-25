@@ -18,10 +18,10 @@ export class ProjectContainer implements OnInit {
       "django.png"
     ];
     this.data = {
-      tipe: "Universitario",
-      link: "http",
-      git: "htto://localhost",
-      list: ["angular", "redux", "javascript", "html5"]
+      Type: "Universitario",
+      Link: "https://www.google.com",
+      Github: "https://localhost",
+      ListBuilt: [{ Name: "angular", Image: "angular.png" }]
     };
   }
 

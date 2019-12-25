@@ -1,6 +1,11 @@
 export interface Built {
-  tipe: string;
-  link: string;
-  git: string;
-  list: string[];
+  Type: string;
+  Link: string;
+  Github: string;
+  ListBuilt: BuiltItem[];
+}
+
+export interface BuiltItem {
+  Name: string;
+  Image: string;
 }

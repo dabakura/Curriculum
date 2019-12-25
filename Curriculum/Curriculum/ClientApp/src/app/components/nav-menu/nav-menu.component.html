@@ -6,7 +6,7 @@
                 <a [routerLink]="['/']" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="brand-logo center hide-on-med-and-down tabs tabs-transparent">
                     <li class="tab"><a [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">Curriculum</a></li>
-                    <li class="tab"><a [routerLink]="['/project']" [routerLinkActive]="['active']">Proyectos</a></li>
+                    <li class="tab"><a [routerLink]="['/projects']" [routerLinkActive]="['active']">Proyectos</a></li>
                     <li class="tab"><a [routerLink]="['/titles']" [routerLinkActive]="['active']">Titulos</a></li>
                     <li class="tab"><a [routerLink]="['/references']" [routerLinkActive]="['active']">Referencias</a></li>
                 </ul>
@@ -18,7 +18,7 @@
     </div>
     <ul class="sidenav" id="mobile-demo" #sidenav>
         <li><a [routerLink]="['/']">Curriculum</a></li>
-        <li><a [routerLink]="['/project']">Proyectos</a></li>
+        <li><a [routerLink]="['/projects']">Proyectos</a></li>
         <li><a [routerLink]="['/titles']">Titulos</a></li>
         <li><a [routerLink]="['/references']">Referencias</a></li>
     </ul>
