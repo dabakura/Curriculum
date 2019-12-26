@@ -6,3 +6,5 @@ export * from "./portfolio-module.state";
 export * from "./Technologie.state";
 export * from "./Otro.state";
 export * from "./Framework.state";
+export * from "./Project.state";
+export * from "./project-ui.state";

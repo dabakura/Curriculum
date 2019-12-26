@@ -1,7 +1,7 @@
 import { createReducer, on } from "@ngrx/store";
 import * as Actions from "../actions/";
 import { HomeUIState } from "../states/home-ui.state";
-import { loadHomeRequest } from "../actions/";
+import { NullTemplateVisitor } from "@angular/compiler";
 
 export const initialState: HomeUIState = {
   errorLoadingInformation: null,
@@ -146,9 +146,20 @@ export const homeUIReducer = createReducer(
       errorLoadingTechnologie: error || null
     };
   }),
-  on(loadHomeRequest, state => {
+  on(Actions.loadHomeRequest, state => {
     return {
       ...state
+    };
+  }),
+  on(Actions.loadHomeFail, (state, { error }) => {
+    return {
+      ...state,
+      errorLoadingTechnologie: error || null,
+      errorLoadingFramework: error || null,
+      errorLoadingOtro: error || null,
+      errorLoadingLanguages: error || null,
+      errorLoadingProgrammingLanguages: error || null,
+      errorLoadingInformation: error || null
     };
   })
 );

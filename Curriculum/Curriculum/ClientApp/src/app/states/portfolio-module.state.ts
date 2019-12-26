@@ -7,7 +7,9 @@ import {
   ProgrammingLanguagesState,
   TechnologieState,
   OtroState,
-  FrameworkState
+  FrameworkState,
+  ProjectState,
+  ProjectUIState
 } from ".";
 
 export interface PortfolioModuleState {
@@ -18,5 +20,7 @@ export interface PortfolioModuleState {
   otros: OtroState;
   frameworks: FrameworkState;
   homeUI: HomeUIState;
+  projects: ProjectState;
+  projectUI: ProjectUIState;
   router: fromRouter.RouterReducerState<RouterStateUrl>;
 }

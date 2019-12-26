@@ -3,7 +3,7 @@ namespace Curriculum.Entities
 {
     public class Project
     {
-        public DateTime Creation_Date { get; set; }
+        public String Creation_Date { get; set; }
         public String Description { get; set; }
         public Boolean OnlyImage { get; set; }
         public String Title { get; set; }

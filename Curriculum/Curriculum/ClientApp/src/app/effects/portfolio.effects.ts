@@ -11,6 +11,7 @@ import {
 
 import {
   loadHomeRequest,
+  loadProjectsRequest,
   loadInformation,
   loadInformationRequest,
   loadInformationSuccess,
@@ -34,7 +35,13 @@ import {
   loadOtroRequest,
   loadOtro,
   loadOtroSuccess,
-  loadOtroFail
+  loadOtroFail,
+  loadProject,
+  loadProjectSuccess,
+  loadProjectFail,
+  loadHomeFail,
+  loadProjectsFail,
+  loadProjectRequest
 } from "../actions";
 import { PortfolioService } from "../services/portfolio.service";
 
@@ -147,13 +154,46 @@ export class PortfolioEffects {
     )
   );
 
+  loadProjectRequest = createEffect(() =>
+    this.actions$.pipe(
+      ofType(loadProjectRequest),
+      switchMap(() => {
+        return this.portfolioService.getProject().pipe(
+          mergeMap(project => [loadProject({ project }), loadProjectSuccess()]),
+          catchError(error => {
+            console.error(error);
+            return of(loadProjectFail({ error }));
+          })
+        );
+      })
+    )
+  );
+
+  loadProjectsRequest = createEffect(() =>
+    this.actions$.pipe(
+      ofType(loadProjectsRequest),
+      switchMap(() => {
+        return this.portfolioService.getProject().pipe(
+          mergeMap(data => [
+            loadProject({ project: data }),
+            loadProjectSuccess()
+          ]),
+          catchError(error => {
+            console.error(error);
+            return of(loadProjectsFail({ error }));
+          })
+        );
+      })
+    )
+  );
+
   loadHomeRequest = createEffect(() =>
     this.actions$.pipe(
       ofType(loadHomeRequest),
       switchMap(() => {
         return this.portfolioService.getKnowledge().pipe(
           mergeMap(
-            information => this.portfolioService.getInformation(),
+            () => this.portfolioService.getInformation(),
             (knowledge, information) => ({ knowledge, information })
           ),
           mergeMap(data => [
@@ -174,7 +214,7 @@ export class PortfolioEffects {
           ]),
           catchError(error => {
             console.error(error);
-            return of(loadOtroFail({ error }));
+            return of(loadHomeFail({ error }));
           })
         );
       })

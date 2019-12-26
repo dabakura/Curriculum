@@ -3,13 +3,14 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { environment } from "../../environments/environment";
 import { Information } from "../models/Information";
 import { Knowledge } from "../models/Knowledge";
-import { Observable, throwError } from "rxjs";
-import { map, catchError } from "rxjs/operators";
+import { Observable, throwError, timer } from "rxjs";
+import { map, catchError, switchMap } from "rxjs/operators";
 import { ProgrammingLanguages } from "../models/ProgrammingLanguages";
 import { Languages } from "../models/Languages";
 import { Framework } from "../models/Framework";
 import { Technologie } from "../models/Technologie";
 import { Otro } from "../models/Otro";
+import { Project } from "../models/Project";
 
 @Injectable({
   providedIn: "root"
@@ -75,6 +76,13 @@ export class PortfolioService {
     const url = `${this.apiUrl}/Information`;
     return this.http
       .get<Information>(url, this.httpOptions)
+      .pipe(catchError(error => throwError(error)));
+  }
+
+  getProject(): Observable<Project[]> {
+    const url = `${this.apiUrl}/Project`;
+    return this.http
+      .get<Project[]>(url, this.httpOptions)
       .pipe(catchError(error => throwError(error)));
   }
 }

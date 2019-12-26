@@ -81,3 +81,8 @@ export const loadFrameworkFail = createAction(
 export const loadHomeRequest = createAction(
   "[PortfolioModule] loadHomeRequest"
 );
+
+export const loadHomeFail = createAction(
+  "[PortfolioModule] LoadHomeFail",
+  props<{ error: string }>()
+);

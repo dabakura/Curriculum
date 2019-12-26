@@ -15,6 +15,8 @@ import { languagesReducer } from "./languages.reducer";
 import { otroReducer } from "./otro.reducer";
 import { frameworkReducer } from "./framework.reducer";
 import { technologieReducer } from "./technologie.reducer";
+import { projectUIReducer } from "./project-ui.reducer";
+import { projectReducer } from "./project.reducer";
 
 export const reducers: ActionReducerMap<PortfolioModuleState> = {
   information: informationReducer,
@@ -24,7 +26,9 @@ export const reducers: ActionReducerMap<PortfolioModuleState> = {
   frameworks: frameworkReducer,
   technologies: technologieReducer,
   homeUI: homeUIReducer,
-  router: fromRouter.routerReducer
+  router: fromRouter.routerReducer,
+  projectUI: projectUIReducer,
+  projects: projectReducer
 };
 
 export function logger(

@@ -5,3 +5,5 @@ export * from "./home-ui.actions";
 export * from "./technologie.actions";
 export * from "./framework.actions";
 export * from "./otro.actions";
+export * from "./project-ui.actions";
+export * from "./project.actions";
