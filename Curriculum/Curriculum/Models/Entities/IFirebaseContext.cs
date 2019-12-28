@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Curriculum.Entities
+namespace Curriculum.Models.Entities
 {
     public interface IFirebaseContext
     {
         DbSet<Information> Informations { get; set; }
         DbSet<Knowledge> Knowledges { get; set; }
         DbSet<Project> Projects { get; set; }
+        DbSet<Certification> Certifications { get; set; }
         //DbSet<AdminEntity> Admins { get; set; }
         //DbSet<BookingEntity> Bookings { get; set; }
         //DbSet<OfficeEntity> Offices { get; set; }

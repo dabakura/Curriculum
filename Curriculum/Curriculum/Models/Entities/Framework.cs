@@ -1,4 +1,4 @@
-﻿namespace Curriculum.Entities
+﻿namespace Curriculum.Models.Entities
 {
     public class Framework
     {

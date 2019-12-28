@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Curriculum.Entities
+namespace Curriculum.Models.Entities
 {
     public class Project
     {

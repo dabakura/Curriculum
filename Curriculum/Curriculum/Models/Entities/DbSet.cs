@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Curriculum.Entities
+namespace Curriculum.Models.Entities
 {
     public class DbSet<T> : FirebaseDB where T : class
     {

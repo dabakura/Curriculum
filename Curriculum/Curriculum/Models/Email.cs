@@ -1,6 +1,10 @@
 ﻿using System;
-namespace Curriculum.Entities
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+
+namespace Curriculum.Models
 {
+    [BindProperties(SupportsGet = true)]
     public class Email : IMail
     {
         private String _from;
@@ -17,9 +21,11 @@ namespace Curriculum.Entities
             Subject = subject;
             Message = message;
         }
-
+        [BindRequired]
         public string From { get => _from; set => _from = value; }
+        [BindRequired]
         public string Subject { get => _subject; set => _subject = value; }
+        [BindRequired]
         public string Message { get => _message; set => _message = value; }
     }
 }

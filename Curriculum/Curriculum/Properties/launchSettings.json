@@ -14,7 +14,9 @@
       "environmentVariables": {
         "KEYSECRET": "oHtmuHRrUF27VrT5AWSV7CtR4Sg8Nge5f7e4vC2Y",
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "BASEURL": "https://curriculum-d5769.firebaseio.com"
+        "BASEURL": "https://curriculum-d5769.firebaseio.com",
+        "EMAIL": "davidcamposch@gmail.com",
+        "EMAIL_PASSWORD": "DIMITRY+vampair"
       }
     },
     "Curriculum": {
@@ -23,7 +25,9 @@
       "environmentVariables": {
         "KEYSECRET": "oHtmuHRrUF27VrT5AWSV7CtR4Sg8Nge5f7e4vC2Y",
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "BASEURL": "https://curriculum-d5769.firebaseio.com"
+        "BASEURL": "https://curriculum-d5769.firebaseio.com",
+        "EMAIL": "davidcamposch@gmail.com",
+        "EMAIL_PASSWORD": "DIMITRY+vampair"
       },
       "applicationUrl": "https://localhost:5001;http://localhost:5000"
     }

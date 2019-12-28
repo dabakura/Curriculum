@@ -2,43 +2,43 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Curriculum.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace Curriculum.Controllers
 {
-    //[Route("api/[controller]")]
-    public class SampleDataController : Controller
+    [ApiController]
+    [Route("[controller]")]
+    public class EmailController : Controller
     {
-        //private static string[] Summaries = new[]
-        //{
-        //    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        //};
+        private readonly ILogger<EmailController> _logger;
 
-        //[HttpGet("[action]")]
-        //public IEnumerable<WeatherForecast> WeatherForecasts()
-        //{
-        //    var rng = new Random();
-        //    return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-        //    {
-        //        DateFormatted = DateTime.Now.AddDays(index).ToString("d"),
-        //        TemperatureC = rng.Next(-20, 55),
-        //        Summary = Summaries[rng.Next(Summaries.Length)]
-        //    });
-        //}
+        public EmailController(ILogger<EmailController> logger)
+        {
+            _logger = logger;
+        }
 
-        //public class WeatherForecast
-        //{
-        //    public string DateFormatted { get; set; }
-        //    public int TemperatureC { get; set; }
-        //    public string Summary { get; set; }
-
-        //    public int TemperatureF
-        //    {
-        //        get
-        //        {
-        //            return 8;
-        //        }
-        //    }
-        //}
+        [HttpPost]
+        public async Task<bool> Post([FromBody] Email email)
+        {
+            var result = false;
+            if (ModelState.IsValid)
+            {
+                Mail mail = new Mail(email);
+                try
+                {
+                    _logger.LogInformation("Intentando conección con Gmail");
+                    result = await mail.SendMailAsync();
+                    _logger.LogInformation("Se envio el email");
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError("Error: Fallo la conección con Gmail:", ex);
+                    throw new ArgumentException("Se presento un error al Enviar el email", ex);
+                }
+            }
+            return result;
+        }
     }
 }

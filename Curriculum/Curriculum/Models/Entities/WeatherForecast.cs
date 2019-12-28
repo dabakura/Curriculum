@@ -1,6 +1,6 @@
 using System;
 
-namespace Curriculum.Models
+namespace Curriculum.Models.Entities
 {
     public class WeatherForecast
     {

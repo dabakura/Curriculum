@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Curriculum.Entities
+namespace Curriculum.Models
 {
     public interface IMail
     {

@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 using Curriculum.Models;
 using Newtonsoft.Json;
 
-namespace Curriculum.Entities
+namespace Curriculum.Models.Entities
 {
     public class FirebaseDB
     {
