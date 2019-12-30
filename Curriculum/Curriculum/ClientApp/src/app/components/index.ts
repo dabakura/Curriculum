@@ -13,6 +13,8 @@ import { EmailComponent } from "./email/email.component";
 import { CertificationItemComponent } from "./certification-item/certification-item.component";
 import { HomeComponent } from "./home/home.component";
 import { HomeMovilComponent } from "./home-movil/home-movil.component";
+import { JobItemComponent } from "./job-item/job-item.component";
+import { PersonalItemComponent } from "./personal-item/personal-item.component";
 
 export const COMPONENTS = [
   CardItemComponent,
@@ -28,6 +30,8 @@ export const COMPONENTS = [
   EmailComponent,
   CertificationItemComponent,
   TechnologiesComponent,
+  JobItemComponent,
+  PersonalItemComponent,
   HomeComponent,
   HomeMovilComponent
 ];

@@ -20,6 +20,7 @@ import { CounterComponent } from "./counter/counter.component";
 import { FetchDataComponent } from "./fetch-data/fetch-data.component";
 import { MainContainer } from "./containers/main/main.container";
 import { ProjectContainer } from "./containers/project/project.container";
+import { ReferenceContainer } from "./containers/reference/reference.container";
 import { CertificationContainer } from "./containers/certification/certification.container";
 
 // config imports
@@ -32,7 +33,6 @@ import * as fromGuards from "./guards";
 import { PortfolioEffects } from "./effects/portfolio.effects";
 /* import { CardItemComponent } from "./shared/components/card-item/card-item.component";
 import { ItemsListComponent } from "./shared/components/items-list/items-list.component"; */
-import { TestComponent } from "./components/test/test.component";
 // declarations ngrx imports
 const NGRX_IMPORTS = [
   StoreModule.forRoot(reducers, { metaReducers }),
@@ -56,7 +56,7 @@ const NGRX_IMPORTS = [
     ProjectContainer,
     CertificationContainer,
     FetchDataComponent,
-    TestComponent,
+    ReferenceContainer,
     ...fromComponents.COMPONENTS,
     ...fromContainers.CONTAINERS
   ],
@@ -68,7 +68,7 @@ const NGRX_IMPORTS = [
       { path: "", component: MainContainer, pathMatch: "full" },
       { path: "projects", component: ProjectContainer },
       { path: "certifications", component: CertificationContainer },
-      { path: "fetch-data", component: FetchDataComponent }
+      { path: "references", component: ReferenceContainer }
     ]),
     ...NGRX_IMPORTS
   ],
