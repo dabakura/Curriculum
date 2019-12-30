@@ -11,6 +11,7 @@ namespace Curriculum.Models.Entities
         DbSet<Knowledge> Knowledges { get; set; }
         DbSet<Project> Projects { get; set; }
         DbSet<Certification> Certifications { get; set; }
+        DbSet<Reference> References { get; set; }
         //DbSet<AdminEntity> Admins { get; set; }
         //DbSet<BookingEntity> Bookings { get; set; }
         //DbSet<OfficeEntity> Offices { get; set; }

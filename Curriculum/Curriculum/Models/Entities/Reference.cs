@@ -3,8 +3,7 @@ namespace Curriculum.Models.Entities
 {
     public class Reference
     {
-        public Reference()
-        {
-        }
+        public Job[] Jobs { get; set; }
+        public Personal[] Personals { get; set; }
     }
 }

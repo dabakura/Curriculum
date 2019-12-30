@@ -3,7 +3,8 @@ import {
   PortfolioModuleState,
   HomeUIState,
   ProjectUIState,
-  CertificationUIState
+  CertificationUIState,
+  ReferenceUIState
 } from "../states";
 import { Information } from "../models/Information";
 import { ProgrammingLanguages } from "../models/ProgrammingLanguages";
@@ -17,6 +18,10 @@ import { selectOtro } from "./otro.selectors";
 import { Technologie } from "../models/Technologie";
 import { Framework } from "../models/Framework";
 import { Otro } from "../models/Otro";
+import { selectPersonals } from "./personal.selectors";
+import { selectJobs } from "./job.selectors";
+import { Job } from "../models/Job";
+import { Personal } from "../models/Personal";
 
 export const selectHomeUIStateFeature = (state: PortfolioModuleState) =>
   state.homeUI;
@@ -24,6 +29,14 @@ export const selectHomeUIStateFeature = (state: PortfolioModuleState) =>
 export const getHomeUIState = createSelector(
   selectHomeUIStateFeature,
   (state: HomeUIState) => state
+);
+
+export const selectReferenceUIStateFeature = (state: PortfolioModuleState) =>
+  state.referenceUI;
+
+export const getreferenceUIState = createSelector(
+  selectReferenceUIStateFeature,
+  (state: ReferenceUIState) => state
 );
 
 export const selectProjectUIStateFeature = (state: PortfolioModuleState) =>
@@ -63,5 +76,14 @@ export const getHomeArrayState = createSelector(
     langua: state_langua,
     techn: { technologies: state_techn, otros: state_otro },
     frame: state_frame
+  })
+);
+
+export const getReferenceArrayState = createSelector(
+  selectPersonals,
+  selectJobs,
+  (state_person: Personal[], state_job: Job[]) => ({
+    person: state_person,
+    job: state_job
   })
 );

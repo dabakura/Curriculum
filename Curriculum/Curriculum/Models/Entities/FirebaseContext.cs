@@ -15,6 +15,7 @@ namespace Curriculum.Models.Entities
 			this.Knowledges = new DbSet<Knowledge>();
             this.Projects = new DbSet<Project>();
             this.Certifications = new DbSet<Certification>();
+            this.References = new DbSet<Reference>();
         }
 
 		public static FirebaseContext Database
@@ -26,5 +27,6 @@ namespace Curriculum.Models.Entities
 		public DbSet<Knowledge> Knowledges { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Certification> Certifications { get; set; }
+        public DbSet<Reference> References { get; set; }
     }
 }

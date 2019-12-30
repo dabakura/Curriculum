@@ -47,7 +47,17 @@ import {
   loadCertification,
   loadCertificationSuccess,
   loadCertificationFail,
-  loadCertificationsFail
+  loadCertificationsFail,
+  loadPersonalRequest,
+  loadPersonal,
+  loadPersonalSuccess,
+  loadPersonalFail,
+  loadJobRequest,
+  loadJob,
+  loadJobSuccess,
+  loadJobFail,
+  loadReferenceRequest,
+  loadReferenceFail
 } from "../actions";
 import { PortfolioService } from "../services/portfolio.service";
 
@@ -274,6 +284,59 @@ export class PortfolioEffects {
     this.actions$.pipe(
       ofType(loadCertificationsRequest),
       mergeMap(() => [loadCertificationRequest()])
+    )
+  );
+
+  loadPersonalRequest = createEffect(() =>
+    this.actions$.pipe(
+      ofType(loadPersonalRequest),
+      switchMap(() => {
+        return this.portfolioService.getPersonals().pipe(
+          mergeMap(personal => [
+            loadPersonal({ personal }),
+            loadPersonalSuccess()
+          ]),
+          catchError(error => {
+            console.error(error);
+            return of(loadPersonalFail({ error }));
+          })
+        );
+      })
+    )
+  );
+
+  loadJobRequest = createEffect(() =>
+    this.actions$.pipe(
+      ofType(loadJobRequest),
+      switchMap(() => {
+        return this.portfolioService.getJobs().pipe(
+          mergeMap(job => [loadJob({ job }), loadJobSuccess()]),
+          catchError(error => {
+            console.error(error);
+            return of(loadJobFail({ error }));
+          })
+        );
+      })
+    )
+  );
+
+  loadReferenceRequest = createEffect(() =>
+    this.actions$.pipe(
+      ofType(loadReferenceRequest),
+      switchMap(() => {
+        return this.portfolioService.getReference().pipe(
+          mergeMap(data => [
+            loadJob({ job: data.Jobs }),
+            loadJobSuccess(),
+            loadPersonal({ personal: data.Personals }),
+            loadPersonalSuccess()
+          ]),
+          catchError(error => {
+            console.error(error);
+            return of(loadReferenceFail({ error }));
+          })
+        );
+      })
     )
   );
 

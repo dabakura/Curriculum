@@ -1,8 +1,8 @@
 import * as fromRouter from "@ngrx/router-store";
-import { HomeUIState } from "./home-ui.state";
 import { Information } from "../models/Information";
 import { RouterStateUrl } from "../shared/utils/utils";
 import {
+  HomeUIState,
   LanguagesState,
   ProgrammingLanguagesState,
   TechnologieState,
@@ -11,7 +11,10 @@ import {
   ProjectState,
   ProjectUIState,
   CertificationUIState,
-  CertificationState
+  CertificationState,
+  JobState,
+  PersonalState,
+  ReferenceUIState
 } from ".";
 
 export interface PortfolioModuleState {
@@ -26,5 +29,8 @@ export interface PortfolioModuleState {
   projectUI: ProjectUIState;
   certifications: CertificationState;
   certificationUI: CertificationUIState;
+  Jobs: JobState;
+  Personals: PersonalState;
+  referenceUI: ReferenceUIState;
   router: fromRouter.RouterReducerState<RouterStateUrl>;
 }

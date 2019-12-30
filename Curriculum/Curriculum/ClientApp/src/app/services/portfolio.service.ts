@@ -12,6 +12,9 @@ import { Technologie } from "../models/Technologie";
 import { Otro } from "../models/Otro";
 import { Project } from "../models/Project";
 import { Certification } from "../models/Certification";
+import { Reference } from "../models/Reference";
+import { Job } from "../models/Job";
+import { Personal } from "../models/Personal";
 
 @Injectable({
   providedIn: "root"
@@ -92,5 +95,28 @@ export class PortfolioService {
     return this.http
       .get<Certification[]>(url, this.httpOptions)
       .pipe(catchError(error => throwError(error)));
+  }
+
+  getReference(): Observable<Reference> {
+    const url = `${this.apiUrl}/Reference`;
+    return this.http
+      .get<Reference>(url, this.httpOptions)
+      .pipe(catchError(error => throwError(error)));
+  }
+
+  getJobs(): Observable<Job[]> {
+    const url = `${this.apiUrl}/Reference`;
+    return this.http.get<Reference>(url, this.httpOptions).pipe(
+      map(todos => todos.Jobs),
+      catchError(error => throwError(error))
+    );
+  }
+
+  getPersonals(): Observable<Personal[]> {
+    const url = `${this.apiUrl}/Reference`;
+    return this.http.get<Reference>(url, this.httpOptions).pipe(
+      map(todos => todos.Personals),
+      catchError(error => throwError(error))
+    );
   }
 }

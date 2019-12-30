@@ -9,3 +9,6 @@ export * from "./project-ui.actions";
 export * from "./project.actions";
 export * from "./certification-ui.actions";
 export * from "./certification.actions";
+export * from "./job.actions";
+export * from "./reference-ui.actions";
+export * from "./personal.actions";
