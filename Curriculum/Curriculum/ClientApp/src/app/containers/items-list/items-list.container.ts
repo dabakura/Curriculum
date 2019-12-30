@@ -8,8 +8,7 @@ import {
 } from "@angular/core";
 import { CardItemComponent } from "../../components/card-item/card-item.component";
 import * as Colors from "../../../data/colors-items.json";
-import { Color } from "../../models/Color";
-import { Framework } from "../../models/Framework";
+import { Framework, Color } from "../../models";
 @Component({
   selector: "app-items-list",
   templateUrl: "./items-list.container.html",
@@ -20,8 +19,6 @@ export class ItemsListContainer implements OnInit, AfterViewInit {
   @Input() data: Framework[];
   @ViewChildren(CardItemComponent) cards: QueryList<CardItemComponent>;
   @Input() columns: number;
-
-  constructor() {}
 
   ngAfterViewInit(): void {
     this.cards.changes.subscribe((cards: QueryList<CardItemComponent>) => {

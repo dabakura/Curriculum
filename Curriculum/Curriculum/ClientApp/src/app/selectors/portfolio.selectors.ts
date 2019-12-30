@@ -1,4 +1,12 @@
 import { createSelector } from "@ngrx/store";
+import { selectInformationFeature } from "./information.selectors";
+import { selectProgrammingLanguages } from "./programming.selectors";
+import { selectLanguages } from "./languages.selectors";
+import { selectTechnologie } from "./technologie.selectors";
+import { selectFramework } from "./framework.selectors";
+import { selectOtro } from "./otro.selectors";
+import { selectPersonals } from "./personal.selectors";
+import { selectJobs } from "./job.selectors";
 import {
   PortfolioModuleState,
   HomeUIState,
@@ -6,22 +14,16 @@ import {
   CertificationUIState,
   ReferenceUIState
 } from "../states";
-import { Information } from "../models/Information";
-import { ProgrammingLanguages } from "../models/ProgrammingLanguages";
-import { selectInformationFeature } from "./information.selectors";
-import { Languages } from "../models/Languages";
-import { selectProgrammingLanguages } from "./programming.selectors";
-import { selectLanguages } from "./languages.selectors";
-import { selectTechnologie } from "./technologie.selectors";
-import { selectFramework } from "./framework.selectors";
-import { selectOtro } from "./otro.selectors";
-import { Technologie } from "../models/Technologie";
-import { Framework } from "../models/Framework";
-import { Otro } from "../models/Otro";
-import { selectPersonals } from "./personal.selectors";
-import { selectJobs } from "./job.selectors";
-import { Job } from "../models/Job";
-import { Personal } from "../models/Personal";
+import {
+  Personal,
+  Job,
+  Otro,
+  Framework,
+  Technologie,
+  Languages,
+  ProgrammingLanguages,
+  Information
+} from "../models";
 
 export const selectHomeUIStateFeature = (state: PortfolioModuleState) =>
   state.homeUI;

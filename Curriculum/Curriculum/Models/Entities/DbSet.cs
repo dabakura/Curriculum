@@ -9,13 +9,6 @@ namespace Curriculum.Models.Entities
 {
     public class DbSet<T> : FirebaseDB where T : class
     {
-        //public async Task<string> TaskAsync<String> ExistAsync(int Id)
-        //{
-        //    var data = await firebaseClient
-        //      .Child("prueba")
-        //      .OrderByKey()
-        //      .OnceAsync<PruebaViewModel>();
-        //}
         public async Task<String> GetAllAsync()
         {
             try
@@ -34,9 +27,5 @@ namespace Curriculum.Models.Entities
                 throw;
             }
         }
-        //Task<String> GetAsync(int Id);
-        //Task<bool> DeleteAsync(int Id);
-        //Task<T> UpdateAsync(T entity);
-        //Task<T> AddAsync(T entity);
     }
 }

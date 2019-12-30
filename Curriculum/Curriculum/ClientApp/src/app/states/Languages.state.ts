@@ -1,5 +1,5 @@
 import { EntityState, EntityAdapter, createEntityAdapter } from "@ngrx/entity";
-import { Languages } from "../models/Languages";
+import { Languages } from "../models";
 
 // tslint:disable-next-line: no-empty-interface
 export interface LanguagesState extends EntityState<Languages> {}

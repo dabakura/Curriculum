@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { Job } from "../../models/Job";
 
 @Component({
@@ -6,9 +6,6 @@ import { Job } from "../../models/Job";
   templateUrl: "./job-item.component.html",
   styleUrls: ["./job-item.component.css"]
 })
-export class JobItemComponent implements OnInit {
+export class JobItemComponent {
   @Input() job: Job;
-  constructor() {}
-
-  ngOnInit() {}
 }

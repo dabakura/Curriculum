@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Project } from "../../models/Project";
+import { Project } from "../../models";
 import { Store, select } from "@ngrx/store";
 import { PortfolioModuleState, ProjectUIState } from "../../states/";
 import { Observable } from "rxjs";

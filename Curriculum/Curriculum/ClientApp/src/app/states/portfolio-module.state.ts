@@ -1,5 +1,5 @@
 import * as fromRouter from "@ngrx/router-store";
-import { Information } from "../models/Information";
+import { Information } from "../models";
 import { RouterStateUrl } from "../shared/utils/utils";
 import {
   HomeUIState,

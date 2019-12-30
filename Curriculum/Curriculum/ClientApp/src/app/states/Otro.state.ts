@@ -1,5 +1,5 @@
 import { EntityState, EntityAdapter, createEntityAdapter } from "@ngrx/entity";
-import { Otro } from "../models/Otro";
+import { Otro } from "../models";
 
 // tslint:disable-next-line: no-empty-interface
 export interface OtroState extends EntityState<Otro> {}

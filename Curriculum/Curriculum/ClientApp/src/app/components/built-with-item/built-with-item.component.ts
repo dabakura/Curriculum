@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { Built } from "../models/build";
 
 @Component({
@@ -6,9 +6,6 @@ import { Built } from "../models/build";
   templateUrl: "./built-with-item.component.html",
   styleUrls: ["./built-with-item.component.css"]
 })
-export class BuiltWithItemComponent implements OnInit {
+export class BuiltWithItemComponent {
   @Input() data: Built;
-  constructor() {}
-
-  ngOnInit() {}
 }

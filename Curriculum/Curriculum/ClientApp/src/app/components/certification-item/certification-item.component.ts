@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild, ElementRef } from "@angular/core";
-import { Certification } from "../../models/Certification";
+import { Certification } from "../../models";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Component({

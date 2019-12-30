@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import * as Actions from "../actions/";
-import { Information } from "../models/Information";
+import { Information } from "../models";
 
 export const initialState: Information = {
   Birth_Date: "",

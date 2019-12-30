@@ -1,7 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import * as Actions from "../actions/";
-import { HomeUIState } from "../states/home-ui.state";
-import { NullTemplateVisitor } from "@angular/compiler";
+import { HomeUIState } from "../states";
 
 export const initialState: HomeUIState = {
   errorLoadingInformation: null,

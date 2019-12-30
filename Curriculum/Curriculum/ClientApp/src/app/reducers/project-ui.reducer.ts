@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import * as Actions from "../actions/";
-import { ProjectUIState } from "../states/project-ui.state";
+import { ProjectUIState } from "../states";
 
 export const initialState: ProjectUIState = {
   errorLoadingProject: null,

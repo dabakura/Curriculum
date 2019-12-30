@@ -1,5 +1,5 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from "@angular/core";
-import { Personal } from "../../models/Personal";
+import { Component, Input, ViewChild, ElementRef } from "@angular/core";
+import { Personal } from "../../models";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Component({
@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
   templateUrl: "./personal-item.component.html",
   styleUrls: ["./personal-item.component.css"]
 })
-export class PersonalItemComponent implements OnInit {
+export class PersonalItemComponent {
   @ViewChild("downloadZipLink", { static: true }) downloadLink: ElementRef;
   @Input() personal: Personal;
   constructor(private http: HttpClient) {}
@@ -32,6 +32,4 @@ export class PersonalItemComponent implements OnInit {
     link.click();
     window.URL.revokeObjectURL(url);
   }
-
-  ngOnInit() {}
 }

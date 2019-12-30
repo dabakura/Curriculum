@@ -7,8 +7,7 @@ import {
   AfterViewInit
 } from "@angular/core";
 import * as Colors from "../../../data/colors-items.json";
-import { Color } from "../../models/Color";
-import { Framework } from "../..//models/Framework";
+import { Framework, Color } from "../..//models";
 import { CardItemCircularComponent } from "../../components/card-item-circular/card-item-circular.component";
 
 @Component({
@@ -24,7 +23,6 @@ export class ItemsListCircularContainer implements OnInit, AfterViewInit {
   @ViewChildren(CardItemCircularComponent) cards: QueryList<
     CardItemCircularComponent
   >;
-  constructor() {}
 
   ngAfterViewInit(): void {
     this.cards.changes.subscribe(

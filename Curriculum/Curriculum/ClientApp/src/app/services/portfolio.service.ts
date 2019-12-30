@@ -1,20 +1,21 @@
 import { Injectable, Inject } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { environment } from "../../environments/environment";
-import { Information } from "../models/Information";
-import { Knowledge } from "../models/Knowledge";
-import { Observable, throwError, timer } from "rxjs";
-import { map, catchError, switchMap } from "rxjs/operators";
-import { ProgrammingLanguages } from "../models/ProgrammingLanguages";
-import { Languages } from "../models/Languages";
-import { Framework } from "../models/Framework";
-import { Technologie } from "../models/Technologie";
-import { Otro } from "../models/Otro";
-import { Project } from "../models/Project";
-import { Certification } from "../models/Certification";
-import { Reference } from "../models/Reference";
-import { Job } from "../models/Job";
-import { Personal } from "../models/Personal";
+import { Observable, throwError } from "rxjs";
+import { map, catchError } from "rxjs/operators";
+import {
+  Personal,
+  Job,
+  Reference,
+  Certification,
+  Project,
+  Otro,
+  Technologie,
+  Framework,
+  Languages,
+  ProgrammingLanguages,
+  Knowledge,
+  Information
+} from "../models";
 
 @Injectable({
   providedIn: "root"
@@ -22,22 +23,25 @@ import { Personal } from "../models/Personal";
 export class PortfolioService {
   private apiUrl: string;
   private httpOptions: { headers: HttpHeaders };
-  constructor(private http: HttpClient) {
-    this.apiUrl = "https://192.168.42.98:5001";
+  constructor(
+    private http: HttpClient,
+    @Inject("BASE_URL") private baseUrl: string
+  ) {
+    this.apiUrl = this.baseUrl;
     this.httpOptions = {
       headers: new HttpHeaders({ "Content-Type": "application/json" })
     };
   }
 
   getKnowledge(): Observable<Knowledge> {
-    const url = `${this.apiUrl}/Knowledge`;
+    const url = `${this.apiUrl}Knowledge`;
     return this.http
       .get<Knowledge>(url, this.httpOptions)
       .pipe(catchError(error => throwError(error)));
   }
 
   getProgrammingLanguages(): Observable<ProgrammingLanguages[]> {
-    const url = `${this.apiUrl}/Knowledge`;
+    const url = `${this.apiUrl}Knowledge`;
     return this.http.get<Knowledge>(url, this.httpOptions).pipe(
       map(todos => todos.Programming_Languages),
       catchError(error => throwError(error))
@@ -45,7 +49,7 @@ export class PortfolioService {
   }
 
   getLanguages(): Observable<Languages[]> {
-    const url = `${this.apiUrl}/Knowledge`;
+    const url = `${this.apiUrl}Knowledge`;
     return this.http.get<Knowledge>(url, this.httpOptions).pipe(
       map(todos => todos.Languages),
       catchError(error => throwError(error))
@@ -53,7 +57,7 @@ export class PortfolioService {
   }
 
   getFrameworks(): Observable<Framework[]> {
-    const url = `${this.apiUrl}/Knowledge`;
+    const url = `${this.apiUrl}Knowledge`;
     return this.http.get<Knowledge>(url, this.httpOptions).pipe(
       map(todos => todos.Frameworks),
       catchError(error => throwError(error))
@@ -61,7 +65,7 @@ export class PortfolioService {
   }
 
   getTechnologies(): Observable<Technologie[]> {
-    const url = `${this.apiUrl}/Knowledge`;
+    const url = `${this.apiUrl}Knowledge`;
     return this.http.get<Knowledge>(url, this.httpOptions).pipe(
       map(todos => todos.Technologies),
       catchError(error => throwError(error))
@@ -69,7 +73,7 @@ export class PortfolioService {
   }
 
   getOtros(): Observable<Otro[]> {
-    const url = `${this.apiUrl}/Knowledge`;
+    const url = `${this.apiUrl}Knowledge`;
     return this.http.get<Knowledge>(url, this.httpOptions).pipe(
       map(todos => todos.Otros),
       catchError(error => throwError(error))
@@ -77,35 +81,35 @@ export class PortfolioService {
   }
 
   getInformation(): Observable<Information> {
-    const url = `${this.apiUrl}/Information`;
+    const url = `${this.apiUrl}Information`;
     return this.http
       .get<Information>(url, this.httpOptions)
       .pipe(catchError(error => throwError(error)));
   }
 
   getProject(): Observable<Project[]> {
-    const url = `${this.apiUrl}/Project`;
+    const url = `${this.apiUrl}Project`;
     return this.http
       .get<Project[]>(url, this.httpOptions)
       .pipe(catchError(error => throwError(error)));
   }
 
   getCertification(): Observable<Certification[]> {
-    const url = `${this.apiUrl}/Certification`;
+    const url = `${this.apiUrl}Certification`;
     return this.http
       .get<Certification[]>(url, this.httpOptions)
       .pipe(catchError(error => throwError(error)));
   }
 
   getReference(): Observable<Reference> {
-    const url = `${this.apiUrl}/Reference`;
+    const url = `${this.apiUrl}Reference`;
     return this.http
       .get<Reference>(url, this.httpOptions)
       .pipe(catchError(error => throwError(error)));
   }
 
   getJobs(): Observable<Job[]> {
-    const url = `${this.apiUrl}/Reference`;
+    const url = `${this.apiUrl}Reference`;
     return this.http.get<Reference>(url, this.httpOptions).pipe(
       map(todos => todos.Jobs),
       catchError(error => throwError(error))
@@ -113,7 +117,7 @@ export class PortfolioService {
   }
 
   getPersonals(): Observable<Personal[]> {
-    const url = `${this.apiUrl}/Reference`;
+    const url = `${this.apiUrl}Reference`;
     return this.http.get<Reference>(url, this.httpOptions).pipe(
       map(todos => todos.Personals),
       catchError(error => throwError(error))

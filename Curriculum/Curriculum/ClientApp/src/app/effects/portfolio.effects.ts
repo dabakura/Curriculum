@@ -1,13 +1,7 @@
 import { Injectable } from "@angular/core";
-import { Actions, Effect, ofType, createEffect } from "@ngrx/effects";
+import { Actions, ofType, createEffect } from "@ngrx/effects";
 import { of } from "rxjs";
-import {
-  switchMap,
-  catchError,
-  mergeMap,
-  map,
-  concatMap
-} from "rxjs/operators";
+import { switchMap, catchError, mergeMap } from "rxjs/operators";
 
 import {
   loadHomeRequest,
@@ -40,14 +34,12 @@ import {
   loadProjectSuccess,
   loadProjectFail,
   loadHomeFail,
-  loadProjectsFail,
   loadProjectRequest,
   loadCertificationRequest,
   loadCertificationsRequest,
   loadCertification,
   loadCertificationSuccess,
   loadCertificationFail,
-  loadCertificationsFail,
   loadPersonalRequest,
   loadPersonal,
   loadPersonalSuccess,
@@ -192,24 +184,6 @@ export class PortfolioEffects {
     )
   );
 
-  /* loadProjectsRequest = createEffect(() =>
-    this.actions$.pipe(
-      ofType(loadProjectsRequest),
-      switchMap(() => {
-        return this.portfolioService.getProject().pipe(
-          mergeMap(project => [
-            loadProject({ project: project }),
-            loadProjectSuccess()
-          ]),
-          catchError(error => {
-            console.error(error);
-            return of(loadProjectsFail({ error }));
-          })
-        );
-      })
-    )
-  ); */
-
   loadHomeRequest = createEffect(() =>
     this.actions$.pipe(
       ofType(loadHomeRequest),
@@ -261,24 +235,6 @@ export class PortfolioEffects {
       })
     )
   );
-
-  /* loadCertificationsRequest = createEffect(() =>
-    this.actions$.pipe(
-      ofType(loadCertificationsRequest),
-      switchMap(() => {
-        return this.portfolioService.getCertification().pipe(
-          mergeMap(data => [
-            loadCertification({ certification: data }),
-            loadCertificationSuccess()
-          ]),
-          catchError(error => {
-            console.error(error);
-            return of(loadCertificationsFail({ error }));
-          })
-        );
-      })
-    )
-  ); */
 
   loadCertificationsRequest = createEffect(() =>
     this.actions$.pipe(

@@ -24,7 +24,6 @@ code {
 
 .lds-hourglass {
     display: inline-block;
-    /*position: relative;*/
     position: absolute;
     top: 50%;
     margin-top: -50px;

@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { Technologie } from "../models/Technologie";
+import { Technologie } from "../models";
 
 export const loadTechnologie = createAction(
   "[PortfolioModule] LoadTechnologie",

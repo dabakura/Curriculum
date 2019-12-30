@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import * as Actions from "../actions/";
-import { CertificationUIState } from "../states/certification-ui.state";
+import { CertificationUIState } from "../states";
 
 export const initialState: CertificationUIState = {
   errorLoadingCertification: null,

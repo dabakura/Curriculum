@@ -1,6 +1,5 @@
 import {
   Component,
-  OnInit,
   Renderer2,
   ViewChild,
   ElementRef,
@@ -12,7 +11,7 @@ import {
   templateUrl: "./card-item.component.html",
   styleUrls: ["./card-item.component.css"]
 })
-export class CardItemComponent implements OnInit {
+export class CardItemComponent {
   public indicador: string;
   public sombra: string;
   public fondo: string;
@@ -30,8 +29,6 @@ export class CardItemComponent implements OnInit {
     this.percentagestring = "";
     this.contenido = "";
   }
-
-  ngOnInit(): void {}
 
   /**
    * updateColors

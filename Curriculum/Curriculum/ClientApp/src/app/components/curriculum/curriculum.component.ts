@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from "@angular/core";
-import { Information } from "src/app/models/Information";
+import { Component, Input } from "@angular/core";
+import { Information } from "src/app/models";
 
 @Component({
   selector: "app-curriculum",

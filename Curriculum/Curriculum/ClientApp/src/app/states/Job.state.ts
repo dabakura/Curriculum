@@ -1,5 +1,5 @@
 import { EntityState, EntityAdapter, createEntityAdapter } from "@ngrx/entity";
-import { Job } from "../models/Job";
+import { Job } from "../models";
 
 // tslint:disable-next-line: no-empty-interface
 export interface JobState extends EntityState<Job> {}

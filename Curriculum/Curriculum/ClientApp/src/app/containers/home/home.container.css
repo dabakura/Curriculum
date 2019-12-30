@@ -33,7 +33,6 @@ span.badge.new:after {
     transform: skew(0deg, 4deg) translateY(60px);
     margin-bottom: 3.75rem;
     background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
-    /* background-image: linear-gradient(45deg, #303f9f, #7b1fa2); */
     background-color: #3f72af;
 }
 
@@ -50,7 +49,6 @@ span.badge.new:after {
 }
 
 .frame {
-    /*  background-image: linear-gradient(45deg, #303f9f, #7b1fa2); */
     background-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
     background-color: #21D4FD;
     padding-top: 54px;

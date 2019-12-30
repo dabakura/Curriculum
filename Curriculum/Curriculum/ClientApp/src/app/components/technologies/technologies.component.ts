@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { Technologie } from "../../models/Technologie";
-import { Otro } from "../../models/Otro";
+import { Otro, Technologie } from "../../models";
 
 @Component({
   selector: "app-technologies",
@@ -11,8 +10,6 @@ export class TechnologiesComponent implements OnInit {
   @Input() data: Technologie | Otro;
   @Input() lastChild: boolean;
   public lineal: boolean;
-
-  constructor() {}
 
   ngOnInit() {
     this.lineal = !this.isTechnologie(this.data);

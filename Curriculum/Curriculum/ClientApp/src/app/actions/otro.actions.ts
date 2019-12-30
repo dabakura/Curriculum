@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { Otro } from "../models/Otro";
+import { Otro } from "../models";
 
 export const loadOtro = createAction(
   "[PortfolioModule] LoadOtro",

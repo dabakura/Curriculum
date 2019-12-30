@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import * as Actions from "../actions";
-import { ReferenceUIState } from "../states/reference-ui.state";
+import { ReferenceUIState } from "../states";
 
 export const initialState: ReferenceUIState = {
   errorLoadingJob: null,

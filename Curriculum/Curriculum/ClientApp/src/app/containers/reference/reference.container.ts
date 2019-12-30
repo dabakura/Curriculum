@@ -5,8 +5,7 @@ import { Observable } from "rxjs";
 import { getreferenceUIState, getReferenceArrayState } from "../../selectors";
 import { ReferenceUIState } from "../../states";
 import * as ReferenceUIActions from "../../actions/reference-ui.actions";
-import { Job } from "../../models/Job";
-import { Personal } from "../../models/Personal";
+import { Personal, Job } from "../../models";
 
 @Component({
   selector: "app-reference",

@@ -1,5 +1,5 @@
 import { EntityState, EntityAdapter, createEntityAdapter } from "@ngrx/entity";
-import { Framework } from "../models/Framework";
+import { Framework } from "../models";
 
 // tslint:disable-next-line: no-empty-interface
 export interface FrameworkState extends EntityState<Framework> {}

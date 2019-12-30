@@ -30,37 +30,6 @@ namespace Curriculum.Models.Entities
                      AuthTokenAsyncFactory = () => Task.FromResult(APISECRET),
                  });
         }
-        //public static async Task<int> Coneccion()
-        //{
-
-        //    var firebaseClient = new FirebaseClient(
-        //       URL,
-        //       new FirebaseOptions
-        //       {
-        //           AuthTokenAsyncFactory = () => Task.FromResult(APISECRET),
-
-        //       });
-
-        //    var data = await firebaseClient
-        //      .Child("prueba")
-        //      .OrderByKey()
-        //      .OnceAsync<PruebaViewModel>();
-
-        //    var data4 = await firebaseClient
-        //      .Child("Knowledge")
-        //      .OrderByKey()
-        //      .OnceSingleAsync<Object>();
-
-        //    String salida = JsonConvert.SerializeObject(data4);
-
-        //    int numero = 0;
-
-        //    foreach (var d in data)
-        //    {
-        //        String valor = d.Key;
-        //        numero = d.Object.numero;
-        //    }
-        //    return numero;
-        //}
+        
     }
 }
