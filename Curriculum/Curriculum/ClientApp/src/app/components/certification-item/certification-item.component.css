@@ -10,3 +10,20 @@ a {
     position: relative;
     transform: translateY(0%) !important;
 }
+
+img {
+    height: 500px;
+}
+
+@media screen and (max-width: 800px) {
+    img {
+        height: 300px;
+    }
+    .row .col {
+        padding: 0;
+    }
+    .flotar {
+        position: absolute;
+        right: 10px;
+    }
+}

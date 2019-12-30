@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-image waves-effect waves-block waves-light" (click)="DowmloadPDF()">
-        <img [src]="'/assets/img/certification/' + certification.Image" *ngIf="show_image" height="500">
+        <img [src]="'/assets/img/certification/' + certification.Image" *ngIf="show_image">
     </div>
     <div class="card-content" *ngIf="show_image" [ngStyle]="{ 'display':show_image ? 'block' : 'none' }">
         <span class="card-title activator grey-text text-darken-4" (click)="DisplayImage()">{{certification.Title}}<i
@@ -12,7 +12,7 @@
     </div>
     <div class="card-reveal card-content" [ngStyle]="{ 'display':show_image ? 'none' : 'block' }">
         <span class="card-title grey-text text-darken-4" (click)="DisplayImage()">{{certification.Title}}<i
-        class="material-icons right">close</i></span>
+        class="material-icons right flotar">close</i></span>
         <div class="row">
             <div class="left col">{{certification.Institution}}</div>
             <div class="right col">{{certification.Date}}</div>
