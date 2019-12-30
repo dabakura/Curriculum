@@ -91,3 +91,10 @@ textarea.valid {
     border-bottom: 1px solid #fff;
     box-shadow: 0 1px 0 0 #fff;
 }
+
+@media screen and (max-width: 500px) {
+    .tap-target {
+        border-radius: 0;
+        bottom: -70px;
+    }
+}
