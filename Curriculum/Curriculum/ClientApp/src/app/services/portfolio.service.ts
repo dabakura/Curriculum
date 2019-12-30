@@ -11,6 +11,7 @@ import { Framework } from "../models/Framework";
 import { Technologie } from "../models/Technologie";
 import { Otro } from "../models/Otro";
 import { Project } from "../models/Project";
+import { Certification } from "../models/Certification";
 
 @Injectable({
   providedIn: "root"
@@ -19,7 +20,7 @@ export class PortfolioService {
   private apiUrl: string;
   private httpOptions: { headers: HttpHeaders };
   constructor(private http: HttpClient) {
-    this.apiUrl = "https://localhost:5001";
+    this.apiUrl = "https://192.168.42.98:5001";
     this.httpOptions = {
       headers: new HttpHeaders({ "Content-Type": "application/json" })
     };
@@ -83,6 +84,13 @@ export class PortfolioService {
     const url = `${this.apiUrl}/Project`;
     return this.http
       .get<Project[]>(url, this.httpOptions)
+      .pipe(catchError(error => throwError(error)));
+  }
+
+  getCertification(): Observable<Certification[]> {
+    const url = `${this.apiUrl}/Certification`;
+    return this.http
+      .get<Certification[]>(url, this.httpOptions)
       .pipe(catchError(error => throwError(error)));
   }
 }

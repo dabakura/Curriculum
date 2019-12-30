@@ -9,6 +9,10 @@ import { BuiltWithItemComponent } from "./built-with-item/built-with-item.compon
 import { VideoItemComponent } from "./video-item/video-item.component";
 import { ImageItemComponent } from "./image-item/image-item.component";
 import { ProjectItemComponent } from "./project-item/project-item.component";
+import { EmailComponent } from "./email/email.component";
+import { CertificationItemComponent } from "./certification-item/certification-item.component";
+import { HomeComponent } from "./home/home.component";
+import { HomeMovilComponent } from "./home-movil/home-movil.component";
 
 export const COMPONENTS = [
   CardItemComponent,
@@ -21,5 +25,9 @@ export const COMPONENTS = [
   VideoItemComponent,
   ImageItemComponent,
   ProjectItemComponent,
-  TechnologiesComponent
+  EmailComponent,
+  CertificationItemComponent,
+  TechnologiesComponent,
+  HomeComponent,
+  HomeMovilComponent
 ];

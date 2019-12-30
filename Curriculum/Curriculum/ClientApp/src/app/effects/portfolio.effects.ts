@@ -41,7 +41,13 @@ import {
   loadProjectFail,
   loadHomeFail,
   loadProjectsFail,
-  loadProjectRequest
+  loadProjectRequest,
+  loadCertificationRequest,
+  loadCertificationsRequest,
+  loadCertification,
+  loadCertificationSuccess,
+  loadCertificationFail,
+  loadCertificationsFail
 } from "../actions";
 import { PortfolioService } from "../services/portfolio.service";
 
@@ -172,10 +178,17 @@ export class PortfolioEffects {
   loadProjectsRequest = createEffect(() =>
     this.actions$.pipe(
       ofType(loadProjectsRequest),
+      mergeMap(() => [loadProjectRequest()])
+    )
+  );
+
+  /* loadProjectsRequest = createEffect(() =>
+    this.actions$.pipe(
+      ofType(loadProjectsRequest),
       switchMap(() => {
         return this.portfolioService.getProject().pipe(
-          mergeMap(data => [
-            loadProject({ project: data }),
+          mergeMap(project => [
+            loadProject({ project: project }),
             loadProjectSuccess()
           ]),
           catchError(error => {
@@ -185,7 +198,7 @@ export class PortfolioEffects {
         );
       })
     )
-  );
+  ); */
 
   loadHomeRequest = createEffect(() =>
     this.actions$.pipe(
@@ -218,6 +231,49 @@ export class PortfolioEffects {
           })
         );
       })
+    )
+  );
+
+  loadCertificationRequest = createEffect(() =>
+    this.actions$.pipe(
+      ofType(loadCertificationRequest),
+      switchMap(() => {
+        return this.portfolioService.getCertification().pipe(
+          mergeMap(certification => [
+            loadCertification({ certification }),
+            loadCertificationSuccess()
+          ]),
+          catchError(error => {
+            console.error(error);
+            return of(loadCertificationFail({ error }));
+          })
+        );
+      })
+    )
+  );
+
+  /* loadCertificationsRequest = createEffect(() =>
+    this.actions$.pipe(
+      ofType(loadCertificationsRequest),
+      switchMap(() => {
+        return this.portfolioService.getCertification().pipe(
+          mergeMap(data => [
+            loadCertification({ certification: data }),
+            loadCertificationSuccess()
+          ]),
+          catchError(error => {
+            console.error(error);
+            return of(loadCertificationsFail({ error }));
+          })
+        );
+      })
+    )
+  ); */
+
+  loadCertificationsRequest = createEffect(() =>
+    this.actions$.pipe(
+      ofType(loadCertificationsRequest),
+      mergeMap(() => [loadCertificationRequest()])
     )
   );
 

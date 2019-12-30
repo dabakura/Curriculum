@@ -1,8 +1,45 @@
 img {
     height: 110px;
     z-index: 2;
-    top: 17%;
+    top: 27%;
     text-align: center;
     position: absolute;
     left: -57px;
+}
+
+.titulo {
+    padding-left: 0.5rem;
+}
+
+@media screen and (max-width: 325px) {
+    img {
+        height: 110px;
+        z-index: 2;
+        top: 27%;
+        text-align: center;
+        position: absolute;
+        left: -30%;
+    }
+}
+
+@media screen and (max-width: 489px) and (min-width: 326px) {
+    img {
+        height: 110px;
+        z-index: 2;
+        top: 27%;
+        text-align: center;
+        position: absolute;
+        left: -17%;
+    }
+}
+
+@media screen and (max-width: 790px) and (min-width: 490px) {
+    img {
+        height: 110px;
+        z-index: 2;
+        top: 27%;
+        text-align: center;
+        position: absolute;
+        left: -12%;
+    }
 }

@@ -14,7 +14,7 @@ export const loadProjectFail = createAction(
 );
 
 export const loadProjectsRequest = createAction(
-  "[PortfolioModule] loadHomeRequest"
+  "[PortfolioModule] loadProjectsRequest"
 );
 
 export const loadProjectsFail = createAction(

@@ -64,8 +64,7 @@ export class CardItemCircularComponent implements OnInit {
       console.log(visiblecontent);
       console.log("===================================="); */
       if (visiblecontent > -1260 && visiblecontent < -900 && self.status) {
-        self.progress.nativeElement.innerHTML =
-          '<span class="percent" style="position: absolute; width: 35px; max-width: 35px;"></span>';
+        self.progress.nativeElement.innerHTML = "";
         self.chart = self.Chart(self.progress.nativeElement, data);
         self.chart.update(data.percent.toFixed());
         const source = timer(6000);

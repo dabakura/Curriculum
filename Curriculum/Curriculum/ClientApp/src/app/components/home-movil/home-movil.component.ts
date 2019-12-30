@@ -6,18 +6,17 @@ import { Observable } from "rxjs";
 import { getHomeUIState, getHomeArrayState } from "../../selectors";
 import { HomeUIState } from "../../states";
 import * as HomeUIActions from "../../actions/home-ui.actions";
-import { ProgrammingLanguages } from "src/app/models/ProgrammingLanguages";
-import { Languages } from "src/app/models/Languages";
-import { Framework } from "src/app/models/Framework";
-import { Technologie } from "src/app/models/Technologie";
-import { Otro } from "src/app/models/Otro";
-
+import { ProgrammingLanguages } from "../../models/ProgrammingLanguages";
+import { Languages } from "../../models/Languages";
+import { Framework } from "../../models/Framework";
+import { Technologie } from "../../models/Technologie";
+import { Otro } from "../../models/Otro";
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.container.html",
-  styleUrls: ["./home.container.css"]
+  selector: "app-home-movil",
+  templateUrl: "./home-movil.component.html",
+  styleUrls: ["./home-movil.component.css"]
 })
-export class HomeContainer implements OnInit {
+export class HomeMovilComponent implements OnInit {
   information$: Observable<Information>;
   programming_Languages$: Observable<ProgrammingLanguages[]>;
   indicators$: Observable<HomeUIState>;

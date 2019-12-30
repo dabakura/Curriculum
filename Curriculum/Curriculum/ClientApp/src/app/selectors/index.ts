@@ -6,3 +6,4 @@ export * from "./otro.selectors";
 export * from "./framework.selectors";
 export * from "./technologie.selectors";
 export * from "./project.selectors";
+export * from "./certification.selectors";

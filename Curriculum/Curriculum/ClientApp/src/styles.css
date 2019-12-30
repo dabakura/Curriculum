@@ -1,38 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
 
+
 /* Provide sufficient contrast against white background */
+
 a {
-  color: #0366d6;
+    color: #0366d6;
 }
 
 code {
-  color: #e01a76;
+    color: #e01a76;
 }
 
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 .relleno {
-  background-color: #311b92;
-  height: 100vh;
+    background-color: #311b92;
+    height: 100vh;
 }
 
 .lds-hourglass {
-  display: inline-block;
-  /*position: relative;*/
-  position: absolute;
-  top: 50%;
-  margin-top: -50px;
-  left: 50%;
-  margin-left: -50px;
-  width: 200px;
-  height: 200px;
+    display: inline-block;
+    /*position: relative;*/
+    position: absolute;
+    top: 50%;
+    margin-top: -50px;
+    left: 50%;
+    margin-left: -50px;
+    width: 200px;
+    height: 200px;
 }
 
-  .lds-hourglass:after {
+.lds-hourglass:after {
     content: " ";
     display: block;
     border-radius: 50%;
@@ -43,20 +45,18 @@ code {
     border: 32px solid #fff;
     border-color: #fff transparent #fff transparent;
     animation: lds-hourglass 1.2s infinite;
-  }
+}
 
 @keyframes lds-hourglass {
-  0% {
-    transform: rotate(0);
-    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-  }
-
-  50% {
-    transform: rotate(900deg);
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  100% {
-    transform: rotate(1800deg);
-  }
+    0% {
+        transform: rotate(0);
+        animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    50% {
+        transform: rotate(900deg);
+        animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    100% {
+        transform: rotate(1800deg);
+    }
 }

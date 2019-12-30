@@ -1,5 +1,10 @@
 import { createSelector } from "@ngrx/store";
-import { PortfolioModuleState, HomeUIState, ProjectUIState } from "../states";
+import {
+  PortfolioModuleState,
+  HomeUIState,
+  ProjectUIState,
+  CertificationUIState
+} from "../states";
 import { Information } from "../models/Information";
 import { ProgrammingLanguages } from "../models/ProgrammingLanguages";
 import { selectInformationFeature } from "./information.selectors";
@@ -27,6 +32,15 @@ export const selectProjectUIStateFeature = (state: PortfolioModuleState) =>
 export const getProjectUIState = createSelector(
   selectProjectUIStateFeature,
   (state: ProjectUIState) => state
+);
+
+export const selectCertificationUIStateFeature = (
+  state: PortfolioModuleState
+) => state.certificationUI;
+
+export const getCertificationUIState = createSelector(
+  selectCertificationUIStateFeature,
+  (state: CertificationUIState) => state
 );
 
 export const getHomeArrayState = createSelector(

@@ -1,0 +1,8 @@
+<div class="loading" *ngIf="showInformation">
+    <img src="/assets/img/certification/background_certification.png" class="loading-img" *ngFor="let item of ['1','2','3','4']">
+</div>
+<div class="container" *ngIf="!showInformation">
+    <div *ngFor="let certification of (data$ | async)">
+        <app-certification-item [certification]="certification"></app-certification-item>
+    </div>
+</div>

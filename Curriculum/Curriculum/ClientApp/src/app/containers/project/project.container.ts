@@ -4,7 +4,7 @@ import { Store, select } from "@ngrx/store";
 import { PortfolioModuleState, ProjectUIState } from "../../states/";
 import { Observable } from "rxjs";
 import * as ProjectUIActions from "../../actions/project-ui.actions";
-import { getProjectUIState, selectProject } from "src/app/selectors";
+import { getProjectUIState, selectProject } from "../../selectors";
 
 @Component({
   selector: "app-project",

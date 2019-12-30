@@ -18,8 +18,9 @@ import { AppComponent } from "./app.component";
 import { NavMenuComponent } from "./components/nav-menu/nav-menu.component";
 import { CounterComponent } from "./counter/counter.component";
 import { FetchDataComponent } from "./fetch-data/fetch-data.component";
-import { HomeContainer } from "./containers/home/home.container";
+import { MainContainer } from "./containers/main/main.container";
 import { ProjectContainer } from "./containers/project/project.container";
+import { CertificationContainer } from "./containers/certification/certification.container";
 
 // config imports
 import * as fromComponents from "./components";
@@ -31,7 +32,7 @@ import * as fromGuards from "./guards";
 import { PortfolioEffects } from "./effects/portfolio.effects";
 /* import { CardItemComponent } from "./shared/components/card-item/card-item.component";
 import { ItemsListComponent } from "./shared/components/items-list/items-list.component"; */
-
+import { TestComponent } from "./components/test/test.component";
 // declarations ngrx imports
 const NGRX_IMPORTS = [
   StoreModule.forRoot(reducers, { metaReducers }),
@@ -51,9 +52,11 @@ const NGRX_IMPORTS = [
     AppComponent,
     NavMenuComponent,
     CounterComponent,
-    HomeContainer,
+    MainContainer,
     ProjectContainer,
+    CertificationContainer,
     FetchDataComponent,
+    TestComponent,
     ...fromComponents.COMPONENTS,
     ...fromContainers.CONTAINERS
   ],
@@ -62,9 +65,9 @@ const NGRX_IMPORTS = [
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: "", component: HomeContainer, pathMatch: "full" },
+      { path: "", component: MainContainer, pathMatch: "full" },
       { path: "projects", component: ProjectContainer },
-      { path: "counter", component: CounterComponent },
+      { path: "certifications", component: CertificationContainer },
       { path: "fetch-data", component: FetchDataComponent }
     ]),
     ...NGRX_IMPORTS

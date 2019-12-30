@@ -17,6 +17,8 @@ import { frameworkReducer } from "./framework.reducer";
 import { technologieReducer } from "./technologie.reducer";
 import { projectUIReducer } from "./project-ui.reducer";
 import { projectReducer } from "./project.reducer";
+import { certificationUIReducer } from "./certification-ui.reducer";
+import { certificationReducer } from "./certification.reducer";
 
 export const reducers: ActionReducerMap<PortfolioModuleState> = {
   information: informationReducer,
@@ -28,7 +30,9 @@ export const reducers: ActionReducerMap<PortfolioModuleState> = {
   homeUI: homeUIReducer,
   router: fromRouter.routerReducer,
   projectUI: projectUIReducer,
-  projects: projectReducer
+  projects: projectReducer,
+  certificationUI: certificationUIReducer,
+  certifications: certificationReducer
 };
 
 export function logger(

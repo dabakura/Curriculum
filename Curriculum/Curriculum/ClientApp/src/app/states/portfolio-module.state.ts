@@ -9,7 +9,9 @@ import {
   OtroState,
   FrameworkState,
   ProjectState,
-  ProjectUIState
+  ProjectUIState,
+  CertificationUIState,
+  CertificationState
 } from ".";
 
 export interface PortfolioModuleState {
@@ -22,5 +24,7 @@ export interface PortfolioModuleState {
   homeUI: HomeUIState;
   projects: ProjectState;
   projectUI: ProjectUIState;
+  certifications: CertificationState;
+  certificationUI: CertificationUIState;
   router: fromRouter.RouterReducerState<RouterStateUrl>;
 }

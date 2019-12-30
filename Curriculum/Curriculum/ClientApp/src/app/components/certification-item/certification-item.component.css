@@ -1,0 +1,12 @@
+.card .card-reveal {
+    overflow-y: hidden;
+}
+
+a {
+    cursor: grabbing;
+}
+
+.card .card-reveal {
+    position: relative;
+    transform: translateY(0%) !important;
+}

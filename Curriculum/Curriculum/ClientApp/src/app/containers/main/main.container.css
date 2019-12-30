@@ -1,0 +1,16 @@
+.show {
+    display: block;
+}
+
+.show-movil {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .show {
+        display: none;
+    }
+    .show-movil {
+        display: block;
+    }
+}

@@ -1,0 +1,34 @@
+<!-- Element Showed -->
+<div class="fixed-action-btn" #floating>
+    <a id="menu" class="btn-floating waves-effect waves-light btn deep-purple darken-1" (click)="open()">
+        <i class="large material-icons">email</i>
+    </a>
+</div>
+<!-- Tap Target Structure -->
+<div class="tap-target deep-purple darken-4" data-target="menu" #discovery>
+    <div class="tap-target-content">
+        <div class="row">
+            <form class="col s12" #f="ngForm">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">email</i>
+                        <input id="email" type="email" class="validate" [(ngModel)]="email.from" name="from" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">subject</i>
+                        <input id="subject" type="text" class="validate" [(ngModel)]="email.subject" name="subject" required>
+                        <label for="subject">Asunto</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">message</i>
+                        <textarea id="message" class="materialize-textarea" [(ngModel)]="email.message" name="message" required></textarea>
+                        <label for="message">Mensaje</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

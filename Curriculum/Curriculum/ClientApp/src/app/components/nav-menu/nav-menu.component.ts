@@ -8,10 +8,12 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 })
 export class NavMenuComponent implements AfterViewInit {
   @ViewChild("downloadZipLink", { static: true }) downloadLink: ElementRef;
+  @ViewChild("download", { static: true }) download: ElementRef;
   @ViewChild("sidenav", { static: false }) sidenav: ElementRef;
   constructor(private http: HttpClient) {}
   ngAfterViewInit(): void {
     M.Sidenav.init(this.sidenav.nativeElement);
+    M.Tooltip.init(this.download.nativeElement, {position:"left"});
   }
   public async downloadResource(): Promise<Blob> {
     let headers = new HttpHeaders();

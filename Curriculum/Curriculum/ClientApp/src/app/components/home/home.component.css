@@ -60,3 +60,7 @@ span.badge.new:after {
     transform: skew(0deg, -4deg);
     padding-bottom: 3.75rem;
 }
+
+.row {
+    margin-bottom: 0;
+}
