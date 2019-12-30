@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, ViewChild, ElementRef } from "@angular/core";
 import { Personal } from "../../models/Personal";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Component({
   selector: "app-personal-item",
@@ -7,8 +8,30 @@ import { Personal } from "../../models/Personal";
   styleUrls: ["./personal-item.component.css"]
 })
 export class PersonalItemComponent implements OnInit {
+  @ViewChild("downloadZipLink", { static: true }) downloadLink: ElementRef;
   @Input() personal: Personal;
-  constructor() {}
+  constructor(private http: HttpClient) {}
+  public async downloadResource(): Promise<Blob> {
+    let headers = new HttpHeaders();
+    headers = headers.set("Accept", "application/pdf");
+    const url = "/assets/pdf/reference/" + this.personal.Pdf;
+    const file = await this.http
+      .get<Blob>(url, { headers: headers, responseType: "blob" as "json" })
+      .toPromise();
+    return file;
+  }
+  /**
+   * DowmloadPDF
+   */
+  public async DowmloadPDF() {
+    const blob = await this.downloadResource();
+    const url = window.URL.createObjectURL(blob);
+    const link = this.downloadLink.nativeElement;
+    link.href = url;
+    link.download = this.personal.Pdf;
+    link.click();
+    window.URL.revokeObjectURL(url);
+  }
 
   ngOnInit() {}
 }
