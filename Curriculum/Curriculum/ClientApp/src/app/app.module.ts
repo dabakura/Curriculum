@@ -28,7 +28,8 @@ const NGRX_IMPORTS = [
   EffectsModule.forRoot([...EFFECTS]),
   StoreDevtoolsModule.instrument({
     name: "AngularPortfolioNgRx",
-    logOnly: environment.production
+    logOnly: environment.production,
+    maxAge: 25
   })
 ];
 

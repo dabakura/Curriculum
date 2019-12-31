@@ -19,17 +19,17 @@
                 "EMAIL_PASSWORD": "DIMITRY+vampair"
             }
         },
-        "Curriculum": {
-            "commandName": "Project",
-            "launchBrowser": true,
-            "environmentVariables": {
-                "KEYSECRET": "oHtmuHRrUF27VrT5AWSV7CtR4Sg8Nge5f7e4vC2Y",
-                "ASPNETCORE_ENVIRONMENT": "Development",
-                "BASEURL": "https://curriculum-d5769.firebaseio.com",
-                "EMAIL": "davidcamposch@gmail.com",
-                "EMAIL_PASSWORD": "DIMITRY+vampair"
-            },
-            "applicationUrl": "https://192.168.42.98:5001;http://192.168.42.98:5000"
-        }
+      "Curriculum": {
+        "commandName": "Project",
+        "launchBrowser": true,
+        "environmentVariables": {
+          "KEYSECRET": "oHtmuHRrUF27VrT5AWSV7CtR4Sg8Nge5f7e4vC2Y",
+          "ASPNETCORE_ENVIRONMENT": "Development",
+          "BASEURL": "https://curriculum-d5769.firebaseio.com",
+          "EMAIL": "davidcamposch@gmail.com",
+          "EMAIL_PASSWORD": "DIMITRY+vampair"
+        },
+        "applicationUrl": "https://localhost:5001;http://localhost:5000"
+      }
     }
 }
