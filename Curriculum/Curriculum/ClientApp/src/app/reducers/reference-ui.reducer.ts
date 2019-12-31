@@ -1,4 +1,4 @@
-import { createReducer, on } from "@ngrx/store";
+import { createReducer, on, Action } from "@ngrx/store";
 import * as Actions from "../actions";
 import { ReferenceUIState } from "../states";
 
@@ -9,7 +9,7 @@ export const initialState: ReferenceUIState = {
   loadingPersonal: false
 };
 
-export const referenceUIReducer = createReducer(
+const reducer = createReducer(
   initialState,
   on(Actions.loadJobRequest, state => {
     return {
@@ -66,3 +66,7 @@ export const referenceUIReducer = createReducer(
     };
   })
 );
+
+export function referenceUIReducer(state: ReferenceUIState | undefined, action: Action) {
+  return reducer(state, action);
+}

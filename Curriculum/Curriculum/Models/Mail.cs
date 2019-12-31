@@ -31,7 +31,7 @@ namespace Curriculum.Models
             {
                 try
                 {
-                    await client.ConnectAsync("smtp.gmail.com", 587, false);
+                    await client.ConnectAsync("smtp.gmail.com", 465, false);
                     await client.AuthenticateAsync(TO, PASSWORD);
                     await client.SendAsync(mimemessage);
                     await client.DisconnectAsync(true);

@@ -1,4 +1,4 @@
-import { createReducer, on } from "@ngrx/store";
+import { createReducer, on, Action } from "@ngrx/store";
 import * as Actions from "../actions/";
 import { ProjectUIState } from "../states";
 
@@ -7,7 +7,7 @@ export const initialState: ProjectUIState = {
   loadingProject: false
 };
 
-export const projectUIReducer = createReducer(
+const reducer = createReducer(
   initialState,
   on(Actions.loadProjectRequest, state => {
     return {
@@ -44,3 +44,7 @@ export const projectUIReducer = createReducer(
     };
   })
 );
+
+export function projectUIReducer(state: ProjectUIState | undefined, action: Action) {
+  return reducer(state, action);
+}

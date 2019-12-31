@@ -1,4 +1,4 @@
-import { createReducer, on } from "@ngrx/store";
+import { createReducer, on, Action } from "@ngrx/store";
 import * as Actions from "../actions/";
 import { CertificationUIState } from "../states";
 
@@ -7,7 +7,7 @@ export const initialState: CertificationUIState = {
   loadingCertification: false
 };
 
-export const certificationUIReducer = createReducer(
+const reducer = createReducer(
   initialState,
   on(Actions.loadCertificationRequest, state => {
     return {
@@ -44,3 +44,7 @@ export const certificationUIReducer = createReducer(
     };
   })
 );
+
+export function certificationUIReducer(state: CertificationUIState | undefined, action: Action) {
+  return reducer(state, action);
+}
