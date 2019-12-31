@@ -3,7 +3,7 @@
 }
 
 a {
-    cursor: grabbing;
+  cursor: pointer;
 }
 
 .card .card-reveal {
