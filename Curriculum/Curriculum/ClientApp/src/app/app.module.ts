@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { RouterModule } from "@angular/router";
 import { environment } from "src/environments/environment";
+import { HomeResolverGuard } from "./Guards/home-resolver.guard";
 
 // ngrx imports
 import { StoreModule, StoreRootModule } from "@ngrx/store";
@@ -40,10 +41,21 @@ const NGRX_IMPORTS = [
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: "", component: CONTAINER.MainContainer, pathMatch: "full" },
+      {
+        path: "",
+        component: CONTAINER.MainContainer,
+        pathMatch: "full",
+        resolve: { home: HomeResolverGuard }
+      },
       { path: "projects", component: CONTAINER.ProjectContainer },
       { path: "certifications", component: CONTAINER.CertificationContainer },
-      { path: "references", component: CONTAINER.ReferenceContainer }
+      {
+        path: "references",
+        loadChildren: () =>
+          import("./reference/reference.module").then(
+            mod => mod.ReferenceModule
+          )
+      }
     ]),
     ...NGRX_IMPORTS
   ],

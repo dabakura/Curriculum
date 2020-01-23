@@ -11,8 +11,6 @@ import { ImageItemComponent } from "./image-item/image-item.component";
 import { ProjectItemComponent } from "./project-item/project-item.component";
 import { EmailComponent } from "./email/email.component";
 import { CertificationItemComponent } from "./certification-item/certification-item.component";
-import { JobItemComponent } from "./job-item/job-item.component";
-import { PersonalItemComponent } from "./personal-item/personal-item.component";
 
 export const COMPONENTS = [
   CardItemComponent,
@@ -27,7 +25,5 @@ export const COMPONENTS = [
   ProjectItemComponent,
   EmailComponent,
   CertificationItemComponent,
-  TechnologiesComponent,
-  JobItemComponent,
-  PersonalItemComponent
+  TechnologiesComponent
 ];

@@ -11,10 +11,7 @@ import {
   ProjectState,
   ProjectUIState,
   CertificationUIState,
-  CertificationState,
-  JobState,
-  PersonalState,
-  ReferenceUIState
+  CertificationState
 } from ".";
 
 export interface PortfolioModuleState {
@@ -29,8 +26,5 @@ export interface PortfolioModuleState {
   projectUI: ProjectUIState;
   certifications: CertificationState;
   certificationUI: CertificationUIState;
-  Jobs: JobState;
-  Personals: PersonalState;
-  referenceUI: ReferenceUIState;
   router: fromRouter.RouterReducerState<RouterStateUrl>;
 }

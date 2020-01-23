@@ -43,6 +43,6 @@ export class HomeMovilContainer implements OnInit {
         AOS.init();
       }
     });
-    this.store.dispatch(HomeUIActions.loadHomeRequest());
+    //this.store.dispatch(HomeUIActions.loadHomeRequest());
   }
 }

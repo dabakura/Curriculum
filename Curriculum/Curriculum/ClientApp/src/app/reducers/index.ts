@@ -19,9 +19,6 @@ import { projectUIReducer } from "./project-ui.reducer";
 import { projectReducer } from "./project.reducer";
 import { certificationUIReducer } from "./certification-ui.reducer";
 import { certificationReducer } from "./certification.reducer";
-import { referenceUIReducer } from "./reference-ui.reducer";
-import { jobReducer } from "./job.reducer";
-import { personalReducer } from "./personal.reducer";
 
 export const reducers: ActionReducerMap<PortfolioModuleState> = {
   information: informationReducer,
@@ -35,10 +32,7 @@ export const reducers: ActionReducerMap<PortfolioModuleState> = {
   projectUI: projectUIReducer,
   projects: projectReducer,
   certificationUI: certificationUIReducer,
-  certifications: certificationReducer,
-  Personals: personalReducer,
-  Jobs: jobReducer,
-  referenceUI: referenceUIReducer
+  certifications: certificationReducer
 };
 
 export function logger(
