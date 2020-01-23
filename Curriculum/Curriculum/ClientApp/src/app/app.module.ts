@@ -2,9 +2,9 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
-import { RouterModule } from "@angular/router";
 import { environment } from "src/environments/environment";
-import { HomeResolverGuard } from "./Guards/home-resolver.guard";
+
+import { AppRoutingModule } from "./app-routing.module";
 
 // ngrx imports
 import { StoreModule, StoreRootModule } from "@ngrx/store";
@@ -18,15 +18,13 @@ import { AppComponent } from "./app.component";
 
 // config imports
 import { COMPONENTS } from "./components";
-import { CONTAINERS, CONTAINER } from "./containers";
-import { SERVICES } from "./services";
-import { EFFECTS } from "./effects";
+import { RouterModule } from "@angular/router";
 
 // declarations ngrx imports
 const NGRX_IMPORTS = [
   StoreModule.forRoot(reducers, { metaReducers }),
   StoreRouterConnectingModule.forRoot({ stateKey: "router" }),
-  EffectsModule.forRoot([...EFFECTS]),
+  EffectsModule.forRoot([]),
   StoreDevtoolsModule.instrument({
     name: "AngularPortfolioNgRx",
     logOnly: environment.production,
@@ -35,31 +33,15 @@ const NGRX_IMPORTS = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, ...COMPONENTS, ...CONTAINERS],
+  declarations: [AppComponent, ...COMPONENTS],
   imports: [
     BrowserModule.withServerTransition({ appId: "ng-cli-universal" }),
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot([
-      {
-        path: "",
-        component: CONTAINER.MainContainer,
-        pathMatch: "full",
-        resolve: { home: HomeResolverGuard }
-      },
-      { path: "projects", component: CONTAINER.ProjectContainer },
-      { path: "certifications", component: CONTAINER.CertificationContainer },
-      {
-        path: "references",
-        loadChildren: () =>
-          import("./reference/reference.module").then(
-            mod => mod.ReferenceModule
-          )
-      }
-    ]),
+    AppRoutingModule,
     ...NGRX_IMPORTS
   ],
-  providers: [...SERVICES],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

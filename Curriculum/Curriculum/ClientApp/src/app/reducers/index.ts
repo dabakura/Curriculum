@@ -8,31 +8,9 @@ import { storeFreeze } from "ngrx-store-freeze";
 import * as fromRouter from "@ngrx/router-store";
 import { environment } from "../../environments/environment";
 import { PortfolioModuleState } from "../states";
-import { informationReducer } from "./information.reducer";
-import { programmingLanguagesReducer } from "./programmingLanguages.reducer";
-import { homeUIReducer } from "./home-ui.reducer";
-import { languagesReducer } from "./languages.reducer";
-import { otroReducer } from "./otro.reducer";
-import { frameworkReducer } from "./framework.reducer";
-import { technologieReducer } from "./technologie.reducer";
-import { projectUIReducer } from "./project-ui.reducer";
-import { projectReducer } from "./project.reducer";
-import { certificationUIReducer } from "./certification-ui.reducer";
-import { certificationReducer } from "./certification.reducer";
 
 export const reducers: ActionReducerMap<PortfolioModuleState> = {
-  information: informationReducer,
-  programmingLanguages: programmingLanguagesReducer,
-  languages: languagesReducer,
-  otros: otroReducer,
-  frameworks: frameworkReducer,
-  technologies: technologieReducer,
-  homeUI: homeUIReducer,
-  router: fromRouter.routerReducer,
-  projectUI: projectUIReducer,
-  projects: projectReducer,
-  certificationUI: certificationUIReducer,
-  certifications: certificationReducer
+  router: fromRouter.routerReducer
 };
 
 export function logger(

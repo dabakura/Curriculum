@@ -16,7 +16,7 @@ import { EFFECTS } from "./effects";
 
 // declarations ngrx imports
 const NGRX_IMPORTS = [
-  StoreModule.forFeature("Curriculum-module", reducers, {
+  StoreModule.forFeature("curriculum-module", reducers, {
     metaReducers: metaReducers
   }),
   EffectsModule.forFeature([...EFFECTS])
