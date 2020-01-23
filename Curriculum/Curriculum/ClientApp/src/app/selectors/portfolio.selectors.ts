@@ -5,18 +5,13 @@ import { selectLanguages } from "./languages.selectors";
 import { selectTechnologie } from "./technologie.selectors";
 import { selectFramework } from "./framework.selectors";
 import { selectOtro } from "./otro.selectors";
-import { selectPersonals } from "./personal.selectors";
-import { selectJobs } from "./job.selectors";
 import {
   PortfolioModuleState,
   HomeUIState,
   ProjectUIState,
-  CertificationUIState,
-  ReferenceUIState
+  CertificationUIState
 } from "../states";
 import {
-  Personal,
-  Job,
   Otro,
   Framework,
   Technologie,
@@ -31,14 +26,6 @@ export const selectHomeUIStateFeature = (state: PortfolioModuleState) =>
 export const getHomeUIState = createSelector(
   selectHomeUIStateFeature,
   (state: HomeUIState) => state
-);
-
-export const selectReferenceUIStateFeature = (state: PortfolioModuleState) =>
-  state.referenceUI;
-
-export const getreferenceUIState = createSelector(
-  selectReferenceUIStateFeature,
-  (state: ReferenceUIState) => state
 );
 
 export const selectProjectUIStateFeature = (state: PortfolioModuleState) =>
@@ -78,14 +65,5 @@ export const getHomeArrayState = createSelector(
     langua: state_langua,
     techn: { technologies: state_techn, otros: state_otro },
     frame: state_frame
-  })
-);
-
-export const getReferenceArrayState = createSelector(
-  selectPersonals,
-  selectJobs,
-  (state_person: Personal[], state_job: Job[]) => ({
-    person: state_person,
-    job: state_job
   })
 );

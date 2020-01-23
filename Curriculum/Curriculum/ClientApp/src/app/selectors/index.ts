@@ -7,5 +7,3 @@ export * from "./framework.selectors";
 export * from "./technologie.selectors";
 export * from "./project.selectors";
 export * from "./certification.selectors";
-export * from "./job.selectors";
-export * from "./personal.selectors";

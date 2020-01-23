@@ -3,9 +3,6 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable, throwError } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 import {
-  Personal,
-  Job,
-  Reference,
   Certification,
   Project,
   Otro,
@@ -99,28 +96,5 @@ export class PortfolioService {
     return this.http
       .get<Certification[]>(url, this.httpOptions)
       .pipe(catchError(error => throwError(error)));
-  }
-
-  getReference(): Observable<Reference> {
-    const url = `${this.apiUrl}Reference`;
-    return this.http
-      .get<Reference>(url, this.httpOptions)
-      .pipe(catchError(error => throwError(error)));
-  }
-
-  getJobs(): Observable<Job[]> {
-    const url = `${this.apiUrl}Reference`;
-    return this.http.get<Reference>(url, this.httpOptions).pipe(
-      map(todos => todos.Jobs),
-      catchError(error => throwError(error))
-    );
-  }
-
-  getPersonals(): Observable<Personal[]> {
-    const url = `${this.apiUrl}Reference`;
-    return this.http.get<Reference>(url, this.httpOptions).pipe(
-      map(todos => todos.Personals),
-      catchError(error => throwError(error))
-    );
   }
 }

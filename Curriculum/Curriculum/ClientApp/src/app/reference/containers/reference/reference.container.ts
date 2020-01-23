@@ -2,9 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { Store, select } from "@ngrx/store";
 import { ReferenceModuleState } from "../../states/reference-module.state";
 import { Observable } from "rxjs";
-import { getreferenceUIState, getReferenceArrayState } from "../../selectors";
+import {
+  selectReferenceUIState,
+  getReferenceArrayState
+} from "../../selectors";
 import { ReferenceUIState } from "../../states";
-import * as ReferenceUIActions from "../../actions/reference-ui.actions";
 import { Personal, Job } from "../../models";
 
 @Component({
@@ -22,7 +24,7 @@ export class ReferenceContainer implements OnInit {
   constructor(private store: Store<ReferenceModuleState>) {
     this.showInformation = false;
     this.data$ = this.store.pipe(select(getReferenceArrayState));
-    this.indicators$ = this.store.pipe(select(getreferenceUIState));
+    this.indicators$ = this.store.pipe(select(selectReferenceUIState));
   }
 
   ngOnInit(): void {
@@ -32,6 +34,5 @@ export class ReferenceContainer implements OnInit {
         AOS.init();
       }
     });
-    this.store.dispatch(ReferenceUIActions.loadReferenceRequest());
   }
 }

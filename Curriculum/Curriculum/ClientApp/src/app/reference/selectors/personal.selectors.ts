@@ -1,7 +1,14 @@
 import { ReferenceModuleState, personalAdapter } from "../states";
+import { createFeatureSelector, createSelector } from "@ngrx/store";
 
-export const selectPersonalFeature = (state: ReferenceModuleState) =>
-  state.Personals;
+const getReferenceModuleState = createFeatureSelector<ReferenceModuleState>(
+  "reference-module"
+);
+
+export const selectPersonalFeature = createSelector(
+  getReferenceModuleState,
+  state => state.Personals
+);
 
 const { selectIds, selectEntities, selectAll } = personalAdapter.getSelectors(
   selectPersonalFeature

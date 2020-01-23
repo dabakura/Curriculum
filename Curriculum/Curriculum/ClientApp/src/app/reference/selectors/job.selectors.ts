@@ -1,6 +1,14 @@
-import { ReferenceModuleState, jobAdapter } from "../states";
+import { ReferenceModuleState, jobAdapter, personalAdapter } from "../states";
+import { createFeatureSelector, createSelector } from "@ngrx/store";
 
-export const selectJobFeature = (state: ReferenceModuleState) => state.Jobs;
+const getReferenceModuleState = createFeatureSelector<ReferenceModuleState>(
+  "reference-module"
+);
+
+export const selectJobFeature = createSelector(
+  getReferenceModuleState,
+  state => state.Jobs
+);
 
 const { selectIds, selectEntities, selectAll } = jobAdapter.getSelectors(
   selectJobFeature
