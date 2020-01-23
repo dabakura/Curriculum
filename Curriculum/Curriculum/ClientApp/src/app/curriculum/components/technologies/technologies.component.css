@@ -1,0 +1,19 @@
+span.badge.new:after {
+    content: "";
+}
+
+.contorno {
+    margin: 6px;
+}
+
+span {
+    font-weight: bold;
+}
+
+span.badge.new {
+    font-weight: bold;
+}
+
+span.badge {
+    height: auto;
+}

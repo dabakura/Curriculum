@@ -1,0 +1,32 @@
+.title {
+    border-radius: 3px 3px 3px 3px;
+    padding: 1px;
+    background: linear-gradient(45deg, #303f9f, #7b1fa2);
+    color: white;
+}
+
+.content {
+    padding: 10px 10px 0 10px;
+    display: flow-root;
+}
+
+h3 {
+    margin: 1.0rem 0 1.168rem 0;
+}
+
+.text-decorator {
+    font-size: 16.5px;
+}
+
+blockquote {
+    border-left: 5px solid #4a148c;
+}
+
+@media screen and (max-width: 500px) {
+    h3 {
+        font-size: 16.5px;
+    }
+    .text-decorator {
+        font-size: 14.5px;
+    }
+}

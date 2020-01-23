@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Resolve } from "@angular/router";
-import { Store, select } from "@ngrx/store";
+import { Store } from "@ngrx/store";
 import { ReferenceModuleState } from "../states";
 import * as ReferenceUIActions from "../actions/reference-ui.actions";
 

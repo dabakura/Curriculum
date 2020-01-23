@@ -1,0 +1,12 @@
+<div *ngIf="!lineal" class="row collection-item contorno" style="border-bottom: 1px solid #e0e0e0;">
+    <div class="col s8 push-s4">
+        <span *ngFor="let item of getTecnologieOrOtro(); let i=index" class="badge new" [ngClass]="{'grey darken-3': i%2==0, 'light-blue darken-4': i%2!=0}">{{ item }}</span>
+    </div>
+    <div class="col s4 pull-s8"><span class="flow-text" style="font-weight: normal;">{{ data.Name }}</span></div>
+</div>
+<div *ngIf="lineal" class="row collection-item contorno" [ngStyle]="lastChild?{'border-bottom': '0px solid #e0e0e0'} : {'border-bottom': '1px solid #e0e0e0'}">
+    <div class="col s8 push-s4">
+        <span class="badge">{{ getTecnologieOrOtro() }}</span>
+    </div>
+    <div class="col s4 pull-s8"><span class="flow-text" style="font-weight: normal;">{{ data.Name }}</span></div>
+</div>

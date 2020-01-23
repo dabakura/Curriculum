@@ -1,0 +1,9 @@
+<div class="loading" *ngIf="showInformation">
+    <img src="/assets/img/project/background_project.png" class="loading-img" *ngFor="let item of ['1','2','3','4']">
+</div>
+<div class="container" *ngIf="!showInformation">
+    <div *ngFor="let project of (data$ | async)">
+        <app-project-item [data]="project"></app-project-item>
+        <hr />
+    </div>
+</div>
