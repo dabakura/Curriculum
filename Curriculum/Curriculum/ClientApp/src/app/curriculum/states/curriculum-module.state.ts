@@ -1,6 +1,6 @@
 import { Information } from "../models";
 import {
-  HomeUIState,
+  CurriculumUIState,
   LanguagesState,
   ProgrammingLanguagesState,
   TechnologieState,
@@ -15,5 +15,5 @@ export interface CurriculumModuleState {
   technologies: TechnologieState;
   otros: OtroState;
   frameworks: FrameworkState;
-  homeUI: HomeUIState;
+  curriculumUI: CurriculumUIState;
 }

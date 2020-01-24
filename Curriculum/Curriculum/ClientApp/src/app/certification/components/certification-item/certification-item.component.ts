@@ -3,7 +3,7 @@ import { Certification } from "../../models";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Component({
-  selector: "app-certification-item",
+  selector: "certification-certification-item",
   templateUrl: "./certification-item.component.html",
   styleUrls: ["./certification-item.component.css"]
 })

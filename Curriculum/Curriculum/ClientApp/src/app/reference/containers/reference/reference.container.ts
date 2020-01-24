@@ -10,7 +10,7 @@ import { ReferenceUIState } from "../../states";
 import { Personal, Job } from "../../models";
 
 @Component({
-  selector: "app-reference",
+  selector: "reference-reference",
   templateUrl: "./reference.container.html",
   styleUrls: ["./reference.container.css"]
 })

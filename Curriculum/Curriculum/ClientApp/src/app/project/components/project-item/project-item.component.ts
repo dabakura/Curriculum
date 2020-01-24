@@ -2,7 +2,7 @@ import { Component, Input } from "@angular/core";
 import { Project } from "../../models";
 
 @Component({
-  selector: "app-project-item",
+  selector: "project-project-item",
   templateUrl: "./project-item.component.html",
   styleUrls: ["./project-item.component.css"]
 })

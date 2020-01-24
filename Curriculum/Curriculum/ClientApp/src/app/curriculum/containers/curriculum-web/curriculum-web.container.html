@@ -1,29 +1,29 @@
 <img [src]="'/assets/img/banner2.jpg'" alt="" class="responsive-img banner">
 
 <div class="container">
-    <app-curriculum [data]="(data$ | async)?.info" class="row"></app-curriculum>
+    <curriculum-curriculum [data]="(data$ | async)?.info" class="row"></curriculum-curriculum>
 </div>
 
 <section class="progra">
     <div class="row programming">
         <div class="container" data-aos="zoom-in-up" data-aos-offset="50" data-aos-anchor-placement="top-center">
             <h4 class="titulo">Lenguajes de Programación</h4>
-            <app-items-list class="col s12" [columns]="6" [data]="(data$ | async)?.progra"></app-items-list>
+            <curriculum-items-list class="col s12" [columns]="6" [data]="(data$ | async)?.progra"></curriculum-items-list>
         </div>
     </div>
 </section>
 
 <section class="row technologies">
     <div class="container">
-        <div class="row valign-wrapper">
+        <div class="row valign-wrcurriculumer">
             <div class="col s12 hide-on-small-only" style="width: 180px;">
                 <h5 class="titulo">Idiomas</h5>
-                <app-items-list-circular [data]="(data$ | async)?.langua" [columns]="1"></app-items-list-circular>
-                <app-time-line [data]="(data$ | async)?.info.Qualities"></app-time-line>
+                <curriculum-items-list-circular [data]="(data$ | async)?.langua" [columns]="1"></curriculum-items-list-circular>
+                <curriculum-time-line [data]="(data$ | async)?.info.Qualities"></curriculum-time-line>
             </div>
             <div class="col s12 m10">
-                <app-items-list-collection [data]="(data$ | async)?.techn">
-                </app-items-list-collection>
+                <curriculum-items-list-collection [data]="(data$ | async)?.techn">
+                </curriculum-items-list-collection>
             </div>
         </div>
     </div>
@@ -33,9 +33,9 @@
     <div class="row framework">
         <div class="container" data-aos="fade-left" data-aos-offset="50" data-aos-easing="ease-in-sine">
             <h4 class="titulo">Frameworks - Library</h4>
-            <app-items-list class="col s12" [columns]="6" [data]="(data$ | async)?.frame">
+            <curriculum-items-list class="col s12" [columns]="6" [data]="(data$ | async)?.frame">
 
-            </app-items-list>
+            </curriculum-items-list>
         </div>
     </div>
 </section>

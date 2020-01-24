@@ -1,4 +1,4 @@
-export interface HomeUIState {
+export interface CurriculumUIState {
   errorLoadingInformation: string | null;
   loadingInformation: boolean;
   errorLoadingProgrammingLanguages: string | null;

@@ -78,11 +78,11 @@ export const loadFrameworkFail = createAction(
   props<{ error: string }>()
 );
 
-export const loadHomeRequest = createAction(
+export const loadCurriculumRequest = createAction(
   "[CurriculumModule] loadHomeRequest"
 );
 
-export const loadHomeFail = createAction(
+export const loadCurriculumFail = createAction(
   "[CurriculumModule] LoadHomeFail",
   props<{ error: string }>()
 );

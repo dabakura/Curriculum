@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Store, select } from "@ngrx/store";
 import { Observable } from "rxjs";
 import { selectHomeUIState, getHomeArrayState } from "../../selectors";
-import { HomeUIState, CurriculumModuleState } from "../../states";
+import { CurriculumUIState, CurriculumModuleState } from "../../states";
 import {
   Otro,
   Technologie,
@@ -13,14 +13,14 @@ import {
 } from "../../models";
 
 @Component({
-  selector: "app-home-movil",
-  templateUrl: "./home-movil.container.html",
-  styleUrls: ["./home-movil.container.css"]
+  selector: "curriculum-curriculum-movil",
+  templateUrl: "./curriculum-movil.container.html",
+  styleUrls: ["./curriculum-movil.container.css"]
 })
-export class HomeMovilContainer implements OnInit {
+export class CurriculumMovilContainer implements OnInit {
   information$: Observable<Information>;
   programming_Languages$: Observable<ProgrammingLanguages[]>;
-  indicators$: Observable<HomeUIState>;
+  indicators$: Observable<CurriculumUIState>;
   data$: Observable<{
     info: Information;
     progra: ProgrammingLanguages[];

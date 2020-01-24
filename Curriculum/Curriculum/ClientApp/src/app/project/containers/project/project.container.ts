@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 import { selectProjectUIState, selectProject } from "../../selectors";
 
 @Component({
-  selector: "app-project",
+  selector: "project-project",
   templateUrl: "./project.container.html",
   styleUrls: ["./project.container.css"]
 })

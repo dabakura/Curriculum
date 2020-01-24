@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from "@angular/core";
 import { Otro, Technologie } from "../../models";
 
 @Component({
-  selector: "app-technologies",
+  selector: "curriculum-technologies",
   templateUrl: "./technologies.component.html",
   styleUrls: ["./technologies.component.css"]
 })

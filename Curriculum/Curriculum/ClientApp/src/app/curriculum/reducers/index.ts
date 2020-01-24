@@ -7,7 +7,7 @@ import { environment } from "../../../environments/environment";
 import { CurriculumModuleState } from "../states";
 import { informationReducer } from "./information.reducer";
 import { programmingLanguagesReducer } from "./programmingLanguages.reducer";
-import { homeUIReducer } from "./home-ui.reducer";
+import { curriculumUIReducer } from "./curriculum-ui.reducer";
 import { languagesReducer } from "./languages.reducer";
 import { otroReducer } from "./otro.reducer";
 import { frameworkReducer } from "./framework.reducer";
@@ -20,7 +20,7 @@ export const reducers: ActionReducerMap<CurriculumModuleState> = {
   otros: otroReducer,
   frameworks: frameworkReducer,
   technologies: technologieReducer,
-  homeUI: homeUIReducer
+  curriculumUI: curriculumUIReducer
 };
 
 export const metaReducers: MetaReducer<

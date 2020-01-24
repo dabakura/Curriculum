@@ -7,7 +7,7 @@ import {
 } from "@angular/core";
 
 @Component({
-  selector: "app-image-item",
+  selector: "project-image-item",
   templateUrl: "./image-item.component.html",
   styleUrls: ["./image-item.component.css"]
 })

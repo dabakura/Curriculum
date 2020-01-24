@@ -2,12 +2,12 @@
     <div class="row">
         <h3>Empleos</h3>
         <hr />
-        <app-job-item class="col s12 l6" *ngFor="let job of (data$ | async)?.job" [job]="job"></app-job-item>
+        <reference-job-item class="col s12 l6" *ngFor="let job of (data$ | async)?.job" [job]="job"></reference-job-item>
     </div>
     <div class="row">
         <h3>Referencias</h3>
         <hr />
-        <app-personal-item class="col s12" *ngFor="let personal of (data$ | async)?.person" [personal]="personal">
-        </app-personal-item>
+        <reference-personal-item class="col s12" *ngFor="let personal of (data$ | async)?.person" [personal]="personal">
+        </reference-personal-item>
     </div>
 </div>

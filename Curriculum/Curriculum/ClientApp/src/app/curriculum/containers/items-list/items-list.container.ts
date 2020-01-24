@@ -10,7 +10,7 @@ import { CardItemComponent } from "../../components/card-item/card-item.componen
 import * as Colors from "../../../../data/colors-items.json";
 import { Framework, Color } from "../../models";
 @Component({
-  selector: "app-items-list",
+  selector: "curriculum-items-list",
   templateUrl: "./items-list.container.html",
   styleUrls: ["./items-list.container.css"]
 })

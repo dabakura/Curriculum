@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Store, select } from "@ngrx/store";
 import { Observable } from "rxjs";
 import { selectHomeUIState, getHomeArrayState } from "../../selectors";
-import { HomeUIState, CurriculumModuleState } from "../../states";
+import { CurriculumUIState, CurriculumModuleState } from "../../states";
 import {
   Otro,
   Technologie,
@@ -13,14 +13,14 @@ import {
 } from "../../models";
 
 @Component({
-  selector: "app-home",
-  templateUrl: "./home.container.html",
-  styleUrls: ["./home.container.css"]
+  selector: "curriculum-curriculum-web",
+  templateUrl: "./curriculum-web.container.html",
+  styleUrls: ["./curriculum-web.container.css"]
 })
-export class HomeContainer implements OnInit {
+export class CurriculumWebContainer implements OnInit {
   information$: Observable<Information>;
   programming_Languages$: Observable<ProgrammingLanguages[]>;
-  indicators$: Observable<HomeUIState>;
+  indicators$: Observable<CurriculumUIState>;
   data$: Observable<{
     info: Information;
     progra: ProgrammingLanguages[];

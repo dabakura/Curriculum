@@ -17,7 +17,7 @@ import {
 
 export const selectHomeUIState = createSelector(
   getCurriculumModuleState,
-  state => state.homeUI
+  state => state.curriculumUI
 );
 
 export const getHomeArrayState = createSelector(

@@ -3,6 +3,6 @@
 </div>
 <div class="container" *ngIf="!showInformation">
     <div *ngFor="let certification of (data$ | async)">
-        <app-certification-item [certification]="certification"></app-certification-item>
+        <certification-certification-item [certification]="certification"></certification-certification-item>
     </div>
 </div>

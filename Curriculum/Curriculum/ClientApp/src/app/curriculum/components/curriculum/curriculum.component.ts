@@ -2,7 +2,7 @@ import { Component, Input } from "@angular/core";
 import { Information } from "../../models";
 
 @Component({
-  selector: "app-curriculum",
+  selector: "curriculum-curriculum",
   templateUrl: "./curriculum.component.html",
   styleUrls: ["./curriculum.component.css"]
 })

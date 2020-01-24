@@ -36,6 +36,14 @@ namespace Curriculum.Models.Entities
             {
                return "{\"Jobs\":[{\"Admission\": \"12/04/2017\",\"Departure\": \"22/06/2019\",\"Company\": \"C&D Soporte Técnico\",\"Position\": \"Developer and Technical Support\",\"Description\": \"Tareas realizadas: Mantenimiento preventivo, Mantenimiento correctivo, Configuración de redes, Reparación de dispositivos electrónicos, programación, asesoramiento, entre otros.\",\"Phone\": \"23457845\" } ],\"Personals\":[{\"Name\": \"Elva Lopez\",\"Phone\": \"23457845\",\"Image\": \"cartadeelva.png\",\"Pdf\": \"cartadeelva.pdf\"} ]}";
             }
+            if ("Project" == typeof(T).Name)
+            {
+               return "[ {\"Built\" : {\"Github\" : \"https://localhost/githup/medical\",\"Link\" : \"https://localhost:5001\",\"ListBuilt\" : [ {\"Image\" : \"angular.png\",\"Name\" : \"Angular\"}, {\"Image\" : \"c++.png\",\"Name\" : \"C++\"}, {\"Image\" : \"js.png\",\"Name\" : \"Javascript\" } ],\"Type\" : \"Personal\"},\"Creation_Date\" : \"2012-04-23\",\"Description\" : \"Biblioteca de formulas, para el uso farmaceutico en pacientes de pediatria\",\"OnlyImage\" : false,\"Title\" : \"Medical\", \"Video\" : \"big_buck_bunny.mp4\"}]";
+            }
+            if ("Certification" == typeof(T).Name)
+            {
+               return "[{\"Date\": \"08/12/2018\",\"Institution\": \"Universidad Fidelitas\",\"Title\": \"CCNA 1\",\"Image\": \"ccna1.png\",\"Description\": \"Enrutamiento y creacion de redes bla bla bla\",\"Ppf\": \"ccna1.pdf\"}]";
+            }
             return "[]";
             //throw;
          }

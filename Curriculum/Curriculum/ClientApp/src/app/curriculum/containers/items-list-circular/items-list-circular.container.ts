@@ -11,7 +11,7 @@ import { Framework, Color } from "../..//models";
 import { CardItemCircularComponent } from "../../components/card-item-circular/card-item-circular.component";
 
 @Component({
-  selector: "app-items-list-circular",
+  selector: "curriculum-items-list-circular",
   templateUrl: "./items-list-circular.container.html",
   styleUrls: ["./items-list-circular.container.css"]
 })

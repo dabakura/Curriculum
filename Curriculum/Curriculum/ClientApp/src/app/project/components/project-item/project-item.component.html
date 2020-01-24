@@ -10,10 +10,10 @@
 <blockquote>{{ data.Description }}</blockquote>
 <div class="row">
     <div class="col s12 m8">
-        <app-video-item [video]="data.Video" *ngIf="!data.OnlyImage"></app-video-item>
-        <app-image-item [images]="data.Images" *ngIf="data.OnlyImage"></app-image-item>
+        <project-video-item [video]="data.Video" *ngIf="!data.OnlyImage"></project-video-item>
+        <project-image-item [images]="data.Images" *ngIf="data.OnlyImage"></project-image-item>
     </div>
     <div class="col s12 m4">
-        <app-built-with-item [data]="data.Built"></app-built-with-item>
+        <project-built-with-item [data]="data.Built"></project-built-with-item>
     </div>
 </div>

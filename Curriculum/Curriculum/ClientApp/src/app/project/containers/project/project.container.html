@@ -3,7 +3,7 @@
 </div>
 <div class="container" *ngIf="!showInformation">
     <div *ngFor="let project of (data$ | async)">
-        <app-project-item [data]="project"></app-project-item>
+        <project-project-item [data]="project"></project-project-item>
         <hr />
     </div>
 </div>

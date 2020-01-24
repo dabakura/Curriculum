@@ -4,7 +4,7 @@ import { timer } from "rxjs";
 import { ChartData } from "../models/ChartData";
 declare var $: any;
 @Component({
-  selector: "app-card-item-circular",
+  selector: "curriculum-card-item-circular",
   templateUrl: "./card-item-circular.component.html",
   styleUrls: ["./card-item-circular.component.css"]
 })

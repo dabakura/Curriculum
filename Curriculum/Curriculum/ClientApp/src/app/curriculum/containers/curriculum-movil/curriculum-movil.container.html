@@ -1,0 +1,29 @@
+<img [src]="'/assets/img/banner2.jpg'" alt="" class="responsive-img banner">
+
+<curriculum-curriculum [data]="(data$ | async)?.info" class="row"></curriculum-curriculum>
+
+<div class="row" data-aos="zoom-in-up" data-aos-offset="50" data-aos-anchor-placement="top-center">
+    <h4 class="titulo col s12">Lenguajes de Programación</h4>
+    <curriculum-items-list class="col s12" [columns]="6" [data]="(data$ | async)?.progra"></curriculum-items-list>
+</div>
+
+<div class="row">
+    <h4 class="titulo col s12">Idiomas</h4>
+    <div class="center">
+        <curriculum-items-list-circular class="col s6" [data]="(data$ | async)?.langua" [columns]="1">
+        </curriculum-items-list-circular>
+        <curriculum-time-line class="col s6" [data]="(data$ | async)?.info.Qualities"></curriculum-time-line>
+    </div>
+</div>
+
+<div class="row">
+    <h4 class="titulo col s12">Conocimientos</h4>
+    <curriculum-items-list-collection class="col s12" [data]="(data$ | async)?.techn">
+    </curriculum-items-list-collection>
+</div>
+
+<div class="row">
+    <h4 class="titulo col s12">Frameworks - Library</h4>
+    <curriculum-items-list class="col s12" [columns]="6" [data]="(data$ | async)?.frame" data-aos="zoom-in-up" data-aos-offset="50">
+    </curriculum-items-list>
+</div>

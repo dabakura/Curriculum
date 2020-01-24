@@ -1,8 +1,8 @@
 import { createReducer, on, Action } from "@ngrx/store";
 import * as Actions from "../actions/";
-import { HomeUIState } from "../states";
+import { CurriculumUIState } from "../states";
 
-export const initialState: HomeUIState = {
+export const initialState: CurriculumUIState = {
   errorLoadingInformation: null,
   loadingInformation: false,
   errorLoadingProgrammingLanguages: null,
@@ -145,12 +145,12 @@ const reducer = createReducer(
       errorLoadingTechnologie: error || null
     };
   }),
-  on(Actions.loadHomeRequest, state => {
+  on(Actions.loadCurriculumRequest, state => {
     return {
       ...state
     };
   }),
-  on(Actions.loadHomeFail, (state, { error }) => {
+  on(Actions.loadCurriculumFail, (state, { error }) => {
     return {
       ...state,
       errorLoadingTechnologie: error || null,
@@ -163,7 +163,9 @@ const reducer = createReducer(
   })
 );
 
-
-export function homeUIReducer(state: HomeUIState | undefined, action: Action) {
+export function curriculumUIReducer(
+  state: CurriculumUIState | undefined,
+  action: Action
+) {
   return reducer(state, action);
 }

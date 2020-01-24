@@ -4,7 +4,8 @@ import { of } from "rxjs";
 import { switchMap, catchError, mergeMap } from "rxjs/operators";
 
 import {
-  loadHomeRequest,
+  loadCurriculumRequest,
+  loadCurriculumFail,
   loadInformation,
   loadInformationRequest,
   loadInformationSuccess,
@@ -28,8 +29,7 @@ import {
   loadOtroRequest,
   loadOtro,
   loadOtroSuccess,
-  loadOtroFail,
-  loadHomeFail
+  loadOtroFail
 } from "../actions";
 import { CurriculumService } from "../services/curriculum.service";
 
@@ -144,7 +144,7 @@ export class CurriculumEffects {
 
   loadHomeRequest = createEffect(() =>
     this.actions$.pipe(
-      ofType(loadHomeRequest),
+      ofType(loadCurriculumRequest),
       switchMap(() => {
         return this.curriculumService.getKnowledge().pipe(
           mergeMap(
@@ -169,7 +169,7 @@ export class CurriculumEffects {
           ]),
           catchError(error => {
             console.error(error);
-            return of(loadHomeFail({ error }));
+            return of(loadCurriculumFail({ error }));
           })
         );
       })

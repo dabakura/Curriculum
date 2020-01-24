@@ -1,13 +1,13 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { CONTAINER } from "./containers";
-import { HomeResolverGuard } from "./Guards/home-resolver.guard";
+import { CurriculumResolverGuard } from "./Guards/curriculum-resolver.guard";
 
 const routes: Routes = [
   {
     path: "",
     component: CONTAINER.MainContainer,
-    resolve: { reference: HomeResolverGuard }
+    resolve: { reference: CurriculumResolverGuard }
   }
 ];
 

@@ -9,7 +9,7 @@ import {
 import { Certification } from "../../models";
 
 @Component({
-  selector: "app-certification",
+  selector: "certification-certification",
   templateUrl: "./certification.container.html",
   styleUrls: ["./certification.container.css"]
 })

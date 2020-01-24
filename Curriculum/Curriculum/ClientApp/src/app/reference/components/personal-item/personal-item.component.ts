@@ -3,7 +3,7 @@ import { Personal } from "../../models";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Component({
-  selector: "app-personal-item",
+  selector: "reference-personal-item",
   templateUrl: "./personal-item.component.html",
   styleUrls: ["./personal-item.component.css"]
 })
