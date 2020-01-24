@@ -41,7 +41,7 @@ section.programa ul:before {
 
 section.programa li:first-child:before,
 section.programa li:last-child:before {
-    background-image: url(/assets/img/icoCircleGris.png);
+    background-image: url(/assets/img/icoCircleGris.webp);
     background-repeat: no-repeat;
 }
 
@@ -50,7 +50,7 @@ section.programa li:before {
     content: " ";
     width: 2rem;
     height: 1.3rem;
-    background: #ffffff url(/assets/img/icoCircleGris.png);
+    background: #ffffff url(/assets/img/icoCircleGris.webp);
     background-repeat: no-repeat;
     left: 1%;
     top: 0;
@@ -87,7 +87,7 @@ section.programa li>.titulo {
 
 section.programa li:first-child:before,
 section.programa li:last-child:before {
-    background-image: url(/assets/img/icoCircleGris.png);
+    background-image: url(/assets/img/icoCircleGris.webp);
     background-repeat: no-repeat;
     box-sizing: unset;
 }
