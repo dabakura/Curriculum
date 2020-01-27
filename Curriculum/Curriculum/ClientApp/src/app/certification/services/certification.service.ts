@@ -21,7 +21,7 @@ export class CertificationService {
   }
 
   getCertification(): Observable<Certification[]> {
-    const url = `${this.apiUrl}Certification`;
+    const url = `${this.apiUrl}api/Certification`;
     return this.http
       .get<Certification[]>(url, this.httpOptions)
       .pipe(catchError(error => throwError(error)));

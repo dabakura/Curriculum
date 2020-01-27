@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
-import { RouterModule } from "@angular/router";
+import { RouterModule, Routes } from "@angular/router";
 
-const routes = [
+const routes: Routes = [
   {
     path: "",
     loadChildren: () =>
@@ -23,6 +23,11 @@ const routes = [
     path: "references",
     loadChildren: () =>
       import("./reference/reference.module").then(mod => mod.ReferenceModule)
+  },
+  {
+    path: "**",
+    redirectTo: "",
+    pathMatch: "full"
   }
 ];
 

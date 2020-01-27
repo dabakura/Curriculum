@@ -29,14 +29,14 @@ export class CurriculumService {
   }
 
   getKnowledge(): Observable<Knowledge> {
-    const url = `${this.apiUrl}Knowledge`;
+    const url = `${this.apiUrl}api/Knowledge`;
     return this.http
       .get<Knowledge>(url, this.httpOptions)
       .pipe(catchError(error => throwError(error)));
   }
 
   getProgrammingLanguages(): Observable<ProgrammingLanguages[]> {
-    const url = `${this.apiUrl}Knowledge`;
+    const url = `${this.apiUrl}api/Knowledge`;
     return this.http.get<Knowledge>(url, this.httpOptions).pipe(
       map(todos => todos.Programming_Languages),
       catchError(error => throwError(error))
@@ -44,7 +44,7 @@ export class CurriculumService {
   }
 
   getLanguages(): Observable<Languages[]> {
-    const url = `${this.apiUrl}Knowledge`;
+    const url = `${this.apiUrl}api/Knowledge`;
     return this.http.get<Knowledge>(url, this.httpOptions).pipe(
       map(todos => todos.Languages),
       catchError(error => throwError(error))
@@ -52,7 +52,7 @@ export class CurriculumService {
   }
 
   getFrameworks(): Observable<Framework[]> {
-    const url = `${this.apiUrl}Knowledge`;
+    const url = `${this.apiUrl}api/Knowledge`;
     return this.http.get<Knowledge>(url, this.httpOptions).pipe(
       map(todos => todos.Frameworks),
       catchError(error => throwError(error))
@@ -60,7 +60,7 @@ export class CurriculumService {
   }
 
   getTechnologies(): Observable<Technologie[]> {
-    const url = `${this.apiUrl}Knowledge`;
+    const url = `${this.apiUrl}api/Knowledge`;
     return this.http.get<Knowledge>(url, this.httpOptions).pipe(
       map(todos => todos.Technologies),
       catchError(error => throwError(error))
@@ -68,7 +68,7 @@ export class CurriculumService {
   }
 
   getOtros(): Observable<Otro[]> {
-    const url = `${this.apiUrl}Knowledge`;
+    const url = `${this.apiUrl}api/Knowledge`;
     return this.http.get<Knowledge>(url, this.httpOptions).pipe(
       map(todos => todos.Otros),
       catchError(error => throwError(error))
@@ -76,7 +76,7 @@ export class CurriculumService {
   }
 
   getInformation(): Observable<Information> {
-    const url = `${this.apiUrl}Information`;
+    const url = `${this.apiUrl}api/Information`;
     return this.http
       .get<Information>(url, this.httpOptions)
       .pipe(catchError(error => throwError(error)));

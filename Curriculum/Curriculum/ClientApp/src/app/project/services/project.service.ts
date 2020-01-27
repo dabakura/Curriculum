@@ -21,7 +21,7 @@ export class ProjectService {
   }
 
   getProject(): Observable<Project[]> {
-    const url = `${this.apiUrl}Project`;
+    const url = `${this.apiUrl}api/Project`;
     return this.http
       .get<Project[]>(url, this.httpOptions)
       .pipe(catchError(error => throwError(error)));

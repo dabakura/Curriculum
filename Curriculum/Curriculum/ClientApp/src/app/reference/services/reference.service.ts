@@ -21,14 +21,14 @@ export class ReferenceService {
   }
 
   getReference(): Observable<Reference> {
-    const url = `${this.apiUrl}Reference`;
+    const url = `${this.apiUrl}api/Reference`;
     return this.http
       .get<Reference>(url, this.httpOptions)
       .pipe(catchError(error => throwError(error)));
   }
 
   getJobs(): Observable<Job[]> {
-    const url = `${this.apiUrl}Reference`;
+    const url = `${this.apiUrl}api/Reference`;
     return this.http.get<Reference>(url, this.httpOptions).pipe(
       map(todos => todos.Jobs),
       catchError(error => throwError(error))
@@ -36,7 +36,7 @@ export class ReferenceService {
   }
 
   getPersonals(): Observable<Personal[]> {
-    const url = `${this.apiUrl}Reference`;
+    const url = `${this.apiUrl}api/Reference`;
     return this.http.get<Reference>(url, this.httpOptions).pipe(
       map(todos => todos.Personals),
       catchError(error => throwError(error))
