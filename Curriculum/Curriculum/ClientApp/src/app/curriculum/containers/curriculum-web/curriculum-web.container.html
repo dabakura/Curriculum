@@ -15,13 +15,13 @@
 
 <section class="row technologies">
     <div class="container">
-        <div class="row valign-wrcurriculumer">
-            <div class="col s12 hide-on-small-only" style="width: 180px;">
+        <div class="row valign-wrapper">
+            <div class="col s12 hide-on-small-only m3 xl2">
                 <h5 class="titulo">Idiomas</h5>
                 <curriculum-items-list-circular [data]="(data$ | async)?.langua" [columns]="1"></curriculum-items-list-circular>
                 <curriculum-time-line [data]="(data$ | async)?.info.Qualities"></curriculum-time-line>
             </div>
-            <div class="col s12 m10">
+            <div class="col s12 m9 xl10">
                 <curriculum-items-list-collection [data]="(data$ | async)?.techn">
                 </curriculum-items-list-collection>
             </div>
