@@ -8,4 +8,5 @@ export interface Project {
   Video: string;
   Images: string[];
   Built: Built;
+  Order: number;
 }

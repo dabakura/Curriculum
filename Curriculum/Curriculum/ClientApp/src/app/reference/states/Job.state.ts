@@ -8,11 +8,13 @@ export function selectJobId(a: Job): string {
   return a.Company;
 }
 
-export function sortByNameJob(a: Job, b: Job): number {
-  return a.Departure.localeCompare(b.Departure);
+export function sortByDepartureJob(a: Job, b: Job): number {
+  if (a.Departure === "") a.Departure = new Date().toLocaleDateString();
+  if (b.Departure === "") b.Departure = new Date().toLocaleDateString();
+  return b.Departure.localeCompare(a.Departure);
 }
 
 export const jobAdapter: EntityAdapter<Job> = createEntityAdapter<Job>({
   selectId: selectJobId,
-  sortComparer: sortByNameJob
+  sortComparer: sortByDepartureJob
 });

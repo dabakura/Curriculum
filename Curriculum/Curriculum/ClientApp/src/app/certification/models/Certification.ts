@@ -5,4 +5,5 @@ export interface Certification {
   Image: string;
   Description: string;
   Ppf: string;
+  Order: number;
 }

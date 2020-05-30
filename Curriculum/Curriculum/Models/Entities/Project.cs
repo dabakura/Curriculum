@@ -10,5 +10,6 @@ namespace Curriculum.Models.Entities
         public String Video { get; set; }
         public String[] Images { get; set; }
         public Built Built { get; set; }
+        public Int32 Order { get; set; }
     }
 }

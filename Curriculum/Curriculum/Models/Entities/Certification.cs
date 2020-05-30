@@ -9,5 +9,6 @@ namespace Curriculum.Models.Entities
         public string Image { get; set; }
         public string Description { get; set; }
         public string Pdf { get; set; }
+        public Int32 Order { get; set; }
     }
 }
